@@ -74,7 +74,7 @@ int main(void){//函数
 
     %f默认显示小数点后六位的值，%.xf显示小数点后x位的值
 
-    
+    ![](https://github.com/CatDogDwt/Image-Hosting-Services/img/dweight.jpg)
 
   - 初始化
 
