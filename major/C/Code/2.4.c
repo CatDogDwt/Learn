@@ -12,12 +12,12 @@ int main(void){
 	
 	float money,tax_add;
 	
-	printf("税前：");
+	printf("税前：\n");
 	scanf("%f",&money);
 	
 	tax_add = money + money * TAX;
 	
-	printf("税后：%.2f",tax_add);
+	printf("税后：%.2f\n",tax_add);
 	
 	return 0;
 }

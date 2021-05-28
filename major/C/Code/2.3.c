@@ -14,8 +14,8 @@ int main(void){
 
 	float r, result;
 	
-    printf("请输入球体半径：");
-    scanf("%f",&r);
+    	printf("请输入球体半径：\n");
+    	scanf("%f",&r);
 	printf("%.2f",result = V*r*r*r);
 
 	return 0;
