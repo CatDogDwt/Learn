@@ -10,7 +10,7 @@ int main(void){
 
 	float x;
 
-	printf("Please insert value of x：\n");
+	printf("Please insert value of x：");
 	
 	scanf("%f",&x);
 
