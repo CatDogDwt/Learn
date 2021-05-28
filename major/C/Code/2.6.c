@@ -10,7 +10,7 @@ int main(void){
 
 	int count,tw,ten,five,one;
 
-	printf("请输入人民币面额：\n");
+	printf("请输入人民币面额：");
 	scanf("%d",&count);
 	
 	tw = count/20;
