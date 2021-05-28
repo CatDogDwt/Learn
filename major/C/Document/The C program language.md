@@ -76,7 +76,114 @@ int main(void){//函数
 
     ![](https://cdn.jsdelivr.net/gh/CatDogDwt/Image-Hosting-Services/img/dweight.jpg)
 
-  - 初始化
+    ```c
+    //dweight.c
+    #include <stdio.h>
+    
+    int main(void){
+        
+        int length = 12,height = 8,width = 10,volume,weight;
+        
+        volume = length*height*width;
+        weight = (volume+165)/166;
+        //在C语言中，如果两个整数相除，那么结果会被截短，小数点后的所有数字都会丢失，结果会向下取整
+        /*向下取整960/166=5.783≈5 向上取整5.783≈6*/
+        printf("箱子的空间重量为：%d",weight);
+        
+        return 0;
+    }
+    ```
+    
+    ```c
+    //dweight2.c
+    #include <stdio.h>
+    
+    int main(void){
+        int length,height,width,volume,weight;
+        
+        printf("请输入行李高：");
+        scanf("%d",&height);
+        printf("请输入行李宽：");
+        scanf("%d",&width);
+        printf("请输入行李长");
+        scanf("%d",&length);
+        
+        printf("箱子的空间重量为：%d",weight = (length*height*width+165)/166);
+        
+        return 0;
+    }
+    ```
 
 - 定义常量的名字
+
+  可以采用宏定义的方式给常量命名：
+
+  ```c
+  #define N 166//这里的#define是预处理指令，
+  ```
+
+  当对程序进行编译时，预处理会把每一个宏替换为其表示的值
+
+  ```c
+  weight = (volume + N - 1) / N;
+  ```
+
+  👇
+
+  ```c
+  weight = (volume + 166 - 1) / 166;
+  ```
+
+  还可以定义宏表达式
+
+  ```c
+  #define N (1.0f / 3.14159f)
+  ```
+
+  当宏包含运算符时，必须用括号将表达式括起来
+
+  ![](https://cdn.jsdelivr.net/gh/CatDogDwt/Image-Hosting-Services/img/celsius.jpg)
+
+  ```c
+  //celsius.c
+  #include <stdio.h>
+  
+  #define FREEZING_PT 32.0f
+  #define SCALE_FACTOR (5.0f / 9.0f)
+  
+  int main(void){
+      float fahrenheit,celsius;
+      
+      printf("请输入华氏温度：");
+      scanf("%f",&fahrenheit);
+      
+      celsius = (fahrenheit - FREEZING_PT) * SCALE_FACTOR;
+      
+      printf("转换成摄氏温度为：%.1f\n",celsius);
+      
+      return 0;
+  }
+  ```
+
 - 标识符
+
+  在C语言中，标识符可以含有字母、数字、下划线，但是必须以字母或者下划线开头。
+
+  合法标识符示例：
+
+  ​								times10	get_next_char	done	_ok
+
+  不合法的标识符示例：
+
+  ​								10times	get-next-char
+
+- 大小写
+
+  C语言是区分大小写的，例如下列标识符是完全不同的：
+
+  ​							job	joB	jOb	Job jOB	JOB
+
+- 关键字
+
+  ![](https://cdn.jsdelivr.net/gh/CatDogDwt/Image-Hosting-Services/img/keyword.jpg)
+
