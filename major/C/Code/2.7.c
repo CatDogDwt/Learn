@@ -10,13 +10,13 @@ int main(void){
 
 	float money,tax,num,month_tax,interest;
 
-	printf("输入贷款金额：\n");
+	printf("输入贷款金额：");
 	scanf("%f",&money);
 
-	printf("输入利率：\n");
+	printf("输入利率：");
 	scanf("%f",&tax);
 
-	printf("每月还钱：\n");
+	printf("每月还钱：");
 	scanf("%f",&num);
 
 	month_tax = tax * 0.01 / 12;
