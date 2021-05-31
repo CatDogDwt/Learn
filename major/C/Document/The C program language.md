@@ -388,3 +388,175 @@ int main(void){
   -   像printf 、scanf这种带转换说明的输入/ 输出库函数，在处理完每一个转换说明相关的输入/ 输出操作时是一个SequencePoint。库函数bsearch和qsort在查找和排序过程中的每一步比较或移动操作之间是一个Sequence Point。
 
   ###### 详见Document下的expression2009.pdf
+
+#### 第五章
+
+- ##### 逻辑表达式
+
+  在C语言中，像 i < j 这样的比较运算可以产生整数  0 (假)  或  1(真) 。
+
+  表达式 i<j<k 等价于 (i<j)<k，表达式会先计算 i<j的值，然后将结果（如果为真，结果为1，相反，结果为0）与K进行比较。
+
+- ##### 逻辑运算符
+
+  ###### 逻辑非  ！  逻辑与  &&  逻辑或  ||
+
+  逻辑运算符将任何非零值操作数作为真值来处理，同时将任何零值操作数作为假值来处理
+
+  ###### 逻辑运算符操作顺序
+
+  - 如果表达式的值为0，那么逻辑非表达式的值为1。
+  - 如果表达式1和表达式2的值都是非零值，那么表达式1 逻辑与 表达式2的结果为1。
+  - 如果表达式1和表达式2的值中任意一个是（或者两者都是）非零值，那么表达式1 逻辑或 表达式2的结果为1。
+
+  ###### 短路
+
+  当表达式进行逻辑与运算时，只要有一个为假，总的表达式就为假，只有当所有为真时，表达式才为真。
+
+  当表达式进行逻辑或运算时，只要有一个为真，总的表达式就为真，只有当所有为假时，表达式才为假。
+
+  这些运算符首先计算左操作数的值，如果表达式的值可以被左操作数推导出来，那么将不计算右表达式的值
+
+- ##### if语句
+
+  级联式if语句不是新的语句类型，他仅仅是普通的if语句，只是碰巧有另外一条if语句作为else子句。
+
+![](https://cdn.jsdelivr.net/gh/CatDogDwt/Image-Hosting-Services/img/broker.jpg)
+
+```c
+//broker.c
+
+#include <stio.h>
+
+int main(void){
+    
+    float commission,value;
+    
+    printf("录入交易额：");
+    scanf("%f",&value);
+    
+    if(value < 2500.00f)
+        commission = 30.00f + .017f*value;
+    else if(value < 6250.00f)
+        commission = 56.00f + .0066f*value;
+    else if(value < 20000.00f)
+        commission = 76.00f + .0034f*value;
+    else if(value < 50000.00f)
+        commission = 100.00f + .0022f*value;
+    else if(value < 500000.00f)
+        commission = 155.00f + .0011f*value;
+    else
+        commission = 255.00f + .0009f*value;
+    
+    if(commission = 39.00f)
+        commission = 39.00f;
+    
+    printf("佣金为：%.2f\n",commission);
+    
+    return 0;
+}
+```
+
+- ##### 悬空else问题
+
+  C语言遵循的规则是else子句应该属于离他最近的且还未与其他else匹配的if语句
+
+- ##### 条件表达式
+
+  ###### 【条件表达式】 表达式1 ？表达式2：表达式3
+
+  表达式1和表达式2表达式3可以是任何类型的表达式，条件运算符是C运算符中唯一一个要求三个操作数的运算符，因此把他称为三元运算符。
+
+  条件表达式的求值步骤：首先计算出表达式1的值，如果为真值，那么计算表达式2的值，结束运算。
+
+  当int型和float型的值混合在一个条件表达式中时，表达式的类型为float，如果int型变量的值为真，那么int型变量转化为floa型后的值就是表达式的值。
+
+  ###### 许多程序猿会将类似的
+
+  ```c
+  if(i>j)
+      return j;
+  else
+      return i;
+  ```
+
+  ###### 替换为
+
+  ```c
+  return i > j ? j : i;
+  ```
+
+- ##### switch语句
+
+  ###### 【switch语句】switch (控制表达式) {
+
+  ###### 							case 常量表达式 ：语句
+
+  ###### 							...
+
+  ###### 							case 常量表达式 ：语句
+
+  ###### 							default：语句				
+
+  ###### 						}
+
+  - ##### 控制表达式	
+
+    switch后边必须跟着由圆括号括起来的整形表达式。C语言把字符当成整数来处理，因此在switch语句中可以对字符进行判定。但是，不能用浮点数和字符串。
+
+  - ##### 分支标号
+
+    case 常量表达式 ：
+
+  - ##### 常量表达式
+
+    不能包含变量和函数调用，分支标号中的常量表达式的值必须是整数（字符也可以）。
+
+![](https://cdn.jsdelivr.net/gh/CatDogDwt/Image-Hosting-Services/img/date.jpg)
+
+```c
+//date.c
+
+#include <stdio.h>
+
+int main(void){
+    
+    int month,day,year;
+    
+    printf("请输入日期(mm/dd/yy):");
+    scanf("%d/%d/%d",&month,&day,&year);
+    
+    printf("Dated this %d",day);
+    switch(day){
+            case 1: case 21: case 31:
+                printf("st");break;
+            case 2: case 22:
+                printf("nd");break;
+            case 3: case 23:
+                printf("rd");break;
+            default:
+                printf("th");break;
+    }
+    printf("day of");
+    
+    switch(month){
+        	case 1: printf("Juanary\n");break;
+        	case 2: printf("February\n");break;
+        	case 3: printf("\n");break;
+            case 3: printf("\n");break;
+            case 3: printf("\n");break;
+            case 3: printf("\n");break;
+            case 3: printf("\n");break;
+            case 3: printf("\n");break;
+            case 3: printf("\n");break;
+            case 3: printf("\n");break;
+            case 3: printf("\n");break;
+            case 3: printf("\n");break;
+    }
+    
+    printf(", 20%.2d\n",year);
+    
+    return 0;
+}
+```
+
