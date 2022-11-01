@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- saved from url=(0155)https://tpc.googlesyndication.com/sadbundle/$csp%3Der3$/2727723885389018851/970x250.html#t=13303076918548537311&p=https%3A%2F%2Fgoogleads.g.doubleclick.net -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./f(14).txt" type="text/javascript"></script><script src="./f(15).txt" type="text/javascript"></script><meta content="Adobe_Animate_CC" name="authoring-tool"><meta content="width=970,height=250" name="ad.size"><title>970x250</title><script src="./createjs_2015.11.26_54e1c3722102182bb133912ad4442e19_min.js.下载"></script><script src="./970x250.js.下载"></script><script>
+var clickTag = "https://www.semrush.com/academy/courses/how-to-create-a-small-business-website-with-wes-mcdowell/";
+var keyValues = location.search.replace(/^.*\?/, '').split('&'),
+tmpVars = {};
+for (var i = 0; i < keyValues.length; i++) {
+var keys = keyValues[i].split('=');
+if (keys.length == 2) {
+tmpVars[keys[0]] = keys[1];
+}
+}
+if ('clickTAG' in tmpVars) {
+var clickTag = tmpVars.clickTAG;
+}
+var canvas, stage, exportRoot;
+function init() {
+	canvas = document.getElementById("canvas");
+	var comp=AdobeAn.getComposition("C5F6DC7E53506749A2CC30D5A5546B72");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib._970x250();
+	stage = new lib.Stage(canvas);
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(false,'both',false,1,[canvas]);
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script><style>
+*{
+margin: 0px;
+padding: 0px;
+}
+</style><script type="text/javascript" src="./cfKUDseLxMX_VMI_uao_rq0MKOaeCrg8GZjSFxmotG8.js.下载"></script></head><body onclick="ExitApi.exit();" onload="init();" style="background-color:#D4D4D4;margin:0px;; cursor:pointer">
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="javascript:window.open(window.clickTag)">
+	<canvas height="309" id="canvas" style="display: block; background-color: rgb(255, 255, 255); width: 970px; height: 250px;" width="1202"></canvas>
+		</a>
+
+
+</body></html>

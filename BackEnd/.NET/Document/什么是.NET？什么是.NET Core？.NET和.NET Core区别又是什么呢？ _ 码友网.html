@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://codedefault.com/p/difference-between-net-framework-and-net-core -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
+<title>什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ | 码友网</title>
+<meta name="keywords" content=".NET,C#,.NET Core,.NET 5">
+<meta name="description" content="概述对于.NET平台的初学者来说，有时候比较困惑“什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？”。确实，目前微软的开发平台有两种不同的.NET运行时环境，一种是.NET Framework，另一种则是.NET Core(.NET 5)，不同的目标框架运行时环...">
+
+
+    <link rel="stylesheet" href="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/site.min.css">
+
+
+    
+        <link rel="canonical" href="https://codedefault.com/p/difference-between-net-framework-and-net-core">
+    
+    
+    <link href="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/article.min.css" rel="stylesheet">
+
+<meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><link rel="preload" href="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/f(1).txt" as="script"><script src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/f.txt"></script><script type="text/javascript" async="" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/analytics.js.下载"></script><script type="text/javascript" async="" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/js"></script><script type="text/javascript" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/f(1).txt"></script><meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="></head>
+<body aria-hidden="false">
+    
+    <div class="page" style="height: auto !important;">
+        <header class="header-wrap float-panel fixed" data-top="0" data-scroll="100" style="position: fixed; top: 0px;">
+    <div class="container">
+        <nav class="navbar">
+            <div class="navbar-header">
+                <a class="navbar-logo logo" href="https://codedefault.com/" alt="码友网" title="码友网"><span class="logo-img"></span></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="nav navbar-nav navbar-logo-menu">
+                    <ul class="navbar-left navbar-box hidden-md hidden-sm navbar-site-subname">
+                        <li class="dropdown navbar-item">
+                            <h1 class="header-desc-h1"><b>码友网</b> -- 专注C#&amp;.NET/.NET Core的中文技术网站</h1>
+                        </li>
+                    </ul>
+                    <ul class="navbar-left navbar-box hidden-sm hidden-xs navbar-menu">
+                        <li class="navbar-item"><a href="https://codedefault.com/q/explore" title="问答">问答</a></li>
+                        <li class="navbar-item"><a href="https://codedefault.com/course/explore" title="教程">教程</a></li>
+                        <li class="navbar-item"><a href="https://codedefault.com/video/explore" title="视频">视频</a></li>
+                        <li class="navbar-item"><a href="https://codedefault.com/post/list" title="文章">文章</a></li>
+                        <li class="navbar-item"><a href="https://codedefault.com/sn/latest" title="资讯">资讯</a></li>
+                        <li class="navbar-item"><a href="https://codedefault.com/t/list" title="专题">专题</a></li>
+                        <li class="navbar-item"><a href="https://codedefault.com/site/list" title="导航">导航</a></li>
+                        <li class="navbar-item"><a href="https://codedefault.com/activity" title="动态">动态</a></li>
+                    </ul>
+                </div>
+                <div class="nav-search hidden-md hidden-sm hidden-xs">
+                    <div class="navbar-search-box">
+                        <input id="nav_search" type="text" class="search-text" placeholder="热搜:C#, .NET, .NET Core, ASP.NET Core...">
+                        <a id="btn_banner_search" class="btn btn-default navbar-search-btn"><i class="fa fa-search"></i></a>
+                    </div>
+                    <div class="nav-search-hot">
+                        <div class="nav-search-heading">
+                            <h3>他们在搜</h3>
+                        </div>
+                        <ul class="navbar-search-hot-list">
+                            <li><a class="hot-item" href="https://codedefault.com/search?q=.NET+Core">.NET Core</a></li>
+                            <li><a class="hot-item" href="https://codedefault.com/search?q=ASP.NET+Core">ASP.NET Core</a></li>
+                            <li><a class="hot-item" href="https://codedefault.com/search?q=DncZeus">DncZeus</a></li>
+                            <li><a class="hot-item" href="https://codedefault.com/search?q=C%23">C#</a></li>
+                            <li><a class="hot-item" href="https://codedefault.com/search?q=.NET">.NET</a></li>
+                            <li><a class="hot-item" href="https://codedefault.com/search?q=Bootstrap">Bootstrap</a></li>
+                            <li><a class="hot-item" href="https://codedefault.com/search?q=JavaScript">JavaScript</a></li>
+                            <li><a class="hot-item" href="https://codedefault.com/search?q=jQuery">jQuery</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav navbar-right nav-profile navbar-box">
+                    <li class="navbar-item full-height navbar-create-menu">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle navbar-btn-create" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                撰写
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="display: none;">
+                                <li><a href="https://codedefault.com/post/write" title="撰写文章"><i class="fa fa-pencil"></i> &nbsp;写文章</a></li>
+                                <li><a href="https://codedefault.com/q/ask" title="提问题"><i class="fa fa-question"></i> &nbsp;提问题</a></li>
+                                <li><a href="https://codedefault.com/sn/write" title="发头条"><i class="fa fa-newspaper-o"></i> &nbsp;发头条</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                        <li class="navbar-item full-height">
+                            <a class="nav-profile-link" href="https://codedefault.com/account/register">
+                                <i class="fa fa-user"></i> 注册<span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="navbar-item full-height">
+                            <a class="nav-profile-link" href="https://codedefault.com/account/login">
+                                <i class="fa fa-user"></i> 登录<span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header><div style="width: 1533px; display: block; transition: height 0.3s ease 0s; height: 0px;"></div>
+        <div id="main" class="container-fluid main" style="height: auto !important; min-height: 0px !important;">
+            <div id="content" class="container" style="height: auto !important;">
+                <section class="row main-row" style="height: auto !important;">
+    <input type="hidden" value="1933" id="pid">
+    <input type="hidden" value="2" id="authorId">
+    <div class="col-md-9 col-sm-8 col-xs-12" style="height: auto !important; min-height: 0px !important;">
+        <div class="article-container cd-card" style="height: auto !important;">
+            <div class="article-breadcrumb">
+                <a href="https://codedefault.com/" title="码友网">首页</a> /
+                <a href="https://codedefault.com/category/dot-net" title="文章分类">.NET</a> /
+                <span title="什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？">正文</span>
+            </div>
+            <h1 class="h3 post-detail-title" title="什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？">什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？</h1>
+            <div class="extra-info">
+                <span style="margin-right: 25px;" title="浏览量"><i class="fa fa-eye text-right"></i> 2099</span>
+                <span style="margin-right: 25px;" title="点赞数"><i class="fa fa-thumbs-o-up text-right"></i> <span class="like-count">0</span></span>
+                <span class="post-collect-group">
+                </span>
+                <span style="margin-right: 25px;"><i class="fa fa-clock-o"></i> 发布于: 2021-10-18 09:27</span>
+                <span style="margin-left: 15px;" title="约2266个字">读完约需 7 分钟 </span>
+            </div>
+                <div class="article-inner-banner">
+                    <script src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/f(2).txt"></script><script src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/f(3).txt" id="google_shimpl"></script><script src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/hm.js.下载"></script><script async="" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/f(4).txt"></script>
+<ins class="adsbygoogle" style="display: block; text-align: center; height: 200px;" data-ad-format="fluid" data-ad-layout="in-article" data-ad-client="ca-pub-5890596333400804" data-ad-slot="4920539174" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" style="border: none; height: 200px; width: 817px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:817px;height:200px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="817" height="200" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/ads.html" data-google-container-id="a!2" data-google-query-id="CLXV96mB4voCFbtHDwId1zkN0g" data-load-complete="true"></iframe></div></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                </div>
+            <article class="article-content" style="height: auto !important;">
+                <div data-toc="#toc" id="article_content" class="cd-code-block" style="height: auto !important;">
+                    <h2 id="h2-u6982u8FF0"><a name="概述" class="reference-link"></a><span class="header-link octicon octicon-link"></span>概述</h2><p>对于.NET平台的初学者来说，有时候比较困惑“什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？”。确实，目前微软的开发平台有两种不同的.NET运行时环境，一种是.NET Framework，另一种则是.NET Core(.NET 5)，不同的目标框架运行时环境不同。</p>
+<p>那这两者的区别到底是什么，在开发时如何选择不同的.NET框架呢？本文将为.NET开发者逐一讲解。</p>
+<p>在谈及.NET与.NET Core的区别之前，我们得先聊聊.NET的历史，了解一下为什么会有.NET Core？</p>
+<h2 id="h2--net-framework-"><a name=".NET Framework简介" class="reference-link"></a><span class="header-link octicon octicon-link"></span>.NET Framework简介</h2><p>在.NET Core出现之前，微软的应用开发主要运行载体是自家的操作系统，即Windows操作系统。<br>2002年时，微软发布了.NET框架的早期版本，当前只有一个框架，即.NET Framework。不久之后，微软又发布了.NET 精简版框架(.NET Compact Framework)，这是.NET框架的一个子集，适用于更小的设备，特别是Windows移动设备(Windows Mobile)。这个精简版的框架是一个独立于.NET框架的代码库。它包括了整个运行时的垂直结构:运行时、框架和顶部的应用程序模型。
+</p><p>.NET Framework是微软为开发应用程序而创建的主要运行在Windows操作系统的软件框架。它包含了大量的FCL(Framework Class Library)框架类库并且提供了多种语言之间的跨语言互操作。.NET Framework平台的应用程序在公共语言运行时(CLR)中执行，CLR是一个应用程序的虚拟机，它提供安全、内存管理和异常处理等服务。因此，使用.NET Framework编写的计算机代码称为“托管代码”。框架类库(FCL)和公共语言运行时(CLR)一起构成了.NET Framework。</p>
+<p><a class="fancybox" href="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/3j705vm3r2.png"><img src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/3j705vm3r2.png" alt="" data-src="https://statics.codedefault.com/uploads/u/2021/10/3j705vm3r2.png" class="img-responsive" title="点击可查看大图"></a>
+</p><h2 id="h2--net-net-core"><a name=".NET跨平台—.NET Core" class="reference-link"></a><span class="header-link octicon octicon-link"></span>.NET跨平台—.NET Core</h2><p>早期(.NET Core之前)的.NET应用程序是不跨平台(操作系统的)，它只能运行在Windows操作系统上，并且操作系统中还必须安装.NET Framework环境。如果要运行在其他操作系统上，需要借助第三方的框架，比如: Mono—一个开源的第三方.NET Framework框架，它可以运行在Linux和Mac OS操作系统上。</p>
+<p>2011年5月,Mono开发者为了使用C#开发跨平台的移动设备应用，成立并发布了Xamarin后于2016年被微软收购，但这只是微软跨平台的第一步，毕竟Xamarin只适合开发移动端应用。</p><div class="google-auto-placed ap_container" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-5890596333400804" data-adsbygoogle-status="done" style="display: block; margin: auto; background-color: transparent; height: 280px;" data-ad-status="filled"><div id="aswift_3_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 280px; width: 817px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:817px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="817" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/ads(1).html" data-google-container-id="a!4" data-google-query-id="CJ7pnqqB4voCFSVgDwIdkJ4HRg" data-load-complete="true"></iframe></div></ins></div>
+<p>随意移动设备迅速占领市场，Windows平台的大势已去。直到.NET Core，.NET才算真正的跨平台，这也是微软重大的战略转变。2014年12月，微软拥抱开源社区，宣布开源了.NET Core的核心代码，也是.NET跨平台迈出的最重要的一步。</p>
+<p>经过不断地迭代，2016年6月发布和.NET Core 1.0，2017年3月发布.NET Core1.1.1。</p>
+<p>.NET Core是一种模块化实现，可用于各种垂直领域，从数据中心扩展到基于触摸的设备，它是开源的，跨平台的，能在Windows、LinuxMac OSX等操作系统上运行，同时还支持Docker等容器化环境安装和部署。</p>
+<h2 id="h2--net-5"><a name=".NET 5" class="reference-link"></a><span class="header-link octicon octicon-link"></span>.NET 5</h2><p>微软为了统一.NET平台，计划将所有的.NET运行时统一为一个.NET平台，并为所有应用程序模型(如：.NET Core, Windows Forms, WPF, UWP, Xamarin, Blazor)提供统一的基类库(BCL)。在2019年5月6日宣布了.NET 5将是.NET Core 3.0的下一个主要版本。</p>
+<p>2020年3月，微软发布了.NET 5的第一个预览版，并在同年的11月10日发布了.NET 5的第一个正式版。</p>
+<p><a class="fancybox" href="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/80313koe2i.png"><img src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/80313koe2i.png" alt="" data-src="https://statics.codedefault.com/uploads/u/course/2021/05/80313koe2i.png" class="img-responsive" title="点击可查看大图"></a>
+</p><h2 id="h2--net-"><a name=".NET生态" class="reference-link"></a><span class="header-link octicon octicon-link"></span>.NET生态</h2><p>以下是一张如今.NET平台的生态示意图：</p>
+<p><a class="fancybox" href="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/cuzq0c7dit.jpg"><img src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/cuzq0c7dit.jpg" alt="" data-src="https://statics.codedefault.com/uploads/u/2021/10/cuzq0c7dit.jpg" class="img-responsive" title="点击可查看大图"></a>
+</p><p>从上面的图表中可以看出，.NET生态系统有三个主要的高级组件——.NET Framework、.NET Core和Xamarin组成。</p>
+<p><strong>.NET Framework</strong>：支持Windows和Web应用程序。现在，你仍然可以使.NET Framework作为目标框架来构建运行于Windows操作系统的Winform、WPF和UWP等桌面应用程序，以及基于ASP.NET MVC的Web应用程序。</p><div class="google-auto-placed ap_container" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-5890596333400804" data-adsbygoogle-status="done" style="display: block; margin: auto; background-color: transparent; height: 280px;" data-ad-status="filled"><div id="aswift_4_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none; height: 280px; width: 817px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0;width:817px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="817" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/ads(2).html" data-google-container-id="a!5" data-google-query-id="COjVnqqB4voCFRlVDwIdH34MYw" data-load-complete="true"></iframe></div></ins></div>
+<p>.N<strong>ET Core</strong>：是一个新的、开源的、跨平台框架，它用于构建适用于跨操作系统的应用程序，包括Windows、Mac和Linux。结合C#，它的应用场景也相当广泛，比如：</p>
+<ul>
+<li>用一套代码开发基于Xamarin的支持多端(Windows,Android,iOS)的应用程序；</li><li>可以开发基于Blazor的桌面应用；</li><li>跨平台的网站应用，Web API应用，微服务；</li><li>跨平台的游戏开发Unity，目前应用得非常广泛，像【王者荣耀】这类大型的手游都是使用Unity开发出来的；</li><li>基于WPF的桌面应用程序，使用WPF你可以自定义完成超酷的用户交互界面；</li><li>物联网</li><li>人工智能</li><li>机器学习</li></ul>
+<h2 id="h2-u7ED3u8BBA"><a name="结论" class="reference-link"></a><span class="header-link octicon octicon-link"></span>结论</h2><p>俗语说：“长江后浪推前浪。”，技术领域也是如此。随着开发技术的不断发展和进步，新技术终将代替老技术。</p>
+<p>如果你是一位.NET的初学者，并者没有历史项目(基于.NET Framework框架的项目)的包袱，建议你可以直接从.NET Core(.NET 5)入手学习，因为它具备现代开发技术的绝大多数优点：开源，跨平台，支持容器化部署等。</p>
+
+                </div>
+                <p class="post-stopper copyright-disclaimer"><b>版权声明：</b>本作品系原创，版权归码友网所有，如未经许可，禁止任何形式转载，违者必究。</p>
+                <div class="social-container">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12 text-center">
+                            <div class="like-group">
+                                <div class="btn-like">
+                                    <a style="display: inline-block;" class="pointer article-btn-like" data-pid="1933" data-toggle="tooltip" data-placement="top" data-original-title="喜欢请点个赞吧" data-liked="0">
+                                        <span class="article-like-action"><i class="fa fa-thumbs-o-up"> </i> <span class="article-sb-like-txt">赞</span></span>
+                                    </a>
+                                </div>
+                                <div class="like-count-group">
+                                    <span class="like-count" data-toggle="tooltip" data-placement="top" data-original-title="已获得0个赞">0</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div class="article-extra">
+                    <div class="clearfix post-tags mb15">
+                        <div class="pull-left">
+                                <a class="post-tag" href="https://codedefault.com/tag/net-2">.NET</a>
+                                <a class="post-tag" href="https://codedefault.com/tag/c-sharp">C#</a>
+                                <a class="post-tag" href="https://codedefault.com/tag/net-core">.NET Core</a>
+                                <a class="post-tag" href="https://codedefault.com/tag/net-5">.NET 5</a>
+                        </div>
+                    </div>
+                <div class="post-pre-and-next">
+                        <p><span>上一篇:</span> <a href="https://codedefault.com/p/lightweight-open-source-project-hashids-net-for-generating-short-ids-from-numbers" data-toggle="tooltip" data-placement="top" data-original-title="查看上一篇文章"> 分享.NET/.NET 5轻量级开源的将数字编码成字符串的加密(短ID生成)工具类库--hashids.net</a></p>
+                        <p><span>下一篇:</span> <a href="https://codedefault.com/p/redis-for-windows-installer-download-links" data-toggle="tooltip" data-placement="top" data-original-title="查看下一篇文章">Redis在Windows操作系统的各版本安装包(压缩包)下载地址</a></p>
+                </div>
+                <p class="article-permanent-url">
+                    <b>本文永久链接</b>：<a href="https://codedefault.com/">码友网</a> » <a href="https://codedefault.com/p/difference-between-net-framework-and-net-core">什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？</a>
+                </p>
+                <div class="plr10">
+                    <div class="row mt15">
+                        <div class="col-lg-6">
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="pull-right">
+                                <span style="display: inline-block; padding-top: 8px; font-size: 14px;" title="分享扩散，让更多人学习到这些精华">分享扩散：</span>
+                                <a href="http://service.weibo.com/share/share.php?url=https://codedefault.com/p/difference-between-net-framework-and-net-core&amp;title=%e4%bb%80%e4%b9%88%e6%98%af.NET%ef%bc%9f%e4%bb%80%e4%b9%88%e6%98%af.NET+Core%ef%bc%9f.NET%e5%92%8c.NET+Core%e5%8c%ba%e5%88%ab%e5%8f%88%e6%98%af%e4%bb%80%e4%b9%88%e5%91%a2%ef%bc%9f" target="_blank" data-cmd="tsina" title="分享到新浪微博"><i class="fa fa-weibo fa-2x color-red-sina" aria-hidden="true"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-stopper"></div>
+                <div class="h5 sidebar-heading">他们还在浏览...</div>
+                <ul class="list-unstyled side-bar-article-list">
+        <li>
+            <a href="https://codedefault.com/p/bootstrap-angularjs-responsive-admin-template-ui" title="[后台系统模板]精美的基于Bootstrap+Angularjs+Requirejs的响应式管理模板UI"><span class="num">1</span> [后台系统模板]精美的基于Bootstrap+Angularjs+Requirejs的响应式管理模板UI</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/s/how-can-i-use-linq-group-by-and-select-collection-in-csharp-application" title="C#/.NET应用程序编程开发中如何使用LINQ实现按集合元素的某个属性分组(GroupBy)后查询分组的子集合？"><span class="num">2</span> C#/.NET应用程序编程开发中如何使用LINQ实现按集合元素的某个属性分组(GroupBy)后查询分组的子集合？</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/p/dotnet-csharp-query-datatable-using-linq" title=".NET(C#)使用Linq语句查询DataTable的数据操作"><span class="num">3</span> .NET(C#)使用Linq语句查询DataTable的数据操作</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/p/introducing-flurl" title="Flurl--现代的、链式的、异步的、可测试的、可移植的URL构建器和.NET HTTP客户端组件库"><span class="num">4</span> Flurl--现代的、链式的、异步的、可测试的、可移植的URL构建器和.NET HTTP客户端组件库</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/s/how-can-i-change-the-timeout-on-a-net-webclient-object" title="[.NET].NET应用程序开发中如何修改WebClient对象的超时时间(timeout)？"><span class="num">5</span> [.NET].NET应用程序开发中如何修改WebClient对象的超时时间(timeout)？</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/p/sql-server-get-table-comment-and-fields-name-type-comment" title=" MS SQL SERVER 读取数据库中每个表的描述/注释以及表中字段/列的字段名，字段类型，字段描述/注释/说明等信息"><span class="num">6</span>  MS SQL SERVER 读取数据库中每个表的描述/注释以及表中字段/列的字段名，字段类型，字段描述/注释/说明等信息</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/p/www-eleven-com" title="配置github公钥的操作步骤"><span class="num">7</span> 配置github公钥的操作步骤</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/p/install-vs-inconsistent-quality-network" title="[Visual Studio]使用命令行制作Visual Studio 2017的离线安装包并离线安装Visual Studio 2017"><span class="num">8</span> [Visual Studio]使用命令行制作Visual Studio 2017的离线安装包并离线安装Visual Studio 2017</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/p/c-sharp-asp-net-task-timer-fluentscheduler" title="推荐一个简单、轻量、功能非常强大的C#/ASP.NET定时任务执行管理器组件--FluentScheduler"><span class="num">9</span> 推荐一个简单、轻量、功能非常强大的C#/ASP.NET定时任务执行管理器组件--FluentScheduler</a>
+        </li>
+        <li>
+            <a href="https://codedefault.com/p/how-can-i-enforce-lowercase-routing-in-asp-net-core-razor-pages-or-mvc" title="[ASP.NET Core]ASP.NET Core Razor Pages或者MVC应用程序中如何将URL路径设置为小写的？"><span class="num">10</span> [ASP.NET Core]ASP.NET Core Razor Pages或者MVC应用程序中如何将URL路径设置为小写的？</a>
+        </li>
+</ul>
+            </div>
+            <a name="comment"></a>
+                <div class="post-comment-container">
+    <h3><i class="fa fa-comment-o"></i> 发表评论</h3>
+        <p>登录用户才能发表评论， 请 <a href="https://codedefault.com/account/login?returnUrl=https://codedefault.com/p/difference-between-net-framework-and-net-core" class="btn btn-primary btn-xs"><i class="fa fa-user"></i> 登 录</a> 或者 <a href="https://codedefault.com/account/register?returnUrl=https://codedefault.com/p/difference-between-net-framework-and-net-core">注册</a></p>
+</div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12 hidden-xs">
+        <div class="sidebar-article-author cd-card sticky-author">
+            <div class="sidebar-article-author-avatar">
+                    <div class="sidebar-author-card">
+        <div class="article-sb-author-info clearfix">
+            <div class="article-sb-avatar-box">
+                <img class="avatar" alt="" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/6279814886054ac29cabe5534453d242.png">
+            </div>
+            <div class="article-sb-author-detail">
+                <p class="article-sb-username"><a href="https://codedefault.com/u/105374953119"><b>Rector</b></a></p>
+                <p class="author-age">码龄: 2337天</p>
+            </div>
+            <p class="article-sb-desc" title="专注.NET/.NET Core">专注.NET/.NET Core</p>
+        </div>
+        <div class="sb-author-follow-info">
+            <ul class="list-unstyled clearfix sb-author-social">
+                <li class="art-sb-follow-item">
+                    <a href="https://codedefault.com/u/105374953119#followers">
+                        <span>粉丝</span>
+                        <span class="art-sb-follow-num art-sb-follower-count">86</span>
+                    </a>
+                </li>
+                <li class="art-sb-follow-item">
+                    <a href="https://codedefault.com/u/105374953119#followings">
+                        <span>关注</span>
+                        <span class="art-sb-follow-num art-sb-following-count">2</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                <div class="article-sb-actions">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12">
+                            <a class="article-btn-like" data-pid="1933" data-liked="0">
+                                <div class="article-like-action">
+                                    <p class="article-sb-like-txt">赞</p>
+                                    <p class="article-sb-count article-unliked"><i class="fa fa-thumbs-o-up"></i></p>
+                                    <p class="article-sb-count article-like-count like-count article-liked">0</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-xs-12">
+                            <a class="article-btn-collection" data-pid="1933">
+                                <div class="article-collection-action">
+                                    <p class="article-sb-collection-txt">收藏</p>
+                                    <p class="article-sb-count article-uncollected"><i class="fa fa-heart-o"></i></p>
+                                    <p class="article-sb-count article-collection-count  article-collected">0</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4 col-xs-12">
+                            <a href="https://codedefault.com/p/difference-between-net-framework-and-net-core#comment">
+                                <p>评论</p>
+<p class="article-sb-count"><i class="fa fa-comment-o"></i></p>                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="toc-container cd-card sticky-toc" style="position: fixed; width: 275.496px; top: 55px; z-index: 3;">
+            <div id="toc" class="toc toc-fixed shadow" style="top: 24px;"><div class="toc-brand">文章目录</div><div class="toc-navbar" style="max-height: inherit; overflow-y: inherit;"><div class="toc-hightlight" style="top: 140px; height: 28px;"></div><nav class="toc-nav"><a href="https://codedefault.com/p/difference-between-net-framework-and-net-core#h2-u6982u8FF0" class="toc-link">概述</a><a href="https://codedefault.com/p/difference-between-net-framework-and-net-core#h2--net-framework-" class="toc-link">.NET Framework简介</a><a href="https://codedefault.com/p/difference-between-net-framework-and-net-core#h2--net-net-core" class="toc-link">.NET跨平台—.NET Core</a><a href="https://codedefault.com/p/difference-between-net-framework-and-net-core#h2--net-5" class="toc-link">.NET 5</a><a href="https://codedefault.com/p/difference-between-net-framework-and-net-core#h2--net-" class="toc-link">.NET生态</a><a href="https://codedefault.com/p/difference-between-net-framework-and-net-core#h2-u7ED3u8BBA" class="toc-link active">结论</a></nav></div></div>
+        </div><div class="sticky-placeholder" style="width: 275.496px; height: 210.882px;"></div>
+            <script async="" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/f(5).txt" crossorigin="anonymous" data-checked-head="true"></script>
+<!-- 260x80 -->
+<ins class="adsbygoogle" style="display:inline-block;width:278px;height:90px" data-ad-client="ca-pub-5890596333400804" data-ad-slot="4343313654" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_2_host" style="border: none; height: 90px; width: 278px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0;width:278px;height:90px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="278" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/ads(3).html" data-google-container-id="a!3" data-google-query-id="CJDc96mB4voCFQlSDwIdYM0E6Q" data-load-complete="true"></iframe></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+</section>
+
+            </div>
+        </div>
+        <footer class="ui-footer">
+    <div class="container">
+        <p>
+            <a href="https://codedefault.com/">码友网</a> 版权所有 © 2014-2022 · <span>Powered by .NET 5.0.4</span>
+        </p>
+        <p>站点相关： <a href="https://codedefault.com/sn/latest">最新资讯</a> · <a href="https://codedefault.com/site/list">开发者必备</a> · <a href="https://codedefault.com/hot">最多阅读</a> · <a href="https://codedefault.com/cloudtags">标签云</a> · <a href="https://codedefault.com/about-us">关于码友网</a> · <a href="https://codedefault.com/rss/blog.xml">文章RSS</a> · <a href="https://codedefault.com/rss/sn.xml">资讯RSS</a> · <a href="https://codedefault.com/rss/question.xml">问答RSS</a> · <a href="https://codedefault.com/disclaimer">免责声明</a> · <a href="https://codedefault.com/sitemap.xml">网站地图</a></p>
+        <p>友情链接： <a href="https://www.donet5.com/" target="_blank">果糖网</a> · <a href="http://www.webyang.net/" target="_blank">WebYang.NET</a> · <a href="http://shiyousan.com/" target="_blank">十有三博客</a> · <a href="http://www.fangsi.net/" target="_blank">放肆雷特</a> · <a href="http://www.itsvse.com/" target="_blank">架构师</a> · <a href="https://walterlv.com/" target="_blank">walterlv</a> · <a href="https://lindexi.oschina.io/lindexi/" target="_blank">lindexi</a> · <a href="https://www.51aspx.com/" target="_blank">51ASPX</a></p>
+        <p>
+            联系我们：
+            <span title="码友网官方QQ群"><i class="fa fa-qq" aria-hidden="true"></i>483350228</span>
+            <span title="电子邮箱" style="margin-left: 10px; display: inline-block;"><i class="fa fa-envelope" aria-hidden="true"></i>master@codedefault.com</span>
+        </p>
+        <p>ICP备案：<a href="http://www.beian.miit.gov.cn/" target="_blank">蜀ICP备14024472号-5</a></p>
+    </div>
+</footer>
+<div class="back-to-top" style="display: block;">
+    <a><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+</div>
+    </div>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/js(1)"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52484435-5');
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?048c0066de9e8716dc92331471a9af18";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+    
+    
+    
+        <script src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/site.min.js.下载"></script>
+    
+<script type="text/javascript">
+    window.cd.isLogin = 0;
+</script>
+    
+    <script type="text/javascript">
+        var pid = 1933;
+        var returnUrl = "https://codedefault.com/p/difference-between-net-framework-and-net-core";
+    </script>
+    <script src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/article.min.js.下载"></script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;" tabindex="0" title="Advertisement" aria-label="Advertisement"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/ads(4).html" data-google-container-id="a!1" data-load-complete="true"></iframe></div></ins><style>
+@media print {
+   .code-badge { display: none; }
+}
+    .code-badge-pre {
+        position: relative;
+    }
+    .code-badge {
+        display: flex;
+        flex-direction: row;
+        white-space: normal;
+        background: transparent;
+        background: #333;
+        color: white;
+        font-size: 0.875em;
+        opacity: 0.5;
+        transition: opacity linear 0.5s;
+        border-radius: 0 0 0 7px;
+        padding: 5px 8px 5px 8px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .code-badge.active {
+        opacity: 0.8;
+    }
+
+    .code-badge:hover {
+        opacity: .95;
+    }
+
+    .code-badge a,
+    .code-badge a:hover {
+        text-decoration: none;
+    }
+
+    .code-badge-language {
+        margin-right: 10px;
+        font-weight: 600;
+        color: goldenrod;
+    }
+    .code-badge-copy-icon {
+        font-size: 1.2em;
+        cursor: pointer;
+        padding: 0 7px;
+        margin-top:2;
+    }
+    .fa.text-success:{ color: limegreen !important }
+</style><div id="CodeBadgeTemplate" style="display:none">
+    <div class="code-badge">
+        <div class="code-badge-language">{{language}}</div>
+        <div title="复制代码">
+            <i class="{{copyIconClass}} code-badge-copy-icon"></i>
+        </div>
+     </div>
+</div><iframe src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/aframe.html" width="0" height="0" style="display: none;"></iframe></body><iframe id="google_esf" name="google_esf" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/zrt_lookup.html" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background: transparent !important;" aria-hidden="true" data-ad-status="filled" data-vignette-loaded="true"><div id="aswift_5_host" tabindex="0" title="Advertisement" aria-label="Advertisement" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_5" name="aswift_5" style="width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; position: absolute !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="" height="" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="./什么是.NET？什么是.NET Core？.NET和.NET Core区别又是什么呢？ _ 码友网_files/zrt_lookup(1).html" data-google-container-id="a!6" data-google-query-id="CLz19qmB4voCFYtlDwIdS0INqw" data-load-complete="true"></iframe></div></ins></html>

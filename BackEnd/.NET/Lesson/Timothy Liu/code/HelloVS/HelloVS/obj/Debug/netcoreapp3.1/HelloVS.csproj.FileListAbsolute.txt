@@ -1,0 +1,14 @@
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\bin\Debug\netcoreapp3.1\HelloVS.exe
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\bin\Debug\netcoreapp3.1\HelloVS.deps.json
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\bin\Debug\netcoreapp3.1\HelloVS.runtimeconfig.json
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\bin\Debug\netcoreapp3.1\HelloVS.runtimeconfig.dev.json
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\bin\Debug\netcoreapp3.1\HelloVS.dll
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\bin\Debug\netcoreapp3.1\HelloVS.pdb
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\obj\Debug\netcoreapp3.1\HelloVS.csproj.AssemblyReference.cache
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\obj\Debug\netcoreapp3.1\HelloVS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\obj\Debug\netcoreapp3.1\HelloVS.AssemblyInfoInputs.cache
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\obj\Debug\netcoreapp3.1\HelloVS.AssemblyInfo.cs
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\obj\Debug\netcoreapp3.1\HelloVS.csproj.CoreCompileInputs.cache
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\obj\Debug\netcoreapp3.1\HelloVS.dll
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\obj\Debug\netcoreapp3.1\HelloVS.pdb
+D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloVS\HelloVS\obj\Debug\netcoreapp3.1\HelloVS.genruntimeconfig.cache
