@@ -12,3 +12,17 @@ D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\net
 D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.dll
 D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.pdb
 D:\Learn\后端\.NET\课程\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.genruntimeconfig.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.deps.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.runtimeconfig.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.runtimeconfig.dev.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\bin\Debug\netcoreapp3.1\HelloWorld.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.AssemblyInfoInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.AssemblyInfo.cs
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\HelloWorld\obj\Debug\netcoreapp3.1\HelloWorld.genruntimeconfig.cache

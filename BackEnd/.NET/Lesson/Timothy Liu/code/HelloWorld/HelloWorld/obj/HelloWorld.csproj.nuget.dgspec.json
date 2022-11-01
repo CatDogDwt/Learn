@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Learn\\后端\\.NET\\课程\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {}
+    "E:\\Learn\\BackEnd\\.NET\\Lesson\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {}
   },
   "projects": {
-    "D:\\Learn\\后端\\.NET\\课程\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {
+    "E:\\Learn\\BackEnd\\.NET\\Lesson\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\HelloWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Learn\\后端\\.NET\\课程\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
+        "projectUniqueName": "E:\\Learn\\BackEnd\\.NET\\Lesson\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
         "projectName": "HelloWorld",
-        "projectPath": "D:\\Learn\\后端\\.NET\\课程\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
-        "packagesPath": "C:\\Users\\20318\\.nuget\\packages\\",
-        "outputPath": "D:\\Learn\\后端\\.NET\\课程\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\obj\\",
+        "projectPath": "E:\\Learn\\BackEnd\\.NET\\Lesson\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
+        "packagesPath": "C:\\Users\\linx7\\.nuget\\packages\\",
+        "outputPath": "E:\\Learn\\BackEnd\\.NET\\Lesson\\Timothy Liu\\code\\HelloWorld\\HelloWorld\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Programming\\Application Settings\\VS\\22\\shared\\NuGetPackages"
+          "D:\\软件\\工作会议\\软件\\编程\\MicrosoftVS\\2022\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\20318\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\linx7\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
