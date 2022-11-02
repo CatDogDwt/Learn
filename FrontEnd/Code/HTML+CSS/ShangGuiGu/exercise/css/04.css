@@ -1,0 +1,22 @@
+nav{
+    width: 1210px;
+    margin: 125px auto;  
+}
+nav>ul>li>a{
+    width: 166px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    float: left;
+    text-decoration: none;
+    color: #A4A4A2;
+    font-size: 18px;
+    background-color: #E8E7E3;
+    font-weight: bold;
+    transition: .5s ease;
+}
+
+nav>ul>li>a:hover{
+    background-color:#3F3F3F ;
+    color:#E3E2DE ;
+}

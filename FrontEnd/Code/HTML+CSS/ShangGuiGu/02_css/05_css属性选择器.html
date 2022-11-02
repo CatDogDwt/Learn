@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS属性选择器</title>
+    <style>
+        /*
+        属性选择器
+            作用：选择含有指定属性的元素
+            语法：[属性名]
+
+            作用：选择含有指定属性和属性值的元素
+            语法：[属性名=属性值]
+
+            作用：选择属性值以指定值开头的元素
+            语法：[属性名^=属性值]
+
+            作用：选择属性值以指定值结尾的元素
+            语法：[属性名$=属性值]    
+
+            作用：选择属性值中含有某值的元素
+            语法：[属性名*=属性值]       
+        */
+        p[title]{
+            color: lightskyblue;
+        }
+        p[title=今天天气真不错！！]{
+            color: blueviolet;
+        }
+        p[title^=abc]{
+            color: crimson;
+        }
+        p[title$=！！！！]{
+            color:forestgreen;
+        }
+        p[title*=！！！！！]{
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <p title="今天天气真不错！">今天天气真不错</p>
+    <p title="今天天气真不错！！">今天天气真不错</p>
+    <p title="abc今天天气真不错！！！">abc今天天气真不错</p>
+    <p title="今天天气真不错！！！！">今天天气真不错</p>
+    <p title="今天天气真不错！！！！！">今天天气真不错</p>
+    <p>今天天气真不错</p>
+</body>
+</html>

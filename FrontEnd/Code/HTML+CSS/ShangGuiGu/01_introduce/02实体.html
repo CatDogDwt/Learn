@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实体</title>
+</head>
+<body>
+    <!--
+        在网页中编写的多个空格默认情况会自动被浏览器解析为一个空格
+        因为空格在写代码时常被用作缩进
+        在HTML中有时不能直接书写特殊符号 比如多个连续空格和字母两侧的大于和小于号
+        如要书写特殊符号 则需要使用实体（转义字符）
+        实体的语法：
+            &实体名;
+            &nbsp;空格
+            &gt;大于
+            &lt;小于
+    -->
+    <p>
+        今天      天气真不错（源代码中的文字中间有6个空格）
+    </p>
+    <p>今天&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;天气真不错（源代码中的文字中间有6个"nbsp"）</p>
+    <p>
+        a<b>c（在源码中大于小于和b没有显示）
+    </p>
+    <p>a&lt;b&gt;c（在源码中使用了实体lt gt）</p>
+</body>
+</html>

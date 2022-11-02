@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型外边距</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            border: 10px solid salmon;
+            /*
+                外边距（margin）
+                    外边距会影响盒子的位置 
+                    正值会往相反方向移动 负值会往相同方向移动 
+                    默认情况下 设置左和上外边距会移动自己 设置下和右外边距会移动其他元素
+                    margin会影响元素实际所占空间大小
+            */
+            margin: 100px 0 100px 100px;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }        
+    </style>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+    <div class="box2">
+
+    </div>
+</body>
+</html>

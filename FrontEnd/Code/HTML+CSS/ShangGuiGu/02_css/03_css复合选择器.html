@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS复合选择器</title>
+    <style>
+        /*
+        交集选择器
+            作用：选中同时复合多个条件的元素
+            语法：选择器1选择器2选择器n{}
+            注意：如果其中含有元素选择器 
+        并集选择器（选择器分组）
+            作用：同时选择多个选择器对应的元素
+            语法：选择器1，选择器2，选择器n{}
+        */
+        .red{
+            color: red;
+        }
+        div.red{
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">
+        我是div
+    </div>
+    <p class="red">我是p元素</p>
+</body>
+</html>

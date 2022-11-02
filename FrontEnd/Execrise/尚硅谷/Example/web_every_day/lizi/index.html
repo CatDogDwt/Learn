@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jc</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        canvas {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+    <!-- 引入刚才我们生成的数据 -->
+    <script src="./data.js"></script>
+</head>
+
+<body>
+    <canvas id="lizi"></canvas>
+</body>
+<script>
+    //////////////////////////全局变量/////////////////////////////////
+    // 获取一块画布
+    let canvas = document.getElementById("lizi");
+    let ctx = canvas.getContext("2d");
+
+    // 获取屏幕的宽度和高度
+    let w = innerWidth;
+    let h = innerHeight;
+
+    // 设置画布的宽高
+    canvas.width = w;
+    canvas.height = h;
+
+    // 鼠标点击状态
+    let mClick = true;
+    canvas.addEventListener("click", function() {
+        mClick = !mClick;
+        // console.log(mClick)
+    })
+
+
+    // 粒子集合
+    let lizis = [];
+
+
+    // 辅助函数,生成区域随机数
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+
+    /////////////////////////粒子对象/////////////////////////////////
+    // 粒子对象
+    function Lizi(ox, oy, tx, ty) { //需要传入粒子的起点和终点坐标
+        // 粒子当前位置坐标
+        this.x = ox;
+        this.y = ox;
+        // 粒子的起点坐标
+        this.ox = ox;
+        this.oy = oy;
+        // 粒子的终点坐标
+        this.ty = ty;
+        this.tx = tx;
+        // 粒子的上一个位子坐标
+        this.lx = ox;
+        this.ly = oy;
+        // 粒子线条的颜色（随机初始化）
+        this.c = Math.random() * 360;
+        // 粒子运动的加速度
+        this.ax = Math.random() * 0.5;
+        this.ay = Math.random() * 0.5;
+
+
+    }
+
+    // 绘制图形
+    Lizi.prototype.render = function() {
+        if (mClick) {
+            // 改变坐标系的原点点位置，实现小圆点的移动效果
+            ctx.save()
+            ctx.translate(this.x, this.y);
+            // 开始一条路径
+            ctx.beginPath();
+            ctx.fillStyle = "hsla(230,100%,50%,1)"
+            ctx.arc(0, 0, 1, 0, Math.PI * 2, false);
+            ctx.fill()
+            ctx.restore()
+        } else {
+            // 状态的保存
+            ctx.save()
+                // 开始一条路径
+            ctx.beginPath();
+            // 画一条线
+            ctx.strokeStyle = "hsla(" + this.c + ",100%,50%,1)"
+            ctx.moveTo(this.lx, this.ly);
+            ctx.lineTo(this.x, this.y);
+            ctx.stroke();
+            ctx.restore()
+        }
+    }
+
+
+    Lizi.prototype.update = function() {
+        // 因为我门每次计算小圆点的前进距离要用到上次的位置坐标，所以先进行备份
+        this.lx = this.x;
+        this.ly = this.y;
+
+        this.c += 1;
+        if (mClick) {
+
+            // 这里就是小圆点运动的核心了，每次把坐标位置增加未走的路程乘上一个加速度，
+            // 因为加速度小于一，所以会呈现先快后慢的效果
+            this.x += (this.tx - this.x) * this.ax;
+            this.y += (this.ty - this.y) * this.ay;
+        } else {
+            this.x += (this.ox - this.x) * this.ax;
+            this.y += (this.oy - this.y) * this.ay;
+        }
+    }
+
+
+    /////////////////////////代码运行/////////////////////////////////
+    // 效果一
+    for (var i = 0; i < 600; i++) {
+        // 起点在左上角
+        lizis.push(new Lizi(0, 0, w / 2, h / 2));
+        // 起点在右上角
+        lizis.push(new Lizi(w, 0, w / 2, h / 2));
+        // 起点在右下角
+        lizis.push(new Lizi(w, h, w / 2, h / 2));
+        // 起点在左下角
+        lizis.push(new Lizi(0, h, w / 2, h / 2));
+    }
+
+    // 效果二
+    // for (var i = 0; i < 300; i++) {
+    //     //  起点为原点，终点随机
+    //     lizis.push(new Lizi(0, 0, random(0, w), random(0, h)));
+    //     //  起点为右上角，终点随机
+    //     lizis.push(new Lizi(w, 0, random(0, w), random(0, h)));
+    //     //  起点为左下角，终点随机
+    //     lizis.push(new Lizi(0, h, random(0, w), random(0, h)));
+    //     //  起点为右下角，终点随机
+    //     lizis.push(new Lizi(w, h, random(0, w), random(0, h)));
+    // }
+
+    // 效果二_1
+    // for (var i = 0; i < 800; i++) {
+    //     //  起点为原点，终点随机
+    //     lizis.push(new Lizi(w / 2, h / 2, random(0, w), random(0, h)));
+    //     //  起点为右上角，终点随机
+    //     lizis.push(new Lizi(w / 2, h / 2, random(0, w), random(0, h)));
+    //     //  起点为左下角，终点随机
+    //     lizis.push(new Lizi(w / 2, h / 2, random(0, w), random(0, h)));
+    //     //  起点为右下角，终点随机
+    //     lizis.push(new Lizi(w / 2, h / 2, random(0, w), random(0, h)));
+    // }
+
+    // 效果三
+    // alert(data.length)   //能打印出数组长度说明引入数据成功
+
+    // for (var i = 0; i < data.length; i++) {
+    //     // y用图片中黑点的坐标作为粒子的终点
+    //     lizis.push(new Lizi(0, 0, data[i][0] + 500, data[i][1] + 50))
+    // }
+
+    // 效果三_1
+    // alert(data.length)   //能打印出数组长度说明引入数据成功
+
+    // for (var i = 0; i < data.length; i++) {
+    //     // y用图片中黑点的坐标作为粒子的终点
+    //     lizis.push(new Lizi(w / 2, 0, data[i][0] + 500, data[i][1] + 50))
+    // }
+
+    // 循环函数
+    function loop() {
+        // 用一块黑色的画布来覆盖上次绘制的图像，这样就呈现出小球在运动的效果了
+        ctx.fillStyle = "rgb(0,0,0)";
+        ctx.fillRect(0, 0, w, h);
+
+        for (var i = 0; i < lizis.length; i++) {
+            lizis[i].render();
+            lizis[i].update();
+        }
+
+    }
+
+    setInterval(loop, 40);
+</script>
+
+</html>

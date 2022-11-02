@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS简介语法</title>
+    <link rel="stylesheet" href="./01_css简介.css">
+    <style>
+        /*CSS中的注释*/
+        /*
+        css基本语法：
+            选择器
+                通过选择器可以选中页面中的指定的全部元素 
+            声明块
+                通过声明块指定元素设置的样式
+                声明为名值对结构 一个样式名对应一个样式值 各值之间以:连接 以;结尾
+        */        
+        p{
+            color:cadetblue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        网页分成三个部分：结构（HTML）表现（CSS）行为（JAVASCRIPT）
+        CSS 层叠样式表
+            网页实际上是一个多层结构 通过css设置每一层的样式
+            但我们只能看到网页的最上一层
+        
+        使用CSS修改元素样式
+        第一种方法：(内联样式（行内样式）)
+            在标签内部通过style属性设置元素的样式 但内联样式只对该标签有效
+            注意：在开发时不能使用内联样式
+        第二种方法：
+            将样式编写到head的style标签里 通过css的选择器选中元素并为其设置各种样式
+            可以同时为多个标签设置样式 更加方便
+        第三种方式：
+            外部样式表 将css样式编写到外部css文件中 然后通过link标签引入    
+            可以同时为多个网页设置样式 更加方便
+            将样式编写到外部css中 可以使用浏览器的缓存机制 加快网页加载速度 提高用户体验
+    -->
+
+    <p style="color: red; font-size: 20px;">今天天气真不错</p>
+    <p>今天天气真不错</p>
+    <p>今天天气真不错</p>
+    <p>今天天气真不错</p>
+    <a href="javascript:;">今天天气真不错</a>
+    <a href="javascript:;">今天天气真不错</a>
+    <a href="javascript:;">今天天气真不错</a>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型边框</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            /*
+            边框：边框里边属于盒子内部 边框外边属于盒子外部
+                 边框的大小会影响到整个盒子的大小
+                    设置边框 至少需要设置三个样式：
+                        边框宽度 border-width 用来指定四个方向的边框的宽度 
+                            有默认值 一般为3个像素
+                                值的情况： 
+                                    四个值：上 右 下 左
+                                    三个值：上 左右 下
+                                    两个值：上下 左右
+                                    一个值：上下左右
+                        边框颜色 border-color 
+                            默认值为黑色
+                            规则和border-width相同
+                        边框样式 border-style
+                            默认值为null 无边框
+                            solid 实线
+                            dotted 点状虚线
+                            dashed 线状虚线
+                            double 双线
+
+            */
+            border-width: 10px 20px 30px 40px;
+            border-color: orange red yellow blue;
+            border-style: solid dotted dashed double;
+        }
+        /*常用写法 简写属性*/
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            border: 10px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

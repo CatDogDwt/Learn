@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片标签</title>
+</head>
+<body>
+    <!--
+        使用img标签向当前页面中引入外部图片
+        img为自结束标签 属于替换元素（基于块元素和行内元素之间，具有两种元素的特点）
+            属性：
+                src 指定外部图片路径（路径规则与超链接相同）
+                alt 图片的描述 默认不显示 当浏览器无法加载时会显示文字
+                    搜索引擎会根据alt中的内容来识别图片
+                height 图片高度
+                width  图片宽度
+                    宽度和高度如果只修改了一个，则另一个会等比例缩放（一般只指定一个）
+                注意：
+                    在pc端，不建议修改图片大小
+                    在移动端，经常需要对图片进行缩放（大图缩小）
+        
+        图片格式：
+            jpeg(jpg)
+                支持的颜色比较丰富 不支持透明效果 不支持动图
+                一般用来显示照片 可压缩
+            gif
+                支持的颜色较少 支持简单透明 支持动图
+                颜色单一的图片 动图
+            png
+                支持的颜色丰富 支持复杂透明 不支持动图
+                颜色丰富，复杂透明的图片（转为网页而生）
+            webp
+                专门用来表示网页中图片的格式
+                具备了其他图片格式的所有优点 但兼容性差
+            base64
+                将图片使用base64进行编码 这样可以将图片转换为字符 通过字符的形式引入图片
+                一般都是一些需要和网页一起加载的图片才会使用base64
+
+            原则：效果一样 用小的 效果不一样 用效果好的
+    -->
+    <img src="./img/图片01.jpg" alt="图片" height="100px" width="100px">
+    <img src="https://image.so.com/view?q=02&src=tab_www&correct=02&ancestor=list&cmsid=7767b54b3e22db9e7337abc6e5899c1e&cmras=6&cn=0&gn=0&kn=21&crn=0&bxn=0&fsn=81&cuben=0&pornn=0&manun=32&adstar=0&clw=254#id=947eef6248a6cbfa21afdaac8eab9bae&currsn=0&ps=103&pc=103" alt="外部图片">
+
+
+</body>
+</html>

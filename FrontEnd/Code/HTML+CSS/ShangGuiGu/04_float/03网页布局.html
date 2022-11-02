@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网页布局</title>
+    <style>
+        header,main,footer{
+            width: 1000px;
+            margin: 10px auto;
+        }
+        header{
+            height: 150px;
+            background-color: red;
+        }
+        main{
+            height: 400px;
+            background-color: green;
+        }
+        nav,article,aside{
+            float: left;
+        }
+        main>nav{
+            width: 200px;
+            height: 100%;
+            background-color: aliceblue;
+        }
+        main>article{
+            width: 600px;
+            height: 100%;
+            background-color: antiquewhite;
+        }
+        main>aside{
+            width: 200px;
+            height: 100%;
+            background-color: azure;
+        }
+        footer{
+            height: 150px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!--创建头部-->
+    <header></header>
+    <!--创建主体-->
+    <main>
+        <!--左侧导航-->
+        <nav></nav>
+        <!--中间内容-->
+        <article></article>
+        <!--右侧边栏-->
+        <aside></aside>
+    </main>
+    <!--创建底部-->
+    <footer></footer>
+</body>
+</html>

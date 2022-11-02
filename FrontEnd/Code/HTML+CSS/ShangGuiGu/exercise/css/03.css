@@ -1,0 +1,95 @@
+.box1{
+    width: 300px;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.box2{
+    border-top: 1px solid #dddddd ;
+}
+
+.box2 h2{
+    height: 42px;
+    width: 32px;
+    border-top: 1px solid red;
+    text-align: center;
+    margin-top: -1px;/*使h2顶部红线与box2顶部灰线对齐*/
+}
+
+.box2>h2>a{
+    padding: 6px 0 10px 0;
+    font-weight: bold;
+    display: block;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.box2>h2>a:hover{
+    color: red;
+    transition: .2s ease;
+    cursor: pointer;
+}
+
+.box2>div{
+    overflow: hidden;
+}
+
+.box2>div>a>img{
+    transition: .2s ease;
+}
+
+.box2>div>a>img:hover{
+    transform: scale(1.1);
+}
+
+
+.box2>h3>a{
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    text-indent: 19px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    width: 300px;
+    margin-top: -40px;  
+    font-weight: bolder;
+    background: linear-gradient(transparent,black);
+    backface-visibility: hidden;
+}
+
+.box2>h3>a::before{
+    content: "❤";
+    color: red;
+    padding-right: 15px;
+}
+
+.box3{
+    height: 120px;
+    width: 100%;
+    margin-top: 15px;
+    padding-left: 15px;
+}
+
+.box3>ul>li{
+    list-style: square;
+    color: #dddddd;
+    font-size: 10px;
+}
+
+.box3 a{
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    font-family: 宋体;
+    color: gray;
+}
+
+.box3 a:hover{
+    color: red;
+    transition: .2s ease;
+}

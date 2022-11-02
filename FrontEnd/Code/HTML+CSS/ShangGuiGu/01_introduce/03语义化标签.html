@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语义化标签</title>
+</head>
+<body>
+    <!--
+        块元素（block element）
+            在网页中一般通过块元素对网页进行布局
+        行内元素（inline element）
+            在网页中主要用来包裹文字
+        
+        一般在块元素中放行内元素
+            ！！！p元素中不能放任何块元素！！！（如果将块元素写在P标签中浏览器会自动修正） 
+    -->
+    <!--
+        在网页中html专门用来负责网页的结构，所以在使用html标签时，应该关注标签的语义，而不是他的样式
+        例如
+            标题标签：
+                h1~h6 一共有六级标题 重要性依次递减 在网页中重要性仅次于title标签
+            在页面中独占一行的元素称为块元素（block element）
+        -->
+    <h1>一级标题</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <h4>四级标题</h4>
+    <h5>五级标题</h5>
+    <h6>六级标题</h6>
+    <!--
+        例如
+            hgroup标签用来给标题分组，可以将一组相关的标题同时放入到hgroup中
+    -->
+    <hgroup>
+        <h1>回乡偶书二首</h1>
+        <h2>其一</h2>
+    </hgroup>
+    <!--
+        例如
+            p标签表示页面中的一个段落
+            p也是一个块元素
+            标题标签也是块元素（独占一行）
+    -->
+    <p>在p标签中的内容就表示一个段落</p>
+    <p>在p标签中的内容就表示一个段落</p>
+
+    <!--
+        例如
+            em标签表示一个语气的加重
+            strong标签表示强调
+            像em strong这种不会独占一行的标签叫做行内元素（内联元素）
+
+            在页面中不会独占一行的元素称为行内元素（inline element）
+    -->
+    <p>今天<em>天气</em>真不错</p>
+    <p>今天天气<strong>真不错</strong></p>
+
+    <!--
+        例如
+            blockquote标签 表示一个长引用（块元素）
+    -->
+    董文韬说：
+    <blockquote>
+        今天天气真不错！
+    </blockquote>
+    <!--
+        例如
+            q标签 表示一个短引用（行内元素）
+    -->
+    子曰<q>学而时习之</q>
+    <!-- 
+        例如
+            br标签 换行 
+    -->
+    <br>
+    换行啦
+
+    <!--
+        布局标签（结构化语义标签）
+        例如
+            header标签 表示网页或网页某一部分的头部
+            main标签 表示网页的主体部分（一个页面中只会有一个main）
+            footer 表示网页或网页某一部分的底部
+            
+            nav 表示网页中的导航
+            aside 和主体相关的其他内容（侧边栏）
+            article 表示独立的一个文章
+            
+            section 表示一个独立的区块 上边的标签都不能表示时使用section
+
+            div 没有语义 只用来表示一个区块 目前为主要布局元素
+            span 行内元素 无语义 一般用于在网页中选中文字
+    -->
+    <header></header>
+    <main></main>
+    <footer></footer>
+
+    <nav></nav>
+    <aside></aside>
+    <article></article>
+
+    <section></section>
+
+    <div></div>
+    <span></span>
+</body>
+</html>

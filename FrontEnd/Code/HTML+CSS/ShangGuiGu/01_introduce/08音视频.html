@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音视频</title>
+</head>
+<body>
+    <!--
+        audio 向页面中引入外部音频文件
+        video 向页面中引入外部视频文件
+            属性：
+                src 指定外部文件路径
+                source 指定多个外部文件路径（如果浏览器不支持播放 可以写文字提示用户）
+                controls 是否允许用户控制播放（没有属性值）
+                autoplay 音频文件在打开页面时是否自动播放（没有属性值）
+                        目前大部分浏览器不会允许自动播放
+                loop    循环播放
+
+            注意：
+                音视频文件默认不允许用户自己控制
+    -->
+    <audio src="./source/audio/杀破狼.mp3" controls></audio>
+    <audio controls >
+        对不起，您的浏览器不支持播放音频 请升级浏览器
+        <source src="./source/audio/终于明白.mp3"><!--优先使用第一个-->
+        <source src="./source/audio/终于明白.ogg"><!--如果第一个不能使用 就用第二个-->
+        <embed src="./source/audio/杀破狼.mp3" type="audio/mp3"><!--如果前两个都不能使用 就用第三个-->
+    </audio>
+    <video controls>
+        <source src="./source/video/素材2.webm">
+        <source src="./source/video/素材2.mp4">
+        <embed src="./source/video/素材1.mp4" type="video/mp4">
+    </video>
+</body>
+</html>

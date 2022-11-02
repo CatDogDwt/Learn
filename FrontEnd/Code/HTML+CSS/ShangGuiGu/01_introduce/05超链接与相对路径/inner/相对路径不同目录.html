@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对路径（不同目录）</title>
+</head>
+<body>
+    <a href="../05超链接与相对路径.html">跳回去</a>
+    <p>
+        超链接 从一个页面跳转到另一个页面或当前页面的其他位置<br>
+        使用 a 标签定义超链接(行内标签)<br>
+            属性：<br>
+                href 指定跳转的目标路径<br>
+                        值可以是一个外部网站的地址<br>
+                        也可以是一个内部页面的地址<br>
+                target 指定超链接打开的位置<br>
+                        可选值：<br>
+                            _self 默认值 在当前页面中打开超链接<br>
+                            _blank 在一个新页面中打开超链接<br>                          
+        a标签可以嵌套除a标签以外的任何元素<br>
+
+        当我们需要跳转服务器内部页面时 要用到相对路径<br>
+        相对路径使用./或../开头<br>
+        写./或不写./都默认为./ 表示当前文件所在的目录<br>
+        ../ 表示当前文件所在目录的上一级目录<br>
+    </p>
+</body>
+</html>

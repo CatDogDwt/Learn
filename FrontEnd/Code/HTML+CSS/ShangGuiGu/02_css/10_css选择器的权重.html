@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS选择器权重</title>
+    <style>
+        /*
+        样式的冲突
+            通过不同选择器为相同元素设置不同样式
+            发生样式冲突时由选择器的权重决定应用哪个样式
+        选择器的权重（由高到低）权重越高越优先显示
+            内联样式        1,0,0,0
+            id选择器        0,1,0,0
+            类和伪类选择器   0,0,1,0
+            元素选择器       0,0,0,1
+            通配选择器       0,0,0,0
+            继承的样式       没有优先级
+        复合选择器的权重会加在一起 所以最大的优先显示
+        分组选择器的权重单独计算
+        选择器的累加不会超过最大数量级
+        同优先级靠下的优先显示
+
+        可以在某一个样式的后边添加 !important 获取到最高优先级
+        */
+
+        #box1{
+            color: aquamarine;
+        }
+        div{
+            color: yellow;
+        }
+
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="red">我是一个div</div>
+</body>
+</html>

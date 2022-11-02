@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型外边距折叠</title>
+    <style>
+        .box1,.box2{
+            width: 200px;
+            height: 200px;
+            font-size: 100px;
+        }
+        /*
+            外边距的重叠：
+                相邻的垂直方向外边距会发生重叠
+                
+                兄弟元素间的相邻垂直外边距会取两者之间的一个较大值（两者都是正值）
+                特殊情况
+                    如果相邻的外边距一正一负 则取两者的和
+                    如果相邻的外边距都为负 则取绝对值大的值
+                兄弟元素之间的外边距重叠对开发有利 所以不需要处理
+                
+                父子元素间的相邻外边距子元素会传递给父元素（上外边距）
+                
+        */
+        .box1{
+            background-color: #bfa;
+            margin-bottom: 100px;
+        }
+        .box2{
+            background-color: orange;
+            margin-top: 100px;
+        }
+
+        .box3{
+            background-color: #bfa;
+            height: 199px;
+            width: 200px;
+            border-top: 1px solid black;
+        }
+        .box4{
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            margin-top: 99px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

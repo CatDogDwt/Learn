@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子模型</title>
+    <style>
+        .box1{
+            background-color: #bfa;
+            /*
+            内容区：元素中的所有子元素和文本内容都在内容区里排列
+                    内容区的大小由width和height两个属性来设置
+                        width 设置内容区的宽度
+                        height 设置内容区的高度
+            */
+            height: 200px;
+            width: 200px;
+            /*
+            边框：边框里边属于盒子内部 边框外边属于盒子外部
+                 边框的大小会影响到整个盒子的大小
+                    设置边框 至少需要设置三个样式：
+                        边框宽度 border-width
+                        边框颜色 border-color
+                        边框样式 border-style
+
+            */
+            border-width: 10px;
+            border-color: red;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        盒子模型（box model）
+            css将页面中的所有元素都设置成了一个矩形的盒子
+            盒子的组成部分：
+                内容区（content）
+                边框（border）
+                内边距（padding）
+                外边距（margin）
+    -->
+    <div class="box1"></div>
+</body>
+</html>

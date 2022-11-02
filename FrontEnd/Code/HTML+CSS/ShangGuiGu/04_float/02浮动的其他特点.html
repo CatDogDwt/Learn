@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动的其他特点</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+
+        /*
+            浮动元素不会盖住文字 文字会自动环绕在浮动元素的周围（设置文字环绕图片效果）
+        */
+
+        .box2{
+            background-color: yellowgreen;
+            float: left;
+        }
+
+        /*
+            元素设置浮动以后会从文档流中脱离 元素特点也会发生变化
+            元素脱离文档流的特点：
+                块元素：
+                    1.不在独占页面一行
+                    2.宽度和高度默认被内容撑开
+                行内元素：
+                    1.脱离文档流以后会变成块元素 特点和块元素一样
+            
+            脱离文档流以后 不需要再区分块和行内了
+        */
+        .box3{
+            background-color: orange;
+        }
+        .s1{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <p>6666666666666666666666666666666666666
+    666666666666666666666666666666666666666666666
+    66666666666666666666666666666666666666666666666666
+    666666666666666666666666666666666666666666666666666666</p>
+    <div class="box2">hello</div>
+    <div class="box3">hello</div>
+    <span class="s1">我是span</span>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浏览器的默认样式</title>
+    /*引入清除浏览器默认样式*/
+    /*常用*/<link rel="stylesheet" href="./css/reset.css">/*直接清除浏览器默认样式*/
+    <link rel="stylesheet" href="./css/normalize.css">/*对默认样式进行统一*/
+    <style>
+        /*简单页面清除默认样式*/
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        .box1{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+
+    <ul>
+        <li>列表项1</li>
+        <li>列表项2</li>
+        <li>列表项3</li>
+    </ul>
+</body>
+</html>

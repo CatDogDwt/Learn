@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS超链接的伪类</title>
+    <style>
+        /*未访问过的链接*/
+        .a1:link{
+            color:darkviolet;
+        }
+        /*
+        访问过的链接
+
+        注意：visited只能修改颜色
+        */
+        .a2:visited{
+            color:darkkhaki;
+        }
+        /*鼠标移入*/
+        a:hover{
+            color: brown;
+            font-size: 30px;
+        }
+        /*鼠标点击*/
+        a:active{
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <a class="a1" href="https://www.baidu.com">访问过的链接</a>
+    <br><br>
+    <a class="a2" href="https://www.bilibili.com">未访问过的链接</a>
+</body>
+</html>

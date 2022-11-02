@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jc</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="rocket">
+            <img src="./img/rocket.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    function stars(){
+        // 星星的数量
+        let count=100;
+        let scene=document.querySelector('.scene');
+        let i=0;
+        while(i<count){
+            // 生成一个星星
+            let star=document.createElement('i');
+
+            // 现在来给我们的每一个星星加上必要的属性
+            //我们利用窗口的宽度来随机生成星星的横坐标位置
+            let x=Math.floor(Math.random()*window.innerWidth);
+            // 随机生成星星的高度
+            let h=Math.random()*60;
+            // 随机生成一个星星完成一次动画所需要的时间
+            let duration=Math.random()*7
+            // 给星星添加上属性
+            star.style.left=x+'px';
+            star.style.width='1px';
+            star.style.height=h+"px";
+            star.style.animationDuration=duration+'s';
+
+            //把星星挂到天上去
+            scene.appendChild(star);
+            // 继续生成下一颗星星
+            i++;
+
+        }
+    }
+    stars()
+</script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jc</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+</body>
+<script>
+    let canvas=document.querySelector("#canvas"),
+        ctx=canvas.getContext('2d'),
+        cw=canvas.width,
+        ch=canvas.height,
+        angle=40,
+        hue=200,
+        speed=0.01;
+    
+    function Taiji(){
+        this.color_str="hsla("+hue+",100%,50%,1)"
+        // 画一个遮罩层
+        ctx.fillStyle='#fff';
+        ctx.fillRect(0,0,cw,ch);
+        ctx.lineWidth=10;
+        //重置画布的原点坐标
+        ctx.save();
+        ctx.translate(cw/2,ch/2);
+        // 让坐标系旋转一定角度
+        ctx.rotate(angle)
+        //画一个半圆（外部上半部分）
+        ctx.fillStyle=this.color_str;
+        ctx.beginPath();
+        ctx.arc(0,0,cw/2-10,0,Math.PI,true);
+        ctx.fill();
+        ctx.closePath();
+        //画一个半圆（外部下半部分）
+        ctx.fillStyle="white"
+        ctx.beginPath();
+        ctx.arc(0,0,cw/2-10,0,Math.PI);
+        ctx.fill();
+        ctx.closePath();
+        //画一个半圆（ 内部下半部分）
+        ctx.fillStyle=this.color_str;
+        ctx.beginPath();
+        ctx.arc(145,-0.6,145,0,Math.PI,false);
+        ctx.fill();
+        ctx.closePath();
+        //画一个半圆（ 内部上半部分）
+        ctx.fillStyle="white";
+        ctx.beginPath();
+        ctx.arc(-145,0.6,145,0,Math.PI,true);
+        ctx.fill();
+        ctx.closePath();
+        //画一个整圆（有颜色）
+        ctx.fillStyle=this.color_str;
+        ctx.beginPath();
+        ctx.arc(-145,0.6,35,0,Math.PI*2,true);
+        ctx.fill();
+        ctx.closePath();
+        //画一个整圆（无颜色）
+        ctx.fillStyle="white";
+        ctx.beginPath();
+        ctx.arc(145,-0.6,35,0,Math.PI*2,true);
+        ctx.fill();
+        ctx.closePath();
+        //添加一个边框线
+        ctx.lineWidth=1;
+        ctx.strokeStyle='#999';
+        ctx.beginPath();
+        ctx.arc(0,0,cw/2-10,0,Math.PI*2,false);
+        ctx.stroke();
+        ctx.closePath();
+        //重置一下 
+        ctx.restore();
+
+        // 更新一下angle，让太极图旋转起来
+        angle+=speed
+
+    }
+
+    setInterval(Taiji,100)
+
+    //写一个辅助函数
+    //把窗口坐标转换为画布坐标
+    function windowPoint2Canvas(c,x,y){
+        let canvasBox=c.getBoundingClientRect();
+        let canvas_x=Math.abs(x-canvasBox.left);
+        let canvas_y=Math.abs(y-canvasBox.top);
+        return {x:canvas_x,y:canvas_y};
+    }
+
+    canvas.addEventListener("mousemove",function(e){
+        let canvasPoint=windowPoint2Canvas(canvas,e.clientX,e.clientY);
+        let mouse_x=canvasPoint.x;
+        let mouse_y=canvasPoint.y;
+        // 这一步的目的是计算出黑方框内鼠标距离原点的距离(核心算法 )
+        let distance=Math.floor(Math.sqrt(Math.pow(mouse_x-cw/2,2)+Math.pow(mouse_y-ch/2,2)))
+        // 改变速度
+        speed=distance/1000;
+        // 改变颜色
+        hue+=0.5;
+    })
+    //测试一下
+    // console.log(windowPoint2Canvas(canvas,800,500))
+</script>
+</html>
