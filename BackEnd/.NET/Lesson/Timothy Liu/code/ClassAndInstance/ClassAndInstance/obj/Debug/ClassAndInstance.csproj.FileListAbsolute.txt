@@ -1,0 +1,8 @@
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\ClassAndInstance\ClassAndInstance\bin\Debug\ClassAndInstance.exe.config
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\ClassAndInstance\ClassAndInstance\bin\Debug\ClassAndInstance.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\ClassAndInstance\ClassAndInstance\bin\Debug\ClassAndInstance.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\ClassAndInstance\ClassAndInstance\obj\Debug\ClassAndInstance.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\ClassAndInstance\ClassAndInstance\obj\Debug\ClassAndInstance.csproj.SuggestedBindingRedirects.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\ClassAndInstance\ClassAndInstance\obj\Debug\ClassAndInstance.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\ClassAndInstance\ClassAndInstance\obj\Debug\ClassAndInstance.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\ClassAndInstance\ClassAndInstance\obj\Debug\ClassAndInstance.pdb

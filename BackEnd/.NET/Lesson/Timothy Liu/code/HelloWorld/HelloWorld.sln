@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{C0822502-3F99-43C4-BE2B-258006106D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{C0822502-3F99-43C4-BE2B-258006106D5A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLibrary", "..\AssemblyAdd\MyLibrary\MyLibrary\MyLibrary.csproj", "{550CAB14-2E4A-4711-975F-ADF083449CBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperCalculator", "SuperCalculator\SuperCalculator.csproj", "{A62DC22E-9D43-4D32-8C35-354C1A53D3EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C0822502-3F99-43C4-BE2B-258006106D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0822502-3F99-43C4-BE2B-258006106D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0822502-3F99-43C4-BE2B-258006106D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550CAB14-2E4A-4711-975F-ADF083449CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550CAB14-2E4A-4711-975F-ADF083449CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550CAB14-2E4A-4711-975F-ADF083449CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{550CAB14-2E4A-4711-975F-ADF083449CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A62DC22E-9D43-4D32-8C35-354C1A53D3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A62DC22E-9D43-4D32-8C35-354C1A53D3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A62DC22E-9D43-4D32-8C35-354C1A53D3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A62DC22E-9D43-4D32-8C35-354C1A53D3EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

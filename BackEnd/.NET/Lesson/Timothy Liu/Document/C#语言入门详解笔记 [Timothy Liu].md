@@ -32,19 +32,97 @@
    /*如果不引用 System 则编译器无法识别使用console类 所以想使用类 首先要引用当前需要使用的类所被包含的名称空间*/
    ```
 
-   - 查找类所属名称空间的方法：
+   - **查找类所属名称空间的方法：**
      1. 通过help viewer 搜索
      2. 通过编译器智能提示添加
 
 2. ###### 类库 Assembly 的引用是使用名称空间的物理基础：
 
-   - 通过
+   ![image-20221102095555403](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211020955694.png)
+
+   - **黑盒引用 无源代码**
+
+     1. 引用第三方DLL
+
+        ![image-20221102095434822](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211020954630.png)
+
+     2. 引用系统自带DLL
+
+        ![image-20221102095457457](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211020954529.png)
+
+     3. NuGet引用
+
+        - 有时需要手动引用大量类库 这是非常麻烦同时非常危险的 可以通过NuGet引用其他作者编写好的类库
+
+          ![image-20221102100101648](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211021001778.png)
+
+   - **白盒引用 有源代码**
+
+     - 项目的重用：一个项目可以被多个解决方案包含
+     - 尽量追求 高内聚 低耦合
+
+     1. 引用其他人编写的本地类库
+
+        ![image-20221102102731942](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211021039318.png)
+
+     2. 引用自己编写的本地类库
+
+        ![image-20221102103901782](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211021039865.png)
 
 - ###### 常见错误：
 
-  1. 引用不同名称空间太多导致类的冲突
+
+1. 引用不同名称空间太多导致类的冲突
 
 #### 四、004
+
+1. ###### 类 class 是现实世界事物的抽象模型
+
+   - **类是对现实世界事物进行抽象所得的结果 事物包括“物质”（实体）和“运动”（逻辑）**
+   - **建模是一个去伪存真、由表及里的过程**
+
+2. ###### 类与对象的关系
+
+   - **对象也叫实例，是类经过实例化之后得到的内存中的实体**
+
+   - **依照类 我们可以创建对象 这就是 实例化**
+
+   - **使用new操作符创建对象的实例**
+
+     ```c#
+     //创建类的实例 
+     new Form();//构造器：（）：表示form的实例在内存中生成之后 要用什么样的方法去对它初始化
+     (new Form()).ShowDialog();  
+     ```
+
+   - **引用变量与实例的关系**
+
+     ```C#
+     //声明引用变量并引用实例
+     Form myform = new Form();
+     myform.Text = "My dialog";
+     myform.ShowDialog();
+     
+     //一个引用变量引用多个实例
+     Form myform1;
+     Form myform2;
+     myform1 = new Form();
+     myform2 = myform1;
+     ```
+
+3. ###### 类的三大成员
+
+   - **属性 property 存储数据 组合起来表示类或对象当前的状态**  模型类或对象重在属性
+   - **方法 method 类或对象能做什么** 							 		         工具类或对象重在方法
+   - **事件 event 类或对象通知其他类或对象的机制 C#特有**           通知类或对象重在事件
+
+4. **静态成员** **static**      **实例成员**        **绑定*Binding**
+
+   - 
+
+- ###### 注意
+
+  1. 在现实中常讨论 “类与对象”，在现实中常讨论 “类与实例”
 
 #### 五、005
 

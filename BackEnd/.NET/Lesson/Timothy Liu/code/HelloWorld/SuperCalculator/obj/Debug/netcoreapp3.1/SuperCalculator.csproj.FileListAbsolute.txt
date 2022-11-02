@@ -1,0 +1,10 @@
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\bin\Debug\netcoreapp3.1\SuperCalculator.deps.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\bin\Debug\netcoreapp3.1\SuperCalculator.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\bin\Debug\netcoreapp3.1\SuperCalculator.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\obj\Debug\netcoreapp3.1\SuperCalculator.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\obj\Debug\netcoreapp3.1\SuperCalculator.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\obj\Debug\netcoreapp3.1\SuperCalculator.AssemblyInfoInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\obj\Debug\netcoreapp3.1\SuperCalculator.AssemblyInfo.cs
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\obj\Debug\netcoreapp3.1\SuperCalculator.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\obj\Debug\netcoreapp3.1\SuperCalculator.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\HelloWorld\SuperCalculator\obj\Debug\netcoreapp3.1\SuperCalculator.pdb

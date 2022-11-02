@@ -1,0 +1,10 @@
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\bin\Debug\netcoreapp3.1\MyLibrary.deps.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\bin\Debug\netcoreapp3.1\MyLibrary.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\bin\Debug\netcoreapp3.1\MyLibrary.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\obj\Debug\netcoreapp3.1\MyLibrary.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\obj\Debug\netcoreapp3.1\MyLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\obj\Debug\netcoreapp3.1\MyLibrary.AssemblyInfoInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\obj\Debug\netcoreapp3.1\MyLibrary.AssemblyInfo.cs
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\obj\Debug\netcoreapp3.1\MyLibrary.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\obj\Debug\netcoreapp3.1\MyLibrary.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\AssemblyAdd\MyLibrary\MyLibrary\obj\Debug\netcoreapp3.1\MyLibrary.pdb
