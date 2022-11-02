@@ -1,0 +1,14 @@
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\bin\Debug\netcoreapp3.1\MyExample.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\bin\Debug\netcoreapp3.1\MyExample.deps.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\bin\Debug\netcoreapp3.1\MyExample.runtimeconfig.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\bin\Debug\netcoreapp3.1\MyExample.runtimeconfig.dev.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\bin\Debug\netcoreapp3.1\MyExample.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\bin\Debug\netcoreapp3.1\MyExample.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\obj\Debug\netcoreapp3.1\MyExample.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\obj\Debug\netcoreapp3.1\MyExample.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\obj\Debug\netcoreapp3.1\MyExample.AssemblyInfoInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\obj\Debug\netcoreapp3.1\MyExample.AssemblyInfo.cs
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\obj\Debug\netcoreapp3.1\MyExample.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\obj\Debug\netcoreapp3.1\MyExample.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\obj\Debug\netcoreapp3.1\MyExample.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\MyExample\MyExample\obj\Debug\netcoreapp3.1\MyExample.genruntimeconfig.cache

@@ -112,19 +112,58 @@
 
 3. ###### 类的三大成员
 
-   - **属性 property 存储数据 组合起来表示类或对象当前的状态**  模型类或对象重在属性
-   - **方法 method 类或对象能做什么** 							 		         工具类或对象重在方法
-   - **事件 event 类或对象通知其他类或对象的机制 C#特有**           通知类或对象重在事件
+   - **属性 property      存储数据 组合起来表示类或对象当前的状态**  模型类或对象重在属性
 
-4. **静态成员** **static**      **实例成员**        **绑定*Binding**
+   - **方法 method        类或对象能做什么** 							 		         工具类或对象重在方法
 
-   - 
+     - 方法的定义和调用
+
+       ```C#
+       using System;
+       
+       namespace MyExample
+       {
+           internal class Program
+           {
+               static void Main(string[] args)
+               {
+                   //函数(方法)的调用
+                   Calculator calculator = new Calculator();
+                   Console.WriteLine(calculator.Add(1, 2));
+               }
+           }
+           class Calculator
+           {
+               //函数(方法)的定义
+               public int Add(int a,int b)
+               {
+                   return a + b;
+               }
+           }
+       }
+       ```
+
+       
+
+   - **事件 event            类或对象通知其他类或对象的机制 C#特有**           通知类或对象重在事件
+
+4. ###### **静态成员** **static**      **实例成员**  
+
+   - **静态成员在语义上表示他是类的成员**
+   - **实例成员在语义上表示他是对象的成品**
+   - **绑定指的是编译器如果把一个成员与类或对象关联起来**
+   - **成员访问操作符” . “**
 
 - ###### 注意
 
   1. 在现实中常讨论 “类与对象”，在现实中常讨论 “类与实例”
+  1. 方法的命名应该是一个动词或动词短语
 
 #### 五、005
+
+1. ###### 构成C#语言的基本元素   在MSDN文档查看详细内容
+
+   ![image-20221102131200806](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211021312019.png)
 
 #### 六、006
 
