@@ -167,6 +167,109 @@
 
 #### 六、006
 
+- ###### 类型 Type
+
+  - **类型又名数据类型 是数据在内存中存储的型号**
+    - 小内存容纳大尺寸数据会丢失精确度、发生错误 、大内存容纳小尺寸数据会造成浪费
+  - **stack 栈 和 Heap 堆**
+    - stack overflow
+
+- ###### C#的类型系统
+
+  - **C#的五大数据类型**
+
+    ![image-20221103141937402](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211031419535.png)
+
+- ###### 变量、对象与内存
+
+  - **什么是变量**：变量表示了存储位置，每个变量都有一个类型 以决定什么样的值能够存入变量
+
+    ​						变量=以变量名所对应的内存地址为起点、以其数据类型所要求的存储空间为长度的一块内存区域
+
+  - **变量的声明**：有效的修饰符组合   类型   变量名   初始化器
+
+  ```C#
+  			  public static   int  Amount   = 0
+  ```
+
+  - **七种变量**：静态变量、实例变量(成员变量，字段)、数组元素、值参数、引用参数、输出参数、局部变量
+
+  ```C#
+  namespace TypelnCSharp
+  {
+      internal class Program
+      {
+          static void Main(string[] args)
+          {
+              //静态变量
+              Student.Amount();
+              //实例变量(成员变量，字段)
+              Student stu = new Student();
+              stu.Age=10;
+              stu.Name = "学生";
+              //数组元素
+              int[] array = new int[1];
+              array[0] = 1;
+              //局部变量
+              int x;
+  
+          }
+      }
+  
+      class Student
+      {
+          //静态变量
+          public static int Amount()
+          {
+              int x=0;
+              return x;
+          }
+          //实例变量(成员变量，字段)
+          public int Age;
+          public string Name;
+          //值参数
+          public double Add(double a,double b)
+          {
+              return a + b;   
+          }
+          //引用参数
+          public double Add(ref double a, ref double b)
+          {
+              return a + b;
+          }
+          //输出参数
+          public double Add2(out double a,out double b)
+          {
+              a = 0;
+              b = 0;
+              return a + b;
+          }
+      }
+  }
+  ```
+
+  - **引用类型的变量与实例**：引用类型变量里存储的数据是对象的内存地址
+
+  - **局部变量是在stack上分配内存**
+
+  - **常量 const** xxx
+
+  - **装箱与拆箱**
+
+    ```C#
+    //装箱：将栈上的值类型的值封装成一个object类型的实例到堆上
+    int x = 100;
+    object obj = x;//复制变量x的值到某块内存空间 再将这块内存空间的地址存入obj变量所在的内存空间
+    //拆箱：将堆上object类型的实例里的值按照要求拆成目标数据类型 存储到栈中
+    int y = (int)obj;
+    Console.WriteLine(y);
+    ```
+
+- ###### 注意：
+
+  1. 如果想知道是什么类型 可以按F12观察跳转
+  2. 值类型没有实例
+
 #### 七、007
 
 #### 八、008

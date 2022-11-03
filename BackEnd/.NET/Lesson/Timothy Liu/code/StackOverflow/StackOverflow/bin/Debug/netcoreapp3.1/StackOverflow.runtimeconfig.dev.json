@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\linx7\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\linx7\\.nuget\\packages",
+      "D:\\软件\\工作会议\\软件\\编程\\MicrosoftVS\\2022\\Shared\\NuGetPackages"
+    ]
+  }
+}

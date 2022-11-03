@@ -1,0 +1,14 @@
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\bin\Debug\netcoreapp3.1\StackOverflow.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\bin\Debug\netcoreapp3.1\StackOverflow.deps.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\bin\Debug\netcoreapp3.1\StackOverflow.runtimeconfig.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\bin\Debug\netcoreapp3.1\StackOverflow.runtimeconfig.dev.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\bin\Debug\netcoreapp3.1\StackOverflow.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\bin\Debug\netcoreapp3.1\StackOverflow.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\obj\Debug\netcoreapp3.1\StackOverflow.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\obj\Debug\netcoreapp3.1\StackOverflow.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\obj\Debug\netcoreapp3.1\StackOverflow.AssemblyInfoInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\obj\Debug\netcoreapp3.1\StackOverflow.AssemblyInfo.cs
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\obj\Debug\netcoreapp3.1\StackOverflow.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\obj\Debug\netcoreapp3.1\StackOverflow.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\obj\Debug\netcoreapp3.1\StackOverflow.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\StackOverflow\StackOverflow\obj\Debug\netcoreapp3.1\StackOverflow.genruntimeconfig.cache
