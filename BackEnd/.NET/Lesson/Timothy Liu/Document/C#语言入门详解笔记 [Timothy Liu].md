@@ -116,42 +116,32 @@
 
    - **方法 method        类或对象能做什么** 							 		         工具类或对象重在方法
 
-     - 方法的定义和调用
-
-       ```C#
-       using System;
-       
-       namespace MyExample
-       {
-           internal class Program
-           {
-               static void Main(string[] args)
-               {
-                   //函数(方法)的调用
-                   Calculator calculator = new Calculator();
-                   Console.WriteLine(calculator.Add(1, 2));
-               }
-           }
-           class Calculator
-           {
-               //函数(方法)的定义
-               public int Add(int a,int b)
-               {
-                   return a + b;
-               }
-           }
-       }
-       ```
-
-       
-
    - **事件 event            类或对象通知其他类或对象的机制 C#特有**           通知类或对象重在事件
 
 4. ###### **静态成员** **static**      **实例成员**  
 
-   - **静态成员在语义上表示他是类的成员**
-   - **实例成员在语义上表示他是对象的成品**
+   - **静态成员在语义上表示他是类的成员	实例成员在语义上表示他是对象的成品**
+   
+     ```C#
+     public class Program{
+         static void Main(string[] args){
+             类.类的成员();
+             类 实例 = new 类();
+             实例.实例的成员();
+         }
+     }
+     class 类{
+         public static string 类的成员(){
+             ;
+         }
+         public string 实例的成员(){
+             ;
+         }
+     }
+     ```
+   
    - **绑定指的是编译器如果把一个成员与类或对象关联起来**
+   
    - **成员访问操作符” . “**
 
 - ###### 注意
@@ -167,20 +157,20 @@
 
 #### 六、006
 
-- ###### 类型 Type
+1. ###### 类型 Type
 
   - **类型又名数据类型 是数据在内存中存储的型号**
     - 小内存容纳大尺寸数据会丢失精确度、发生错误 、大内存容纳小尺寸数据会造成浪费
   - **stack 栈 和 Heap 堆**
-    - stack overflow
+    - stack overflow：栈内存分配时是由高地址向低地址进行分配的 直至分配至栈顶 无内存可分配就会栈溢出
 
-- ###### C#的类型系统
+2. ###### C#的类型系统
 
   - **C#的五大数据类型**
 
     ![image-20221103141937402](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211031419535.png)
 
-- ###### 变量、对象与内存
+3. ###### 变量、对象与内存
 
   - **什么是变量**：变量表示了存储位置，每个变量都有一个类型 以决定什么样的值能够存入变量
 
@@ -265,12 +255,238 @@
     Console.WriteLine(y);
     ```
 
-- ###### 注意：
+4. ###### 注意：
 
   1. 如果想知道是什么类型 可以按F12观察跳转
   2. 值类型没有实例
 
 #### 七、007
+
+1. ###### 方法的由来
+
+   - **函数在面向对象概念中称为方法    方法永远都是类（或结构体）的成员 当一个函数以类的成员出现的时候 就成为了方法 **
+   - **C#语言中函数不可能独立于类（或结构体）之外，C++中可以 被称为全局函数**
+   - **方法是类（或结构体）最基本的成员之一 ，最基本的成员只有两个：字段（成员变量）、方法（成员函数）**
+   - **方法表示类（或结构体）能做什么事**
+
+   ```C
+   //C语言中的函数
+   #include <stdio.h>
+   
+   int Add(int a, int b){
+       return a+b;
+   }
+   
+   void main(){
+       int a=1;
+       int b=2;
+       int c = Add(a,b);
+       printf("%d",c);
+   }
+   ```
+
+   ```c++
+   #include <iostream>
+   #include "Student.h"
+   
+   int Add(int a,int b){
+       return a+b; 
+   }
+   //C++语言中的函数
+   int main(){
+       int a = 1;
+       int b = 2;
+       int c = Add(a,b);
+       std::cout << x << "+"<< y << "=" << result;
+   //C++语言中的方法
+       Student *pStu = new Student();
+       pStu->SayHello();
+       
+       double x = 3.0;
+       double y = 5.0;
+       double result = pStu->Add(x,y);
+       std::cout << x << "+"<< y << "=" << result;
+       return 0;
+   }
+   
+   //C++语言中的方法
+   //////////////////头文件////////////////////
+   //Student.h 对类的声明
+   #pragma once
+   class Student{
+   public:
+       Student();
+       ~Student();
+       void SayHello();
+       double Add(double a,double b);
+   }
+   /////////////////源文件////////////////////
+   //Student.cpp 对类的定义
+   #include "Student.h"
+   #include <iostream>
+   
+   Student::Student(){
+   }
+   Student::~Student(){
+        
+   }
+   void Student::SayHello(){
+       std::cout << "Hello I'm a Student!";
+   }
+   double Student::Add(double a,double b){
+       return a + b;
+   }
+   ```
+
+2. ###### 为什么需要方法和函数
+
+   - **隐藏复杂的逻辑、分解算法、复用**
+
+   ```C#
+   using System;
+   
+   namespace CSharpMethosExample
+   {
+       internal class Program
+       {
+           static void Main(string[] args)
+           {
+               Calculator c = new Calculator();
+               Console.WriteLine(c.GetCylinderVolume(10,100));
+           }
+       }
+   
+       class Calculator
+       {
+           public double GetCircleArea(double r)
+           {
+               return Math.PI *r *r;
+           }
+           public double GetCylinderVolume(double r,double h)
+           {
+               return GetCircleArea(r) * h;
+           }
+           public double GetConeVolume(double r,double h)
+           {
+               return GetCylinderVolume(r, h) / 3;
+           }
+       }
+   }
+   ```
+
+3. ###### 方法的声明与调用
+
+   - **函数头与函数体**
+
+     **函数头**
+
+     *特性  +  有效的修饰符组合  +  partial  +  返回类型  +  方法名  +  可选的类型参数列表  +  （形式参数列表）  +  对类型参数的约束*
+
+     ```C#
+     	  public static				 int	 Method						   (int a,int b)
+     ```
+
+     **函数体**
+
+     *{*
+
+     *语句块或分号*
+
+     *}*
+
+   - **命名规范**：需要以动词或动词短语作为名字
+
+   - **静态方法和实例方法**
+
+     ```C#
+     public class Program{
+         static void Main(string[] args){
+             类.类的方法();
+             类 实例 = new 类();
+             实例.实例的方法();
+         }
+     }
+     class 类{
+         public static string 类的方法(){
+             ;
+         }
+         public string 实例的方法(){
+             ;
+         }
+     }
+     ```
+
+     - *注意：这里的方法与 四 -> 4 中的成员是一个意思 方法=成员函数*
+
+   - **调用方法**
+
+     - 调用方法时的实参要与定义方法时的形参相匹配
+
+4. ###### 构造器
+
+   - **构造器是类型的成员之一 它本身就是一种特殊的函数 **
+   - **狭义的构造器指的是实例构造器 当你声明类时没有准备构造器 编译器会生成一个默认的构造器**
+
+   ```C#
+   using System;
+   
+   namespace ConstructorExmaple
+   {
+       internal class Program
+       {
+           static void Main(string[] args)
+           {
+               Student student = new Student();
+               Student2 student2 = new Student2(2, "张三");
+               Student3 student3 = new Student3(); 
+   
+           }
+       }
+   
+       class Student
+       {
+           //自定义不带参数的构造器
+           public Student()
+           {
+               this.Id = 1;
+               this.Name = "NoName";
+           }
+           public int Id;  
+           public string Name;
+       }
+   
+       class Student2
+       {
+           //自定义带参数的构造器
+           public Student2(int initId,string initName)
+           {
+               this.Id = initId;
+               this.Name = initName;
+           }
+           public int Id;
+           public string Name;
+       }
+   
+       class Student3
+       {
+           public Student3(int initId, string initName)
+           {
+               this.Id = initId;
+               this.Name = initName;
+           }
+           public Student3()
+           {
+               this.Id = 1;
+               this.Name = "NoName";
+           }
+           public int Id;
+           public string Name;
+       }
+   }
+   ```
+
+   - **方法的重载**：方法的名字一致 但*方法签名*不能重复
+     - **方法签名**：由方法的名称、类型形参的个数和它的每一个形参（按从左到右的顺序）的类型和种类（值、引用和出输出组成。**方法签名不包含返回类型**
 
 #### 八、008
 
@@ -317,3 +533,7 @@
 #### 二十九、029
 
 #### 三十、030
+
+- ###### 进阶
+
+  ![image-20221104085444947](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211040854195.png)
