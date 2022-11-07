@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CSharpMethosExample/1.0.0": {
+        "runtime": {
+          "CSharpMethosExample.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CSharpMethosExample/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

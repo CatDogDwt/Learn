@@ -1,0 +1,14 @@
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\bin\Debug\netcoreapp3.1\CSharpMethosExample.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\bin\Debug\netcoreapp3.1\CSharpMethosExample.deps.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\bin\Debug\netcoreapp3.1\CSharpMethosExample.runtimeconfig.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\bin\Debug\netcoreapp3.1\CSharpMethosExample.runtimeconfig.dev.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\bin\Debug\netcoreapp3.1\CSharpMethosExample.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\bin\Debug\netcoreapp3.1\CSharpMethosExample.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\obj\Debug\netcoreapp3.1\CSharpMethosExample.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\obj\Debug\netcoreapp3.1\CSharpMethosExample.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\obj\Debug\netcoreapp3.1\CSharpMethosExample.AssemblyInfoInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\obj\Debug\netcoreapp3.1\CSharpMethosExample.AssemblyInfo.cs
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\obj\Debug\netcoreapp3.1\CSharpMethosExample.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\obj\Debug\netcoreapp3.1\CSharpMethosExample.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\obj\Debug\netcoreapp3.1\CSharpMethosExample.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CSharpMethosExample\CSharpMethosExample\obj\Debug\netcoreapp3.1\CSharpMethosExample.genruntimeconfig.cache

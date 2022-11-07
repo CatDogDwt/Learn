@@ -1,0 +1,14 @@
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\bin\Debug\netcoreapp3.1\CreateOperator.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\bin\Debug\netcoreapp3.1\CreateOperator.deps.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\bin\Debug\netcoreapp3.1\CreateOperator.runtimeconfig.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\bin\Debug\netcoreapp3.1\CreateOperator.runtimeconfig.dev.json
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\bin\Debug\netcoreapp3.1\CreateOperator.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\bin\Debug\netcoreapp3.1\CreateOperator.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\obj\Debug\netcoreapp3.1\CreateOperator.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\obj\Debug\netcoreapp3.1\CreateOperator.GeneratedMSBuildEditorConfig.editorconfig
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\obj\Debug\netcoreapp3.1\CreateOperator.AssemblyInfoInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\obj\Debug\netcoreapp3.1\CreateOperator.AssemblyInfo.cs
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\obj\Debug\netcoreapp3.1\CreateOperator.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\obj\Debug\netcoreapp3.1\CreateOperator.dll
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\obj\Debug\netcoreapp3.1\CreateOperator.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\CreateOperator\CreateOperator\obj\Debug\netcoreapp3.1\CreateOperator.genruntimeconfig.cache

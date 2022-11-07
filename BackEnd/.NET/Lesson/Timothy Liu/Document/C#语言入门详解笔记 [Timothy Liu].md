@@ -512,9 +512,142 @@
    ![image-20221106181957551](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211061819651.png)
    
    - **方法的重载**：方法的名字一致 但*方法签名*不能重复
+     
      - **方法签名**：由方法的名称、类型形参的个数和它的每一个形参（按从左到右的顺序）的类型和种类（值、引用和出输出组成。**方法签名不包含返回类型**
+     - 实例构造函数签名由他的每一个形参的类型和种类组成
+     - 重载决策：选择最优的重载解决问题
+     
+   - **如何对方法Debug**
+   
+     - **call stack**	![image-20221107132202407](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211071322119.png)
+   
+   - **方法的调用与栈**
+   
+     - **stack frame**:一个方法在被调用时它在栈内存中的布局
+   
+     - **方法调用时栈内存的分配**：
+   
+       ![image-20221107135605649](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211071356715.png)
+   
+       ![image-20221107135736004](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211071357069.png)
+   
+       
 
 #### 八、008
+
+![image-20221107140157772](C:\Users\linx7\AppData\Roaming\Typora\typora-user-images\image-20221107140157772.png)
+
+​	*上图优先级从上往下依次递减*
+
+1. ###### 操作符的本质
+
+   - **操作符的本质是函数（即算法）的简记法**
+
+   ```C#
+       internal class Program
+       {
+           static void Main(string[] args)
+           {
+               Person person1 = new Person();
+               Person person2 = new Person();
+               person1.Name = "Deer";
+               person2.Name = "Deer's wife";
+             //List<person> nation = Person.GetMarry(person1, person2);  
+               List<Person> nation = person1 + person2;
+               foreach(var p in nation)
+               {
+                   Console.WriteLine(p.Name);  
+               }
+           }
+       }
+   
+       class Person
+       {
+           public string Name;
+   	  //public static List<Person> GetMarry(Person p1, Person p2)
+           public static List<Person> operator + (Person p1, Person p2)
+           {
+               List<Person> people = new List<Person>();
+               people.Add(p1);
+               people.Add(p2);
+               for (int i = 0; i < 11; i++)
+               {
+                   Person child = new Person();
+                   child.Name = p1.Name + "&" + p2.Name + "'s child";
+                   people.Add(child);
+               }
+               return people;
+           }
+       }
+   ```
+
+   - **操作符不能脱离与他关联的数据类型**
+
+   ```C#
+   int x = 5;
+   int y = 4;
+   int z = x / y;
+   Console.WriteLine(z);//输出的结果为整数1 因为 / 关联的数据类型为 int
+   
+   double a = 5.0;
+   double b = 4.0;
+   double c = a / b;
+   Console.WriteLine(c);//输出的结果为小数1.25 因为 / 关联的数据类型为 double
+   ```
+
+2. ###### 优先级与运算顺序
+
+   - **操作符的优先级**：可以使用圆括号提高被括起来表达式的优先级
+   - **同优先级操作符的运算顺序**：带有赋值功能的操作符的运算顺序是由右向左，其他同优先级操作符都是自左向右进行运算
+
+3. ###### 基本操作符
+
+   - **成员访问操作符** x.y
+
+   ```C#
+   //访问外层名称空间中的子集名称空间
+   //访问名称空间中的类型
+   //访问类型中的静态成员
+   System.IO.File.Create("Hello.txt");
+   Form myForm = new Form();
+   //访问引用对象的实例成员
+   myForm.Text = "";
+   //访问方法
+   myForm.ShowDialog();
+   ```
+
+   - **方法调用操作符 **f(x)
+
+   ```C#
+   Console.WritLine();
+   ```
+
+   - **元素访问操作符** a[x]
+
+   ```C#
+   int[] myIntArray = new int[10];
+   int[] myIntArray = new int[]{1,2,3,4,5};
+   Console.WritLint(myIntArray[0]);
+   ```
+
+   - **typeof**  :  查看类型的内部结构
+
+   ```C#
+   Type t = typeof(int);
+   Console.WritLine(t.Namespace);//查看名称空间
+   Console.WritLine(t.FullName);//查看全名
+   Console.WritLine(t.Name);//查看名称
+   int c = t.GetMethods().Length//查看有多少个方法
+   ```
+
+   - **default** :  获取类型的默认值
+
+   ```C#
+   int x = default(int);
+   Console.WritLine(x);
+   ```
+
+   
 
 #### 九、009
 

@@ -1,0 +1,8 @@
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\OperatorsExmaple\OperatorsExmaple\bin\Debug\OperatorsExmaple.exe.config
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\OperatorsExmaple\OperatorsExmaple\bin\Debug\OperatorsExmaple.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\OperatorsExmaple\OperatorsExmaple\bin\Debug\OperatorsExmaple.pdb
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\OperatorsExmaple\OperatorsExmaple\obj\Debug\OperatorsExmaple.csproj.AssemblyReference.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\OperatorsExmaple\OperatorsExmaple\obj\Debug\OperatorsExmaple.csproj.SuggestedBindingRedirects.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\OperatorsExmaple\OperatorsExmaple\obj\Debug\OperatorsExmaple.csproj.CoreCompileInputs.cache
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\OperatorsExmaple\OperatorsExmaple\obj\Debug\OperatorsExmaple.exe
+E:\Learn\BackEnd\.NET\Lesson\Timothy Liu\code\OperatorsExmaple\OperatorsExmaple\obj\Debug\OperatorsExmaple.pdb
