@@ -262,7 +262,7 @@
 
     ```C#
     //装箱：将栈上的值类型的值封装成一个object类型的实例到堆上
-    int x = 100;
+    int x = 100;	
     object obj = x;//复制变量x的值到某块内存空间 再将这块内存空间的地址存入obj变量所在的内存空间
     ```
     
@@ -619,7 +619,7 @@
    - **方法调用操作符 **f(x)
 
    ```C#
-   Console.WritLine();
+   Console.WriteLine();
    ```
 
    - **元素访问操作符** a[x]
@@ -627,16 +627,16 @@
    ```C#
    int[] myIntArray = new int[10];
    int[] myIntArray = new int[]{1,2,3,4,5};
-   Console.WritLint(myIntArray[0]);
+   Console.WriteLine(myIntArray[0]);
    ```
 
    - **typeof**  :  查看类型的内部结构
 
    ```C#
    Type t = typeof(int);
-   Console.WritLine(t.Namespace);//查看名称空间
-   Console.WritLine(t.FullName);//查看全名
-   Console.WritLine(t.Name);//查看名称
+   Console.WriteLine(t.Namespace);//查看名称空间
+   Console.WriteLine(t.FullName);//查看全名
+   Console.WriteLine(t.Name);//查看名称
    int c = t.GetMethods().Length//查看有多少个方法
    ```
 
@@ -644,10 +644,275 @@
 
    ```C#
    int x = default(int);
-   Console.WritLine(x);
+   Console.WriteLine(x);
    ```
 
+   - **new** :  在内存中创建一个类型的实例 并且立刻调用此实例的实例构造器 并且将实例的内存地址通过左边的赋值操作符赋值给访			问此实例的变量
    
+   ```C#
+   //调用实例的初始化器（非匿名类型）
+   Form myform = new Form(){Text = "Hello", FormBorderStyle=FormBorderStyle.SizableToolWindow};
+   //为匿名类型创建对象 并用隐式类型变量来引用这个实例
+   var person = new{Name = "Mr.Okay",Age = 18};
+   Console.WriteLine(person.Name);
+   Console.WriteLine(person.Age);
+   //new操作符容易造成紧耦合 为了避免紧耦合会使用依赖注入的设计模式
+   ```
+   
+   ```C#
+   //子类使用new作为修饰符隐藏父类方法
+   public class program{
+       static void Main(string[] args){
+           Student stu = new Student();
+           stu.Report();
+           CsStudent csstu = new CsStudent();
+           csstu.Report();
+       }
+   }
+   
+   class Student{
+       public void Report(){
+           Console.WriteLine("I'm a Student");
+       }
+   }
+   
+   class CsStudent:Student{
+       new public void Report(){
+           Console.WriteLine("I'm Cs Student");
+       }
+   }
+   ```
+   
+   - **checked & unchecked**  :  检查溢出 & 不检查溢出
+   
+   ```c#
+   //第一种使用方法
+   uint x = uint.MaxValue;
+   Console.WriteLine(x);
+   String binStr = Convert.ToString(x,2);
+   Console.WriteLine(binStr);
+   try{
+       uint y = checked(x + 1);
+   	Console.WriteLine(y);
+   }catch(OverflowException ex){
+       Console.WriteLine("There's overflow!");
+   }
+   //第二种使用方法
+   uint x = uint.MaxValue;
+   Console.WriteLine(x);
+   String binStr = Convert.ToString(x,2);
+   Console.WriteLine(binStr);
+   checked{
+       try{
+           uint y = x + 1;
+           Console.WrietLine(y);
+       }catch(OverflowException ex){
+           Console.WriteLine("There's overflow!");
+       }
+   }
+   ```
+   
+   - **sizeof**  :  获取对象在内存当中所占字节数 默认情况只能获取结构体基本数据类型实例在内存所占字节数	
+   
+   ```C#
+   int x = sizeof(long);
+   Console.WriteLine(x);
+   //获取自定义结构体在内存中所占字节数需要放在不安全的上下文中
+   unsafe{
+       int y = sizeof(Student);
+       Console.WriteLine(y);
+   }
+   struct Student{
+       int ID;
+       long Score;
+   }
+   ```
+   
+   ![image-20221108101942834](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211081019165.png)
+   
+   - **->**  :  指针 C#严格规定只能用来操作结构体类型
+   
+   ```C#
+   static void Main(string[] args){
+   	unsafe{
+           Student stu;
+           stu.ID = 1;
+           stu.Score = 99;
+           Student* pSpu = $stu;
+           pStu -> Score = 100;
+           Console.WriteLine(stu.Score);
+       }    
+   }
+   
+   struct Student{
+       public int ID;
+       public long Score;
+   }
+   ```
+   
+   - **+ - ~ ！++x --x**
+   
+   - **(T)x**  :  强制类型转换操作符
+   
+     ```C#
+     string str1 = Console.ReadLine();
+     string str2	= Console.ReadLine();
+     Console.WriteLine( str1 + str2 );
+     int x = Convert.ToInt32(str1);
+     int y = Convert.ToInt32(str2);
+     Console.WriteLine( x + y );	
+     ```
+   
+     - 隐式类型转换
+   
+     ```C#
+     //不丢失精度的转换 低精度向高精度 
+     int x = int.MaxValue;
+     long y = x;
+     //子类向父类的转换
+     class Program{
+         static void Main(string[] args){
+             Teacher T = new Teacher();
+       //C#规定 当你试图拿一个引用变量(H)去访问它所引用的实例的成员(T)时 这时只能访问到这个变量的类型(Huaman)所具有的成员
+             Human H = T;
+             Animal A = H;
+         }
+     }
+     class Animal{
+         public void Eat(){
+             Console.WriteLine("Eating......");
+         }
+     }
+     class Human:Animal{//派生 声明类时指定基类可以在类名后加上 :基类名
+         public void Think(){
+             Console.WriteLine("Who I am?");
+        }
+     }
+     class Teacher:Human{
+         public void Teach(){
+             Console.WriteLine("I teach programming");
+         }
+     }
+     //装箱
+     int x = 100;
+     Object obj = x;
+     ```
+   
+     ![image-20221108110435751](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211081104847.png)
+   
+     - 显式类型转换
+   
+     ```C#
+     //有可能丢失精度（甚至发生错误）的转换，即cast
+     Console.WriteLine(ushort.MaxValue);
+     uint x = 65536;
+     ushort y = (ushort)
+     //拆箱
+     int y = (int)obj;
+     //使用Convert类
+     Convert.ToInt32();
+     //ToString方法与各数据类型的Prase/TryPrase方法
+     int.Prase()
+     int.TryPrase()
+     int.ToString()
+     ```
+   
+     ![image-20221108122316453](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211081223558.png)
+   
+     - 自定义类型转换
+   
+     ```C#
+     class Program{
+         static void Main(string[] args){
+             Stone stone = new Stone();
+             stone.Age = 5000;
+             Monkey wukongsun = (Monkey)stone;
+             Console.WriteLine(wukongsun.Age);
+         }
+     }
+     class Stone{
+         public int Age;
+         public static explicit operator Monkey(Stone stone){
+             Monkey m = new Monkey();
+             m.Age = stone.Age/500;
+             return m;
+         }
+         //隐式类型转换将explicit改成implicit
+     }
+     class Monkey{
+         public int Age;
+     }
+     ```
+   
+   - **/  %  +  -  <<  >>  <  >  <=  >=  *  **
+   
+   - **is  &  as**  :  类型检验操作符
+   
+   ```C#
+   class Program{
+       static void Main(string[] args){
+           //is
+   		Teacher t = new Teacher();
+           var result1 = t is Teacher;
+           var result2 = t is Human;
+           Console.WriteLine(result.GetType().FullName);
+           Console.WriteLine(result1);//输出为真
+           Console.WriteLine(result2);//输出为真
+           Car car = new Car();
+           Console.WriteLine(car is Animal);//输出为假
+           Console.WriteLine(car is Object);//输出为真
+           //as
+           Object o = new Teacher();
+           if( o is Teacher){
+               Teacher t = (Teacher)o;
+               t.Teach();
+           }
+           Teacher t = o as Teacher;
+       }
+   }
+   class Animal{
+       public void Eat(){
+           Console.WriteLine("Eating......");
+       }
+   }
+   class Human:Animal{
+       public void Think(){
+           Console.WriteLine("Who I am?");
+      }
+   }
+   class Teacher:Human{
+       public void Teach(){
+           Console.WriteLine("I teach programming");
+       }
+   }
+   class Car{
+       public void Run(){
+           Console.WriteLine("Running...");
+       }
+   }
+   ```
+   
+   - **== != & ^ | && ||**
+   - **??**  :  null合并
+   
+   ```C#
+   int x = null;//编译错误 无法接收null值
+   
+   Nullable<int> x = null;//可空类型
+   x = 100;
+   Console.WriteLine(x);
+   
+   int?x = null//将可空类型吸收为?操作符
+   x = 100;
+   Console.WriteLine(x);
+   
+   int?y = null//null合并
+   int z = y ?? 1;
+   Console.WriteLine(z);//输出为1
+   ```
+   
+   - **条件 ? ”表达式1“ ：”表达式2“**
+   - **= *= /= %= += -= <<= >>= &= ^= |= =>**
 
 #### 九、009
 
