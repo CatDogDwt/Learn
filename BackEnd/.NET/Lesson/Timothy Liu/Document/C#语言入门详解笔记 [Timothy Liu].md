@@ -240,7 +240,7 @@
 
   - **引用类型的变量与实例**：引用类型变量里存储的数据是对象在堆内的内存地址
 
-    ![image-20221106175545714](C:/Users/20318/AppData/Roaming/Typora/typora-user-images/image-20221106175545714.png)
+    ![](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211081344813.png)
 
     1. 引用类型的变量在没有引用实例时，系统在分配内存时为引用变量分配4个字节全部置0
 
@@ -535,7 +535,7 @@
 
 #### 八、008
 
-![image-20221107140157772](C:\Users\linx7\AppData\Roaming\Typora\typora-user-images\image-20221107140157772.png)
+![](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211081346262.png)
 
 ​	*上图优先级从上往下依次递减*
 
@@ -616,7 +616,7 @@
    myForm.ShowDialog();
    ```
 
-   - **方法调用操作符 **f(x)
+   - **方法调用操作符** f(x)
 
    ```C#
    Console.WriteLine();
@@ -844,7 +844,7 @@
      }
      ```
    
-   - **/  %  +  -  <<  >>  <  >  <=  >=  *  **
+   - **/  %  +  -  <<  >>  <  >  <=  >=  ***
    
    - **is  &  as**  :  类型检验操作符
    
