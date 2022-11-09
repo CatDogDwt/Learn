@@ -916,6 +916,15 @@
 
 #### 九、009
 
+1. ###### 表达式的定义
+
+   - **表达式是一种专门用来求值的语法实体 表达式求值成功能够得到产出值 表达式求值失败会得到终止**
+   - **C#语言表达式是由一个或多个操作数与0个或多个操作符组成的序列**
+   - **表达式是算法逻辑的最基本单元，表达一定的算法意图**
+   - **因为操作符有优先级，所以表达式也就有了优先级**
+
+2. 
+
 #### 十、010
 
 #### 十一、011
@@ -960,4 +969,4 @@
 
 - ###### 进阶
 
-  ![image-20221104085444947](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211040854195.png)
+  ![image-20221104085444947](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211040854195.png)![image-20221109123517480](https://raw.githubusercontent.com/CatDogDwt/IHS/master/CSharp/202211091235283.png)
