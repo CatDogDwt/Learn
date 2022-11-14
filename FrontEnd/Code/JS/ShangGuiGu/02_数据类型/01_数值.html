@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数值</title>
+    <script>
+        /*
+            数值(Number)：
+                在js中所有的整数和浮点数都是Number类型
+                js中的数值并不是无限大 当数值超过一定范围会显示近似值
+                在js中进行精度较高的运算时要十分注意
+                二进制无法精确计算十分之一
+                特殊值：
+                    Infinity 无穷
+                    NaN 非法数值
+                大整数：
+                    用来表示一些比较大的整数
+                    使用'n'结尾 数字+n 内存越大所能表示的大整数越大
+                其他进制的数字表示：
+                    二进制：0b
+                    八进制：0o
+                    十六进制：0x
+                    输出时还是会输出十进制
+            类型检查：
+                typeof()会根据不同的值返回不同的结果
+                注意是检查不同值的类型 类型检查检查的是值不是变量
+        */
+       let a = 1000000000000000000000000000000000000000000000n;
+       let b = 10.15;
+       let c = 1000000000000000000000000000000000000000000000;
+       let d = 0b1010;
+       console.log(a,b,c,d);
+       console.log( typeof(a),typeof(b));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
