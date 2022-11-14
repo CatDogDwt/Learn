@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他的数据类型</title>
+    <script>
+        /*
+            布尔值 boolean
+                用来进行逻辑判断
+                true false
+            空值 null
+                用来表示空对象
+                空值只有一个值null
+                使用typeof检查一个空值会返回object
+            未定义 undefined
+                声明变量未赋值
+            符号 symbol
+                用来创建唯一的标识
+
+            js中原始值一共有七种
+                1.Number
+                2.BigInt
+                3.String
+                4.Boolean
+                5.Null
+                6.Undefined
+                7.Symbol
+                七种原始值是构成各种数据的基石
+                原始值在JS中是不可变类型 一旦创建就不能修改
+        */
+
+        let boolT = true;
+        let boolF = false;
+        let num = 1;
+        let a = null;
+        let b;
+        let c=undefined;
+        let d=Symbol()
+        console.log(boolT,boolF,num);
+        console.log(typeof(boolF))
+        console.log(a,typeof a);
+        console.log(typeof b,typeof c);
+        console.log(d,typeof d);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换</title>
+    <script>
+        /*
+            强制(显示)类型转换 将一种数据类型转换为其他数据类型(字符串 数值 布尔值)
+            转换为字符串
+                调用toString()方法将其他类型转换为字符串
+                    null 和 undefined 中没有toString()方法
+                调用String()函数将其他类型转换为字符串
+                    null 和 undefined 可以被String()函数转换为字符串
+
+                转换数据类型后 原来的变量值不会改变 所以需要重新赋值给原来的变量或者其他变量
+                即所谓的类型转换 其实是根据一种数据类型的值在内存中创建了另一个数据类型的值
+            转换为数值
+                使用Number()函数将其他类型转换为数值
+        */
+       let a = 10
+       console.log(typeof a,typeof a.toString());
+       let b = true
+       console.log(typeof b,typeof String(b),typeof Number(b));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
