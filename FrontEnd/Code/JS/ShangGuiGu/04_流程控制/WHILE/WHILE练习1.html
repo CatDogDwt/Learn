@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        /*
+            假设银行存款的年利率为5% 问1000块存多少年可以变成5000块
+        */
+        let rate = 0.05
+        let money = 1000
+        let n = 0;
+        while(money < 5000){
+            money += money * rate
+            n++
+            alert("存款第"+n+"年的收入为"+money)
+        }
+        alert("假设银行存款的年利率为5% 1000块存"+n+"年可以变成5000块")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

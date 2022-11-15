@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            男大当婚 女大当嫁 女方家长要嫁女儿 提出了以下条件：
+            高：180cm以上   富：1000万以上  帅：500以上
+            如果这三个条件同时满足 则："我一定要嫁给他"
+            如果这三个条件有为真的情况 则："嫁吧，比上不足比下有余"
+            如果三个条件都不满足，则："不嫁"
+        */
+       alert("我的女儿要嫁人")
+       alert("让我看看你的实力")
+       let height = Number(prompt("你的身高是多少？"))
+       if(height <= 0){
+            alert("?")
+       } else{
+            let rich = Number(prompt("你的财富是多少(万)？"))
+            let handsome = Number(prompt("你的颜值怎么样( 最丑0-1000最帅 )？"))
+            if( height >= 180 && rich >= 1000 && handsome >= 500 ){
+                alert("我一定要嫁给他!")
+            }else if(height >= 180 || rich >= 1000 || handsome >= 500){
+                alert("嫁吧，比上不足比下有余")
+            }else{
+                alert("不嫁")
+            }
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
