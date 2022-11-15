@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            一元正负
+            自增自减
+            逻辑运算符
+                ! 逻辑非
+                &&逻辑与 
+                    对于非布尔值进行与运算 他会转换为布尔值然后运算 并返回原值
+                    如果第一个值为false 则直接返回第一个值
+                    如果第一个值为true 则返回第二个值
+                ||逻辑或
+                    与逻辑与相反
+            关系运算符
+                注意：当关系运算符用于字符串比较时 他会逐位的比较字符的unicode编码
+            相等运算符
+                ==  使用相等运算符比较两个不同类型的值时 它会将其转换为相同的类型 然后再比较
+                    null 和 undefined 进行相等比较时会返回true
+                    NaN 不和任何值相等(包括它自身)
+                === 全等运算符不会自动进行类型转换 如果两个值的类型不同则直接返回false
+                    null 和 undefined 进行全等比较时会返回false
+                !=  
+
+                !== 不全等
+            条件运算符 条件表达式 ? 表达式1 : 表达式2
+        */
+        logicresult = 1 && 2;//2
+        logicresult = 1 && 0//0
+        logicresult = 0 && NaN//0
+        logicresult = NaN && 1;//NaN
+        console.log(logicresult);
+        reresult = abc < b//true
+        console.log(reresult);//注意是逐位比较
+        equresult = 1 == "1"//true
+        console.log(equresult)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换</title>
+    <script>
+        /*
+            强制(显示)类型转换 将一种数据类型转换为其他数据类型(字符串 数值 布尔值)
+            转换为字符串
+                调用toString()方法将其他类型转换为字符串
+                    null 和 undefined 中没有toString()方法
+                调用String()函数将其他类型转换为字符串
+                    null 和 undefined 可以被String()函数转换为字符串
+
+                转换数据类型后 原来的变量值不会改变 所以需要重新赋值给原来的变量或者其他变量
+                即所谓的类型转换 其实是根据一种数据类型的值在内存中创建了另一个数据类型的值
+            转换为数值
+                使用Number()函数将其他类型转换为数值
+                    转换情况：
+                        字符串：如果字符串是一个合法的数字 则会自动转换为对应的数字
+                                如果字符串不是合法数字 则转换为NaN
+                                如果为空字符串或纯空格的字符串会转换为0
+                        布尔值：true转换为1 false转换为0
+                        null:转换为0
+                        undefined:转换为NaN
+                    将字符串转换成数值的两个方法
+                        parseInt() 将一个字符串转换成整数
+                            解析时 会自左向右读取一个字符串 直到读取到字符串中所有的有效整数
+                        parseFloat() 将一个字符串转换成浮点数
+                            解析时 会自左向右读取一个字符串 直到读取到字符串中所有的有效浮点数
+            转换为bool值
+                使用Boolean()函数来将其他类型转换为布尔值
+                    转换情况：
+                        数字：除了0和NaN 转换为false 其余都是true
+                        字符串：空串为false 其余是true
+                        null和undefined都是false
+                        对象会转换为true
+
+            所有表示空性的没有错误的值都会转换为false
+        */
+       let a = 10
+       console.log(typeof a,typeof a.toString());
+       let b = true
+       console.log(typeof b,typeof String(b),typeof Number(b));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

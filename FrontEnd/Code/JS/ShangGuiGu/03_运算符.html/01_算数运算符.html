@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符</title>
+    <script>
+        /*
+            运算符(操作符)
+                运算符可以用来对一个或多个操作数进行运算
+                算数运算符：+ - * / **(幂运算) ** .(开方) %取模(取余)
+                    注意：算数运算时 除了字符串的加法 其他运算的操作数是非数值时 都会转换为数值然后进行运算
+                          当任意一个值和字符串做加法运算时 它会先将其他的值转换为字符串 然后做拼串的操作
+        */
+       let a = 1 + 1;
+       a = 10 - 5
+       a = 2 * 4
+       a = 10 / 5
+       a = 10 / 0 //Infinity
+       a = 10 ** 4
+       a = 10 ** .5
+       a = 10 % 9
+       //js是一门弱类型语言 当进行运算时会通过自动的类型转换来完成运算
+       a = 10 - '5' //10-5
+       a = 10 + true //10+1
+       a = 10 + null //10+0
+       a = 5 - undefined //6-NaN
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
