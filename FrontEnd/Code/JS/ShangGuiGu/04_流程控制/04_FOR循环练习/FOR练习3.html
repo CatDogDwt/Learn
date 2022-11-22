@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            获取用户输入的大于1的整数 然后检查这个数是否为质数 并打印
+            质数：只能被1和它本身整除
+        */
+       let END = 0
+       while(END != 1){
+            let uNum = Number(prompt("请输入一个大于0的数字"))
+            if(uNum < 1)
+                alert("请输入一个大于0的数字!")
+            else{
+                let flag = true
+                for(let i = 2 ; i < uNum ; i++ ){
+                    if( uNum % i === 0 ){
+                        flag = false
+                        break;
+                    }
+                }
+                if(flag)
+                    console.log(`${uNum}是质数`)
+                else
+                    console.log(`${uNum}不是质数`)
+                END = 1
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

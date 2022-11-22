@@ -7,12 +7,15 @@
     <title>Document</title>
     <script>
         /*
-            求1000以内的水仙花数
-            水仙花数 一个n位数(n >= 3)如果它每一位上的数字的n次幂之和还等于这个数 那么这个数就是一个水仙花数
+            100以内所有的质数
         */
-
-       for(let i = 0; i <= 1000 ; i++){
-            
+       for(let i = 2; i<=100; i++){
+            let flag = true
+            for(let j = 2; j < i; j++){
+                if(i % j === 0)
+                    flag = false
+            }
+            if(flag)console.log(i)
        }
     </script>
 </head>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            数据类型：       
+                1.Number
+                2.BigInt
+                3.String
+                4.Boolean
+                5.Null
+                6.Undefined
+                7.Symbol
+                七种原始值是构成各种数据的基石
+                原始值在JS中是不可变类型 一旦创建就不能修改
+                缺点：
+                    原始值只能用来表示一些简单的数据 不能表示复杂数据
+            对象：
+                对象是JS中的一种复合数据类型 它相当于一个容器 在对象中可以存储不同的数据类型
+                属性：对象中存储的数据
+                    属性名：
+                        可以是任何值 无特殊要求(比如 obj.if)
+                        如果属性名无法使用 则需要使用 对象["属性名"] 来赋值
+                    向对象中添加属性：
+                        对象.属性名 = 属性值
+                    读取对象中的属性：
+                        对象.属性名
+                        读取对象中没有的属性 会返回undefined
+                    修改属性：
+                        直接覆盖新值
+                    删除属性：
+                        delete obj.name
+                    使用符号作为属性名：
+                        将对象作为属性名来使用
+        */
+        //创建对象、
+        let obj = Object()
+        obj.name = "孙悟空"
+        obj.age = 18
+        obj.gender = "男"
+        obj["64544awdasd"] = "666"
+        console.log(obj)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
