@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,39 @@
     <title>Document</title>
     <script>
         /*
-            原始值都属于
+            原始值都属于不可变类型，一旦创建就无法修改  
+            在内存中不会创建重复的原始值
         */
-        let a = 10
+        let a = 10//↓原来的原始值10还存在
+        a = 12//在内存中重新创建区域赋值
+        //此时内存中有两块区域：10和12
+        let b = 10//并没有重新在内存中创建原始值 而是引用了之前a的原始值
+
+        /*
+            对象属于可变类型
+            对象创建完成后 可以任意的添加修改删除对象中的属性
+            注意：
+                当对两个对象进行相等或全等比较时 比较的是对象的内存地址
+                如果有两个变量同时指向一个对象 通过一个变量修改对象时，对另外一个变量也会产生影响
+        */
+        let obj = Object()
+        obj.name = "唐僧"//变量-->name的内存地址-->name的值的内存地址
+        console.log(obj.name)
+
+        let obj2 = Object()
+        obj2.name = "沙僧"
+        let obj3 = Object()
+        console.log(obj2 === obj3)//false
+
+        let obj4 = obj2
+        console.log(obj2 === obj4)//true    
+        obj4.name = "猪八戒"
+        console.log(obj2.name)
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

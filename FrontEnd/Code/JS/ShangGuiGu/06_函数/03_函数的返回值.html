@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            在函数中可以通过return关键字来指定函数的返回值
+            返回值就是函数的执行结果 函数调用完毕返回值便会作为结果返回
+
+            任何值都可以作为返回值使用（包括对象和函数）
+            如果return后不跟任何值 则返回undefined 
+            如果不写return 那么函数的返回值依然是undefined
+
+            箭头函数的返回值可以直接写在箭头后
+
+            如果直接在箭头后设置对象字面量为返回值  对象字面量必须使用()括起来  
+        */
+        const fn = (a,b) => a+b
+        console.log(fn(5,6))
+
+        const fn2 = () => ()=>alert("返回了箭头函数")
+        console.log(fn2())
+        fn2()()
+
+        const fn3 = () => ({name:"牛魔王"})
+        console.log(fn3())
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

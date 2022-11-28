@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            函数（function）也是一个对象 它具有其他对象所有的功能
+            存储代码的对象
+            函数的定义方式：
+                1.函数表达式
+                    const 变量名 = function(){
+
+                    }
+                2.函数声明
+                    function 函数名(){
+
+                    }
+                3.箭头函数
+                    ([参数]) => {
+
+                    }
+            调用函数：
+                语法：函数对象()
+        */
+        function fn() {
+            console.log("函数声明")
+        }
+        console.log(fn)
+        fn()        
+        const fn2 = function(){
+            console.log("函数表达式")
+        };
+        console.log(fn2)
+        fn2()        
+        const fn3 = () => {
+            console.log("箭头函数")
+        }
+        const fn4 = () => console.log("箭头函数的另一种方式")
+        console.log(fn3,fn4)
+        fn3()
+        fn4()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

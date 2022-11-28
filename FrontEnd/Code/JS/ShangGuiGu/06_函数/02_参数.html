@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            形式参数
+                在定义函数时，可以在函数中指定数量不等的形式参数
+                在函数中定义形参 就相当于在函数内部声明了对应的变量但是没有赋值
+            实际参数
+                在调用函数时，可以在函数的()春娣数量不等的实参
+                实参会赋值给其对应的形参
+            参数：
+                如果实参和形参数量相同 则对应的实参赋值给对应的形参
+                如果实参多于形参 则多余的实参不会使用
+                如果形参多于实参 则多余的形参赋值为undefined
+            参数的类型
+                JS中不会检查参数的类型 可以传递任何类型的值作为参数
+            函数每次调用 都会重新创建默认值
+        */
+        //定义一个可以求任意两个数和的函数
+        const Add = (a, b) => {
+            console.log(`a=${a}`)
+            console.log(`b=${b}`)
+            console.log(a + b)
+        }
+        let a = Number(prompt("请输入第一个数"))
+        let b = Number(prompt("请输入第二个数"))
+        Add(a, b)
+
+        //当箭头函数中只有一个参数时 可以省略()
+        const fn = (a) => {
+            console.log("a = ", a);
+        }
+        const fn1 = a => {
+            console.log("a = ", a);
+        }
+        //定义参数时，可以为参数指定默认值 默认值会在没有对应实参时生效
+        const fn3 = (a = 10, b = 20, c = 30) => {
+            console.log("a = ", a);
+            console.log("b = ", b);
+            console.log("c = ", c);
+        }
+        //使用对象作为参数
+        function fn4(a) {
+            console.log("a=", a)
+            console.log(a.name)
+        }
+        let obj = {
+            name: "红孩儿"
+        }
+        fn4(obj)
+        /*
+            函数作为参数 在JS中 函数也是一个对象(一等对象)
+        */
+        const fn5 = (a) => {
+            console.log("a=",a)
+            a()
+        }
+        function fn6() {
+            console.log("我是fn6")
+        }
+        fn5(fn6)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
