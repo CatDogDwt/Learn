@@ -20,15 +20,18 @@
 
                 注意：不是所有的属性都可以枚举 比如使用符号添加的属性
         */
+        let mySymbol = Symbol()
         let obj = {
             name: "小明",
             age: 18,
             gender: "男",
-            [Symbol()]:"不可枚举的属性"
+            [Symbol()]:"不可枚举的属性",
+            [mySymbol]:"不可枚举的属性2,但是通过mySymbol添加"
         }
         for (let propName in obj) {
             console.log(propName,obj[propName])
         }
+        console.log(obj[mySymbol])
     </script>
 </head>
 
