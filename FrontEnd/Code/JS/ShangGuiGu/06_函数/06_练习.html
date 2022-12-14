@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../global/global.js"></script>
+    <script>
+        var a = 1
+        function fn(){
+            a = 2
+            console.log(a)
+        }
+        fn()
+        console.log(a)
+        _()
+
+        //变量和函数的提升同样适用于函数作用域
+        var b = 1
+        function fn2(){
+            console.log(b)
+            var b = 2
+            console.log(b)
+        }
+        fn2()
+        console.log(b)
+        _()
+
+        //定义形参就相当于在函数中声明了未赋值的对应变量 
+        var c = 1
+        function fn3(c){
+            console.log(c)
+            c = 2
+            console.log(c)
+        }
+        fn3()
+        console.log(c)
+        _()
+
+        var d = 1
+        function fn4(d){
+            console.log(d)
+            d = 2
+            console.log(d)
+        }
+        fn4(10)
+        console.log(d)
+        _()
+
+        var e = 1
+        function fn5(e){
+            console.log(e)
+            e = 2
+            console.log(e)
+        }
+        fn5(e)
+        console.log(e)
+        _()
+
+        console.log(f)
+        var f = 1//提升var f
+        console.log(f)
+        //提升并赋值
+        function f(){
+            alert(2)
+        }
+        console.log(f)
+        var f = 3//因为第62行var f已经声明 所以此行代码声明不生效 也不会提升
+        console.log(f)
+        //因为第62行var f已经声明 所以此行代码声明不生效 也不会提升
+        var f = function(){
+            alert(4)
+        }
+        console.log(f)
+        var f//因为第62行var f已经声明 所以此行代码声明不生效 也不会提升
+        console.log(f)
+        /*
+            62：var f提升
+            64：function f(){alert(2)}提升并赋值
+            68：不执行(已执行)
+            70：不执行(已执行)
+            74：不执行(已执行)
+            61：打印function f(){alert(2)}
+            62：赋值f=1
+            63：打印1
+         64-66：不执行(已执行)
+            67：打印1
+            68：赋值f=3
+            69：打印3
+         70-72：赋值function f(){alert(4)}
+            73：打印function f(){alert(4)}
+            74：不执行(已执行)
+            75：打印function f(){alert(4)}
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            debug的两种方式
+                1.直接使用debugger标签
+                2.在浏览器开发者工具源代码中直接点击断点
+        */
+        debugger//在代码中打了一个断点
+        console.log(f)
+        var f = 1
+        console.log(f)
+        function f(){
+            alert(2)
+        }
+        console.log(f)
+        var f = 3
+        console.log(f)
+        var f = function(){
+            alert(4)
+        }
+        console.log(f)
+        var f
+        console.log(f)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

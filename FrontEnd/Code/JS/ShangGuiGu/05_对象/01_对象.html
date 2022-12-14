@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../../global/global.js"></script>
     <script>
         /*
             数据类型：       
@@ -44,8 +45,7 @@
         console.log(obj, obj.gender, obj["gender2"])
         delete obj["gender2"]
         console.log(obj, obj.gender)
-        console.log("--------------------------------\
---------------------------------------------------------------------")
+        _()
         /*
                 属性名：
                 使用字符串作为属性名
@@ -67,15 +67,13 @@
         obj2["64544@!!!awdasd"] = "666"
         console.log(obj2)
         console.log(obj2[mySymbol])
-        console.log("--------------------------------\
---------------------------------------------------------------------")
+        _()
         //使用[]去操作属性时，可以使用变量
         let str = "address"
         obj[str] = "花果山"//等价于obj["address"] = "花果山"
         console.log(`obj[str]=${obj[str]}`)
         console.log(`obj["address"]=${obj["address"]}`)
-        console.log("--------------------------------\
---------------------------------------------------------------------")
+        _()
         /*
             属性值：对象的属性值可以是任何数据类型，也可以是一个对象
         */
@@ -85,16 +83,14 @@
         obj3.f.gender = "男"
         obj3.f.age = 99999
         console.log(obj3.f, obj3.f.name)
-        console.log("--------------------------------\
---------------------------------------------------------------------")
+        _()
         /*
              in 运算符：检查对象中是否有某个属性
                  语法：属性名 in obj
                  如果有返回true 没有返回false
         */
         console.log("name" in obj)
-        console.log("--------------------------------\
---------------------------------------------------------------------")
+        _()
         /*
               对象字面量：
                   可以直接使用{}来创建对象
