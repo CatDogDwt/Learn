@@ -8,17 +8,19 @@
     <title>Document</title>
     <script>
         /*
-
+            在类中可以添加一个特殊的方法constructor
+            该方法称为构造函数
+            构造函数会在调用类创建对象时执行
+            可以在构造函数中使用this为实例属性进行赋值 在构造函数中 this表示当前所创建的对象
         */
         class Person {
-            name = "孙悟空"
-            age = 18
-            gender = "男"
-            SayHello() {
-                console.log(this.name)
+            constructor(name, age, gender) {
+                this.name = name
+                this.age = age
+                this.gender = gender
             }
         }
-        const p1 = new Person()
+        const p1 = new Person("Ming", 18, "Boy")
         console.log(p1)
     </script>
 </head>
