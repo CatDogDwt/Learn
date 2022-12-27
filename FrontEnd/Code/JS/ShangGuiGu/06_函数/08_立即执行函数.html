@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,30 @@
     <title>Document</title>
     <script>
         /*
-            在开发中应该尽量减少直接
+            在开发中应该尽量减少直接在全局作用域中编写代码
+            所谓代码应尽量编写到局部作用域
+
+            如果使用let声明变量 可以使用{}来创建块作用域 也可以使用立即执行函数创建一次性的局部作用域
+                立即执行函数 （IIFE）是一个匿名的函数 他只会调用一次
         */
+        {
+            let a = 10
+        }
+        let a = 20;
+            (function () {
+                let b = 10;
+                console.log(b);
+            }());
+
+        (function () {
+            let b = 20;
+            console.log(b);
+        }());
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
