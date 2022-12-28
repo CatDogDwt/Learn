@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../../global/global.js"></script>
     <script>
         /*
             对象中存储属性的区域实际有两个
@@ -32,21 +34,75 @@
                         也就意味着 同类型对象的原型链是一样的
                         原型就相当于是一个公共的区域，可以被所有该类实例访问
                         可以将一个该类实例中所有的公共属性(方法)统一存储到原型中，这样只需要创建一个属性，即可被所有实例访问  
+
+                    JS中继承就是通过原型来实现 当继承时，子类的原型就是一个父类的实例
+
+                    尝试：
+                        函数的原型链？函数--->原型--->原型--->null
+                        Object的原型链？Object--->原型--->null
+                    
+                    修改原型：
+                        类名.prototype.属性(方法)
+
+                    instanceof：用来检查一个对象是否是一个类的实例
+                        检查的是对象的原型链上是否有该类实例
+                        Object是所有对象的原型，所以任何对象和Object进行instanceof运算都会返回true
+                    hasOwn:用来检查一个对象的自身是否含有某个属性(推荐使用)
+                        Object.hasOwn(对象,属性名)
+                    hasOwnProperty：用来检查一个对象的自身是否含有某个属性(不推荐使用)
+                        对象.hasOwnProperty(属性名)
+                    in:
+                        使用in运算符检查属性时，无论属性在对象自身还是在原型对象中，都会返回true
+
         */
-        class Person{
-            name="Ming"
-            sayHello(){
+        class Person {
+            name = "Ming"
+            sayHello() {
                 console.log(this.name)
             }
         }
         const p = new Person()
         console.log(p)
+        console.log(Object.getPrototypeOf(p));
+        //原型链：p对象--->原型--->原型--->null
         console.log(p.__proto__)
         console.log(p.__proto__.__proto__)
-        console.log(Object.getPrototypeOf(p));
+        console.log(p.__proto__.__proto__.__proto__)
+        _()
+        //函数的原型链
+        const fn1 = function () { console.log("this is fn1") }
+        console.log(fn1);
+        console.log(fn1.__proto__);
+        console.log(fn1.__proto__.__proto__);
+        console.log(fn1.__proto__.__proto__.__proto__);
+        _()
+        function fn2() { console.log("this is fn2") }
+        console.log(fn2);
+        console.log(fn2.__proto__);
+        console.log(fn2.__proto__.__proto__);
+        console.log(fn2.__proto__.__proto__.__proto__);
+        _()
+        const fn3 = () => console.log("this is fn3")
+        console.log(fn3);
+        console.log(fn3.__proto__);
+        console.log(fn3.__proto__.__proto__);
+        console.log(fn3.__proto__.__proto__.__proto__);
+        _()
+        //Object的原型链
+        const obj = {
+            property: "property",
+            objfn() {
+                console.log("this is objfn")
+            }
+        }
+        console.log(obj)
+        console.log(obj.__proto__);
+        console.log(obj.__proto__.__proto__);
     </script>
 </head>
+
 <body>
-    
-</body> 
+
+</body>
+
 </html>
