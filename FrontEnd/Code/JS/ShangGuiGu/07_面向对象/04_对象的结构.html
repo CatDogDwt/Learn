@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            对象中存储属性的区域实际有两个
+                1.对象自身
+                    直接通过对象添加的属性，位于对象自身中
+                    在类中通过x = y的形式添加的属性，位于对象自身中
+                2.原型对象[[Prototype]]
+                    会添加到原型对象中的情况：
+                        在类中通过 方法名(){} 添加的方法，位于原型中
+                        主动向原型中添加的属性或方法
+                    在对象中有一个属性__proto__用来存储原型对象
+                    原型对象负责为对象存储属性
+                        当我们访问对象中的属性时，会优先访问对象自身的属性
+                        对象自身不包含该属性时，才会去原型对象中寻找
+                    访问一个对象的原型对象
+                        对象.__proto__
+                        Object.getPrototypeOf(对象)
+                    原型对象中的数据
+                        对象中的数据（属性、方法等）
+                        constructor(对象的构造函数)
+                    注意：
+                        原型对象也有原型，这样就构成了一条原型链，根据对象的复杂程度不同，原型链的长度也不同
+                    原型的作用：
+                        所有的同类型对象他们的原型对象都是同一个
+                        也就意味着 同类型对象的原型链是一样的
+                        原型就相当于是一个公共的区域，可以被所有该类实例访问
+                        可以将一个该类实例中所有的公共属性(方法)统一存储到原型中，这样只需要创建一个属性，即可被所有实例访问  
+        */
+        class Person{
+            name="Ming"
+            sayHello(){
+                console.log(this.name)
+            }
+        }
+        const p = new Person()
+        console.log(p)
+        console.log(p.__proto__)
+        console.log(p.__proto__.__proto__)
+        console.log(Object.getPrototypeOf(p));
+    </script>
+</head>
+<body>
+    
+</body> 
+</html>
