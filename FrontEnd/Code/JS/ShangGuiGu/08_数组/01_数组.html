@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            数组（Array）
+                数组也是一种复合数据类型，数组中可以存储多个不同类型的有序数据
+                通过数组中每个数据唯一的索引来获取数据
+                索引(index)是一组0开头的整数
+                数组中存储的数据叫做元素
+                创建数组
+                    通过Array()来创建数组，也可以通过[]来创建数组
+                向数组中添加元素
+                    语法：
+                        数组[索引] = 元素
+                读取数组中的元素
+                    语法：
+                        数组[索引]
+                length：数组的长度 获取的实际值是数组的最大索引+1
+                    length的长度可以修改 在原来的基础上增加length的值会添加空元素 减少length的值会删除多余元素
+                数组的遍历
+                    获取数组的每一个元素
+
+                    for-of:
+
+        */
+        //使用数组时 应避免性能不好的非连续数组
+        const array = new Array()
+        array[0] = 0
+        array[1] = 1
+        //总是向数组的最大索引添加元素
+        array[array.length] = array[array.length - 1] + 1
+        const array2 = [0, 1, 2]//数组字面量
+        console.log(array);
+        console.log(array2);
+        //数组的遍历 正序
+        for (let index = 0; index < array.length; index++) {
+            const element = array[index];
+            console.log(`${element}↓`)
+        }
+        //数组的遍历 倒序
+        for (let index = array.length - 1; index >= 0; index--) {
+            const element = array[index];
+            console.log(`${element}↑`)
+        }
+
+        //定义一个Person类 类中有两个属性name和age 创建几个Person类 将其添加到一个数组中 遍历数组并打印未成年人的信息
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+        }
+
+        const PersonArray = [new Person("Ming", 18), new Person("Tao", 8), new Person("Wen", 58)]
+        for (let index = 0; index < PersonArray.length; index++) {
+            const element = PersonArray[index];
+            if (element.age < 18) console.log(`三个人中未成年为${element.name} 年龄为${element.age}`)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
