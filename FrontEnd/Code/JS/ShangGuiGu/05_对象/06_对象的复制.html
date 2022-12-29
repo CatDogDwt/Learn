@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../global/global.js"></script>
+    <script>
+        /*
+            如果对象中存储的数据是原始值，那么拷贝的深浅不重要
+                浅拷贝(shallow copy)：
+                    通常对对象的拷贝都是浅拷贝
+                    浅拷贝只对对象的本身进行复制，不会复制对象中的属性或元素(只复制一层)
+
+                深拷贝(deep copy):
+                    深拷贝不仅复制对象本身 还会复制对象中的属性或元素
+                    因为性能问题 通常情况下不太使用深拷贝
+        */
+        const arr = [{ name: "Ming" }, { name: "Tao" }]
+        console.log(arr)
+        _()
+        const arr2 = arr
+        console.log(arr2)
+        console.log("arr?arr2", arr === arr2)
+        //浅拷贝
+        const arr3 = arr.slice()
+        console.log(arr3)
+        console.log("arr?arr3", arr === arr3)
+        //深拷贝
+        const arr4 = structuredClone(arr)
+        console.log(arr4)
+        console.log("arr?arr4", arr === arr4)
+        arr[0].name = "Min"
+        console.log("arr[0].name = Min--->", arr)
+        console.log("arr[0].name = Min--->", arr2)
+        console.log("arr[0].name = Min--->", arr3)
+        console.log("arr[0].name = Min--->", arr4)
+
+        /*
+            复制的方式：
+                ...
+                    展开运算符 可以将一个数组中的元素展开到另一个数组中或者作为函数的参数传递（浅拷贝）
+                              可以将一个对象中的属性展开到另一个对象中或者作为函数的参数传递（浅拷贝）
+                              ......
+                Object.assign(目标对象,被复制的对象)
+                    将被复制对象中的属性复制到目标对象里，并将目标对象返回
+        */
+        const arr5 = [...arr]
+        const obj = {}
+        const obj2 = Object.assign({},obj)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

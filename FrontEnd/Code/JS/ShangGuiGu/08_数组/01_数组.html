@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../../global/global.js"></script>
     <script>
         /*
             数组（Array）
@@ -26,7 +27,15 @@
                 数组的遍历
                     获取数组的每一个元素
 
-                    for-of:
+                    for-of:用来遍历可迭代对象
+                        语法：
+                            for(变量 of 可迭代对象){
+                                语句...
+                            }
+                        执行流程：
+                            for-of的循环体会执行多次，数组中有几个元素就会执行几次
+                数组方法：
+                    https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
 
         */
         //使用数组时 应避免性能不好的非连续数组
@@ -38,6 +47,7 @@
         const array2 = [0, 1, 2]//数组字面量
         console.log(array);
         console.log(array2);
+        _()
         //数组的遍历 正序
         for (let index = 0; index < array.length; index++) {
             const element = array[index];
@@ -48,7 +58,7 @@
             const element = array[index];
             console.log(`${element}↑`)
         }
-
+        _()
         //定义一个Person类 类中有两个属性name和age 创建几个Person类 将其添加到一个数组中 遍历数组并打印未成年人的信息
         class Person {
             constructor(name, age) {
@@ -61,6 +71,15 @@
         for (let index = 0; index < PersonArray.length; index++) {
             const element = PersonArray[index];
             if (element.age < 18) console.log(`三个人中未成年为${element.name} 年龄为${element.age}`)
+        }
+        _()
+        const array3 = [99, 98, 97, 96, 95, 94, 93, 92, 91, 90]
+        for (let value of array3) {
+            console.log(value)
+        }
+        _()
+        for (let StringValue of "Hi") {
+            console.log(StringValue)
         }
     </script>
 </head>
