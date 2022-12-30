@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            递归：调用自身的函数
+            编写递归函数包含的两个要点
+                基线条件 —— 递归的终止条件
+                递归条件 —— 如果对问题进行拆分
+        */
+        //创建一个函数 用来求任意数的阶乘
+        function factorial(number) {
+            let result = 1
+            for (let i = 2; i <= number; i++) {
+                result *= i
+            }
+            return result
+        }
+        console.log(factorial(10))
+        //递归-阶乘
+        function recursion_factorial(number) {
+            if (number === 1) {
+                return 1
+            } else {
+                return recursion_factorial(number - 1) * number
+            }
+        }
+        console.log(recursion_factorial(10));
+        /*
+           ↓ recursion_factorial(10) = 3628800 ←
+              ①↓ return recursion_factorial(9) * 10 ↑①⑨ 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10
+                   ②↓ return recursion_factorial(8) * 9 ↑①⑧ 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9
+                        ③↓ return recursion_factorial(7) * 8 ↑①⑦ 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8
+                           ④↓ return recursion_factorial(6) * 7 ↑①⑥ 1 * 2 * 3 * 4 * 5 * 6 * 7
+                               ⑤↓ return recursion_factorial(5) * 6 ↑①⑤ 1 * 2 * 3 * 4 * 5 * 6
+                                   ⑥↓ return recursion_factorial(4) * 5 ↑①④ 1 * 2 * 3 * 4 * 5
+                                        ⑦↓ return recursion_factorial(3) * 4 ↑①③ 1 * 2 * 3 * 4
+                                            ⑧↓ return recursion_factorial(2) * 3 ↑①② 1 * 2 * 3
+                                                ⑨↓ return recursion_factorial(1) * 2 ↑①① 1 * 2
+                                                    ⑩→ return 1 ↑
+            r_f(r_f(r_f(r_f(r_f(r_f(r_f(r_f(r_fl(r_f(1) * 2) * 3) * 4) * 5) * 6) * 7) * 8) * 9) * 10)    
+        */
+
+        /*
+            递归练习
+                一对兔子出生后的两个月后每个月都能生一对小兔子
+                编写一个函数用来计算第N个月的兔子数量
+                
+                月 1 2 3 4 5 6 7   8  9 10 11  12
+                兔 1 1 2 3 5 8 13 21 34 55 89 144
+        */
+        function Create_rabbit(number) {
+            if (number < 3) {
+                return 1
+            } else {
+                return Create_rabbit(number - 2) + Create_rabbit(number - 1)
+            }
+        }
+        let month = Number(prompt("请输入月份："))
+        console.log(`${month}个月后的兔子数量为${Create_rabbit(month)}对,${Create_rabbit(month)*2}只`)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
