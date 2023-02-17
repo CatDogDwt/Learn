@@ -87,6 +87,7 @@
         }
         const p1 = new Person("Ming", 18, "Boy")
         console.log(p1)
+        p1.name = "Ya"//无法直接通过实例修改 这样做会在Person类中新增一个未封装的公共属性name
         console.log(p1.getName())
         p1.setName("Tao")
         console.log(p1)
@@ -132,12 +133,15 @@
                         重写构造函数时，构造函数的第一行代码必须为super()调用父类的构造函数
                         在方法中可以使用super来引用父类的方法
 
+                    super():??????????????????
+
                 OCP开闭原则
                     程序应该对修改关闭,对扩展开放
             */
             class Animal {
-                constructor(name) {
+                constructor(name,age) {
                     this.name = name
+                    this.age = age
                 }
                 run() {
                     console.log(`${this.name} is running!`)
@@ -158,14 +162,17 @@
                 }
                 constructor(name,age){
                     //https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/super
-                    super(name)
+                    super()
+                    this.name = name
                     this.age = age
                 }
             }
-            const Canis_lupus_familiaris = new Dog("中华田园犬")
-            const Ragdoll = new Cat("布偶猫")
+            const Canis_lupus_familiaris = new Dog("中华田园犬","一岁")
+            const Ragdoll = new Cat("布偶猫","一岁半")
+            console.log(`这只${Canis_lupus_familiaris.name}今年${Canis_lupus_familiaris.age}了`)
             Canis_lupus_familiaris.run()
             Canis_lupus_familiaris.sound()
+            console.log(`这只${Ragdoll.name}今年${Ragdoll.age}了`)
             Ragdoll.run()
             Ragdoll.sound()
         }

@@ -38,7 +38,27 @@
             }
         }
         const newFn = outer()
-        newFn()
+        /*
+            不明白：为什么用newFn()调用num不会被重新赋值为0
+            解释：num位于函数作用域内 outer返回的是()=>{num++ console.log(num)}
+            ①function outer() {
+                let num = 0
+                return () => {
+                    num++
+                    console.log(num)
+                }
+            }
+            实际上和
+            ②let num = 0
+            function outer(){
+                num++
+                console.log(num)
+            }
+            在结构和作用域上是大致相同的
+            但是②中的num是一个全局变量 全局变量有可能不小心被修改
+            
+        */
+        newFn()//outer返回的是()=>{num++ console.log(num)}
         _()
 
         let a = "全局变量a"

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,15 +28,19 @@
                  将符合条件的元素从选择器中去除
 
         */
-        ul>li:first-child{
-            color: white;
+        ul>li:first-child {
+            color: green;
         }
-        ul>li:last-child{
+
+        ul>li:last-child {
             color: pink;
         }
-        ul>li:nth-child(2n){/*或者填入even具有相同效果*/
+
+        ul>li:nth-child(2n) {
+            /*或者填入even具有相同效果 */
             background-color: coral;
         }
+
         ul>li:nth-child(2n-1){
             background-color: darkseagreen;
         }
@@ -50,9 +55,9 @@
         }
     </style>
 </head>
+
 <body>
     <ul>
-        <span>我是一个span用来测试:first-of-type</span>
         <li>第一个</li>
         <li>第二个</li>
         <li>第三个</li>
@@ -62,4 +67,5 @@
         <li>第七个</li>
     </ul>
 </body>
+
 </html>

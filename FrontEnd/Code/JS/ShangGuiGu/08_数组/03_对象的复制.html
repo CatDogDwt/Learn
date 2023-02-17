@@ -17,26 +17,31 @@
                 深拷贝(deep copy):
                     深拷贝不仅复制对象本身 还会复制对象中的属性或元素
                     因为性能问题 通常情况下不太使用深拷贝
+
+            slice() 方法以新的数组对象，返回数组中被选中的元素。
+            slice(start,end) 方法选择从给定的 start 参数开始的元素，并在给定的 end 参数处结束，但不包括。
+                slice() 方法不会改变原始数组。
         */
         const arr = [{ name: "Ming" }, { name: "Tao" }]
         console.log(arr)
         _()
+        //浅拷贝
         const arr2 = arr
         console.log(arr2)
         console.log("arr?arr2", arr === arr2)
-        //浅拷贝
         const arr3 = arr.slice()
         console.log(arr3)
         console.log("arr?arr3", arr === arr3)
+        _()
         //深拷贝
         const arr4 = structuredClone(arr)
         console.log(arr4)
         console.log("arr?arr4", arr === arr4)
         arr[0].name = "Min"
-        console.log("arr[0].name = Min--->", arr)
+        console.log("arr[0].name = Min--->", arr)//浅拷贝是一种引用 所以最初的被拷贝对象里的值被改变 拷贝对象的值也会被改变
         console.log("arr[0].name = Min--->", arr2)
         console.log("arr[0].name = Min--->", arr3)
-        console.log("arr[0].name = Min--->", arr4)
+        console.log("arr[0].name = Min--->", arr4)//深拷贝会将被拷贝对象里的属性和元素 拷贝到一个新的对象中
 
         /*
             复制的方式：

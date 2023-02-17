@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../../global/global.js"></script>
     <script>
         /*
             枚举属性：指获取对象中的所有属性
@@ -31,6 +32,8 @@
         for (let propName in obj) {
             console.log(propName,obj[propName])
         }
+        _()
+        console.log(obj[Symbol()])
         console.log(obj[mySymbol])
     </script>
 </head>

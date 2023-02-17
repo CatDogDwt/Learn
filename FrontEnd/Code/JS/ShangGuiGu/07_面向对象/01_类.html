@@ -30,8 +30,9 @@
 
         */
         class Human {
-            name = "孙悟空" //Human的实例属性 只能通过实例访问 实例.name
+            name = "孙悟空" //Human的实例属性和方法 只能通过实例访问 实例.name 实例.SayHello
             age = 18
+            //静态属性和方法只能通过类名访问 类名.name 类名.SayHello
             static name = "Human"
             static age = 18
             
@@ -52,9 +53,9 @@
         const h2 = new Human()
         console.log(h2.name,h2.age)
         h2.SayHello()
+        _()
         console.log(Human.name,Human.age)
         Human.SayHello()
-        _()
     </script>
 </head>
 

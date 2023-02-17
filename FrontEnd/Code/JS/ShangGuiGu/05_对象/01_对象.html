@@ -38,11 +38,14 @@
         */
         //创建对象、
         let obj = Object()
+        //向对象中添加属性
         obj.name = "孙悟空"
         obj.age = 18
         obj.gender = "男"
+        //修改属性
         obj["gender2"] = "女"
         console.log(obj, obj.gender, obj["gender2"])
+        //删除属性
         delete obj["gender2"]
         console.log(obj, obj.gender)
         _()
@@ -63,16 +66,23 @@
         let obj2 = Object()
         let mySymbol = Symbol()
         obj2.name = "六耳猕猴"
-        obj2[mySymbol] = "通过symbol添加的属性"
+        obj2[mySymbol] = {//注意此时使用的是 mySymbol 这个符号变量来添加的属性
+            str:"通过symbol添加的属性",
+            age:18,
+            Bool:true
+        }
         obj2["64544@!!!awdasd"] = "666"
         console.log(obj2)
         console.log(obj2[mySymbol])
+        console.log(obj2[mySymbol].str)
         _()
         //使用[]去操作属性时，可以使用变量
         let str = "address"
         obj[str] = "花果山"//等价于obj["address"] = "花果山"
+        console.log(obj)
         console.log(`obj[str]=${obj[str]}`)
         console.log(`obj["address"]=${obj["address"]}`)
+        console.log(`obj.address=${obj.address}`)
         _()
         /*
             属性值：对象的属性值可以是任何数据类型，也可以是一个对象

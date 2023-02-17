@@ -18,6 +18,7 @@
                     以方法形式调用时，this指向的是调用方法的对象
                 通过this可以在方法中引用调用方法的对象
         */
+        //以函数形式调用指向window
         function fn() {
             console.log(this)
         }
@@ -28,6 +29,7 @@
         }
         obj.test()
         _()
+        //以方法形式调用指向调用方法的对象
         const obj2 = {
             name: "猪八戒",
             SayHello() {
@@ -52,6 +54,7 @@
                 箭头函数没有自己的this,它的this由它的外层作用域决定
                 箭头函数的this和他的调用方式无关
         */
+        //外部作用域为全局window 此时箭头函数的this指向的是window
         const fn2 = () => {
             console.log("fn2=>", this)//总是window
         }
@@ -59,18 +62,28 @@
         const obj3 = {
             name: "沙僧",
             fn2,
+            //方法
             SayHello() {
+                //以方法形式调用指向调用方法的对象
                 console.log(this.name)
+
+                //以函数形式调用 window
                 function t() {
                     console.log("t---->", this)
                 }
-                t();//以函数形式调用 window
-                const fn3 = () => console.log("()=>", this)
-                fn3()//箭头函数由外层作用域决定 
-            }
+                t();
+
+                //箭头函数由外层作用域决定 此时fn3的外层作用域为obj3
+                const fn3 = () => console.log("fn3()=>", this)
+                fn3()
+            },
+            //箭头函数由外层作用域决定 此时fn4的外层作用域为window
+            fn4: () => console.log("fn4()=>", this)
         }
+        //虽然作为obj3的属性 但由于箭头函数fn2的外层是全局window并且箭头函数this和他的调用方式无关 所以他的this依然指向window 
         obj3.fn2()
         obj3.SayHello()
+        obj3.fn4()
     </script>
 </head>
 
