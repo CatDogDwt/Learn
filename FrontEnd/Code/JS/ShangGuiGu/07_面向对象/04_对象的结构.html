@@ -41,7 +41,7 @@
                         函数的原型链？函数--->原型--->原型--->null
                         Object的原型链？Object--->原型--->null
                             ?Object的原型链为什么会少一个
-                                答：？？？？？？？
+                                答：因为其他对象是由Object衍生而来 Object最后指向原型链的终结null
                     
                     修改原型：
                         类名.prototype.属性(方法)
@@ -100,6 +100,33 @@
         console.log(obj)
         console.log(obj.__proto__);
         console.log(obj.__proto__.__proto__);
+        _()
+        class Alien extends Person {
+            constructor() {
+                super()
+                this.name = "AlienMing"
+            }
+        }
+        const a = new Alien()
+        console.log(a);
+        console.log(a.__proto__);
+        console.log(a.__proto__.__proto__);
+        console.log(a.__proto__.__proto__.__proto__)
+        console.log(a.__proto__.__proto__.__proto__.__proto__)
+        _()
+        class ThreeBody extends Alien{
+            constructor(){
+                super()
+                this.name = "TuoShui"
+            }
+        }
+        const t = new ThreeBody()
+        console.log(t);
+        console.log(t.__proto__);
+        console.log(t.__proto__.__proto__);
+        console.log(t.__proto__.__proto__.__proto__)
+        console.log(t.__proto__.__proto__.__proto__.__proto__)
+        console.log(t.__proto__.__proto__.__proto__.__proto__.__proto__)
     </script>
 </head>
 
