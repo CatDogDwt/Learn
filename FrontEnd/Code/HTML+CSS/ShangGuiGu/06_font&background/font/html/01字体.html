@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            /*
+                字体相关的样式
+                    color 设置字体颜色
+                    font-size:字体大小
+                        单位：
+                            em    相当于当前元素的一个font-size
+                            rem    相当于当前根元素的一个font-size
+                    font-family:字体族(字体格式)
+                        可选值：
+                            serif   衬线字体
+                            sans-serif 非衬线字体
+                            monospace 等宽字体
+                                指定字体类别 浏览器会自动使用计算机中已安装的该类别下的字体
+                        可以同时指定多个字体 多个字体间使用逗号隔开 字体生效时优先使用第一个 第一个无法使用使用第二个 以此类推
+                        @font-face可以将服务器中的字体直接提供给用户去使用
+                            属性：
+                                font-family 指定字体的名字
+                                src:url(服务器中字体的路径) format(告诉浏览器以什么格式解析(非必要))
+                            问题：
+                                1.加载速度
+                                2.版权
+                                3.字体格式
+                        
+
+            */
+            color: red;
+            font-size: 30px;
+            font-family: myfont;
+        }
+
+        @font-face {
+            font-family: 'myfont';
+            src: url(../font/aamaketi.ttf) format("truetype");
+        }
+    </style>
+</head>
+
+<body>
+    <p>今天天气真不错，hello</p>
+</body>
+
+</html>
