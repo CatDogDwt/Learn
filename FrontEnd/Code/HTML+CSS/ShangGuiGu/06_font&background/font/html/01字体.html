@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        p {
+        #p1 {
             /*
                 字体相关的样式
                     color 设置字体颜色
@@ -30,23 +30,106 @@
                                 1.加载速度
                                 2.版权
                                 3.字体格式
-                        
-
+                字体的简写属性
+                    font: 字体粗细 字体风格 字体大小/行高 '字体族';
+                        行高省略不写会使用默认值
+                行高 (line height)
+                    行高指的是文字占有的实际高度
+                    值如果为一个整数 则行高将会是字体的指定倍数
+                    默认值为1.333
+                    行高会在字体框的上下平均分配
+                        字体框就是字体存在的格子 设置font-size实际上就是在设置字体框的高度
+                    行高也经常用来设置文字的行间距
+                        行间距 = 行高 - 字体大小
+                文本样式
+                    text-align 文本水平对齐
+                        可选值
+                            left 左对齐 默认值
+                            right 右对齐
+                            center 居中对齐
+                            justify 两端对齐
+                    vertical-align 元素垂直对齐
+                        可选值
+                            baseline 基线对齐 默认值
+                            top 顶部对齐
+                            bottom 底部对齐
+                            middle 居中对齐
+                            xxxpx 指定像素
+                        图片对齐
+                            图片的底部会有一定的像素距离 对图片设置vertical-align:除了baseline 可以去掉底部的像素距离 使图片对齐
+                    text-decoration 文本修饰
+                        可选值
+                            none 默认值
+                            underline 下划线
+                            line-through 删除线
+                            overline 上划线
+                    white-space 设置网页空白方式
+                        可选值
+                            normal 默认值
+                            nowrap 不换行
+                            pre 保留
+                        文本省略号
+                            white-space: nowrap;不换行
+                            overflow: hidden;溢出隐藏
+                            text-overflow: ellipsis;省略号    
             */
             color: red;
-            font-size: 30px;
-            font-family: myfont;
+            width: 150px;
+            font: bold italic 30px/1.5 myfont;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         @font-face {
             font-family: 'myfont';
             src: url(../font/aamaketi.ttf) format("truetype");
         }
+
+        #box1 p{
+            float: left;
+            margin-right: 35px;
+        }
+
+        #p2,#p3,#p4 {
+            border: 1px solid;
+        }
+
+        img {
+            border: 1px solid red;
+            height: 100px;
+        }
+
+        #p3>img{
+            vertical-align: top;
+        }
+
+        #p4>img{
+            vertical-align: middle;
+        }
+
     </style>
 </head>
 
 <body>
-    <p>今天天气真不错，hello</p>
+    <p id="p1">今天天气真不错，hello</p>
+
+    <div id="box1">
+        <p id="p2">
+            <img src="../../../01_introduce/img/图片01.png" alt="荷包蛋">
+        </p>
+    
+        <p id="p3">
+            <img src="../../../01_introduce/img/图片01.png" alt="荷包蛋">
+        </p>
+    
+        <p id="p4">
+            <img src="../../../01_introduce/img/图片01.png" alt="荷包蛋">
+            <img src="../../../01_introduce/img/图片01.png" alt="荷包蛋">
+            <img src="../../../01_introduce/img/图片01.png" alt="荷包蛋">
+        </p>
+    </div>
 </body>
 
 </html>

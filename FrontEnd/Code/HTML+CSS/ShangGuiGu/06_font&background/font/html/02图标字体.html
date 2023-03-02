@@ -7,6 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../fonticon/fontawesome-free-6.3.0-web/css/all.css">
+    <link rel="stylesheet" href="../fonticon/font_3923885_9lhzn13w5um/iconfont.css">
+    <style>
+        li {
+            list-style: none;
+        }
+
+        #box1 li::before {
+            content: '\f1b0';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
+
+        #box2 li::after {
+            content: '\e6ef';
+            font-family: "iconfont";
+        }
+    </style>
 </head>
 
 <body>
@@ -30,11 +47,45 @@
                             fa-bell:图标名称
                         更多使用方法
                             https://www.runoob.com/font-awesome/fontawesome-tutorial.html
-                
+                    通过伪元素来使用图标字体
+                        找到要设置图标的元素通过before或after选中
+                        在content中设置字体的编码
+                        设置字体的样式
+                            fab格式:
+                                font-family: "";
+                            fas格式:
+                                font-family: "";
+                                font-weight:;
+                    通过实体使用图标字体
+                        &#x图标的编码
+
     -->
+    <div id="box1">
+        <h5>fontawesome-------------------></h5>
         <i class="fas fa-bell"></i>
         <i class="fas fa-bell-slash"></i>
         <i class="fab fa-accessible-icon"></i>
+        <ul>
+            <li>锄禾日当午</li>
+            <li>汗滴禾下土</li>
+            <li>谁之盘中餐</li>
+            <li>粒粒皆辛苦</li>
+        </ul>
+        <span class="fas">&#xf0f3</span>
+    </div>
+    <div id="box2">
+        <h5>阿里妈妈fonticon--------------></h5>
+        <i class="iconfont icon-neiku"></i>
+        <i class="iconfont icon-shuijue"></i>
+        <i class="iconfont icon-jinzita"></i>
+        <ul>
+            <li>锄禾日当午</li>
+            <li>汗滴禾下土</li>
+            <li>谁之盘中餐</li>
+            <li>粒粒皆辛苦</li>
+        </ul>
+        <span class="iconfont">&#xe6eb</span>
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,23 @@
+{
+  "id": "3924821",
+  "name": "2",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2510117",
+      "name": "location",
+      "font_class": "location",
+      "unicode": "e76f",
+      "unicode_decimal": 59247
+    },
+    {
+      "icon_id": "7789620",
+      "name": "下拉",
+      "font_class": "xiala",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    }
+  ]
+}
