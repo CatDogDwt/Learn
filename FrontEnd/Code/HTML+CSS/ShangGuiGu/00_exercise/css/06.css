@@ -1,5 +1,17 @@
 body {
     background-color: #F4F4F4;
+    height: 3000px;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    font-size: 15.5px;
+    margin-right: 3px;
 }
 
 .clearfix::before,
@@ -18,66 +30,374 @@ body {
 
 .top_middle_content {
     height: 30px;
-    margin: 0 170px;
-}
-
-.position_box {
-    width: 300px;
-    height: auto;
-    float: left;
+    line-height: 30px;
+    width: 1190px;
+    margin: 0 auto;
 }
 
 .a {
+    color: #999999;
     text-decoration: none;
-    color: #999;
-    display: block;
 }
 
 .position {
-    padding: 2.5px 7px 0 5px;
-    line-height: 28px;
-    float: left;
+    height: 100%;
+    position: relative;
+    right: 2px;
+    padding: 0 7px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    display: inline-block;
 }
 
 .position i {
-    margin-left: 1px;
+    position: relative;
+    left: 0.5px;
     color: #F10215;
 }
 
-.position span {
+.position_button_a {
     position: relative;
     bottom: 2.5px;
+    right: 0.1px;
 }
 
-.position:hover {
-    background-color: white;
+.p_ctc_top_a {
+    position: relative;
+    left: 1px;
+}
+
+.position:hover,
+.myjd:hover,
+.enterprise_procurement:hover,
+.merchant_service:hover,
+.navigation:hover {
     border: 1px solid #CCCCCC;
     border-bottom: none;
+    background-color: #FFFFFF;
 }
 
-.dropdown {
-    width: 100%;
+.position_content {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 300px;
     padding: 10px;
+    line-height: 24px;
+    background-color: #FFFFFF;
     border: 1px solid #CCCCCC;
-    z-index: -1;
-    position: relative;
-    top: 10px;
-    background-color: white;
-    /* display: none; */
+    border-top: 0;
+    display: none;
 }
 
-.dropdown_position {
-    width: 100%;
-    height: 195px;
-}
-
-.dropdown_position a {
-    width: 40px;
-    height: 28px;
+.p_ctc_t_item {
+    width: 60px;
+    padding: 2px 0;
     float: left;
-    line-height: 28px;
-    margin: 0 10px;
-    text-align: left;
-    vertical-align: left;
 }
 
+.p_ctc_t_item a {
+    padding: 4px 8px;
+    text-align: left;
+}
+
+.p_ctc_t_item a:hover {
+    background-color: #F4F4F4;
+    color: #E33333;
+}
+
+.p_ctc_t_item a:active {
+    background-color: #F10215;
+    color: #FDDEE1;
+}
+
+.position:hover .position_content {
+    display: block;
+}
+
+.p_this {
+    background-color: #F10215;
+    color: #FDDEE1;
+}
+
+.p_ctc_inner {
+    border-top: 1px dashed #EEEEEE;
+    width: 85%;
+    margin: 9px auto;
+}
+
+.p_ctc_middle,
+.p_ctc_bottom {
+    margin: 10px 0 10px 10px;
+}
+
+.p_ctc_m_title,
+.p_ctc_b_title {
+    margin: 9px 1px;
+}
+
+.p_ctc_m_item,
+.p_ctc_b_item {
+    float: left;
+    width: 140px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.p_ctc_m_a,
+.p_ctc_b_a {
+    padding: 0 0 0 6px;
+}
+
+.p_ctc_this {
+    padding: 0 0 0 1px;
+}
+
+.p_ctc_m_item:hover a,
+.p_ctc_b_item:hover a {
+    color: #E33333;
+}
+
+.function {
+    float: right;
+    /* width: 728px; */
+}
+
+.ahover:hover {
+    color: #E33333;
+}
+
+.fundisplay {
+    display: inline-block;
+}
+
+.login {
+    margin-right: 8px;
+}
+
+.login_button {
+    margin-right: 9px;
+}
+
+.register_button {
+    color: #F10215;
+}
+
+.myorder,
+.phonejd,
+.barrier_free {
+    padding: 0 7px;
+}
+
+.myorder{
+    margin: 0 5px 0 0;
+}
+
+.myjd,
+.enterprise_procurement,
+.merchant_service,
+.navigation {
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 0 20px 0 7px;
+    position: relative;
+}
+
+.enterprise_procurement{
+    margin: 0 5px 0 2px;
+}
+
+.myjd i,
+.enterprise_procurement i,
+.merchant_service i,
+.navigation i {
+    position: absolute;
+    color: #999CA3;
+    height: 12px;
+    width: 12px;
+}
+
+.m_content {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 280px;
+    line-height: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-top: 0;
+    display: none;
+}
+
+.m_ctc_top,
+.m_ctc_middle,
+.m_ctc_bottom {
+    padding: 10px 0 10px 15px;
+}
+
+.m_ctc_t_item,
+.m_ctc_m_item,
+.m_ctc_b_item {
+    float: left;
+    width: 88px;
+    height: 24px;
+    line-height: 24px;
+}
+
+.m_ctc_middle,
+.m_ctc_bottom {
+    border-top: 1px solid #EEEEEE;
+    width: 100%;
+}
+
+
+.myjd:hover .m_content {
+    display: block;
+}
+
+.enterprise_procurement>a {
+    color: #F10215;
+}
+
+.ep_content {
+    position: absolute;
+    top: 30px;
+    width: 140px;
+    left: 0;
+    padding: 10px 0 10px 10px;
+    line-height: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-top: 0;
+    display: none;
+}
+
+.ep_ctc_item {
+    float: left;
+    padding-right: 11px;
+    height: 24px;
+}
+
+.enterprise_procurement:hover .ep_content {
+    display: block;
+}
+
+.ms_content {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 170px;
+    line-height: 24px;
+    padding: 10px 0;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-top: 0;
+    display: none;
+}
+
+.ms_ctc_item {
+    float: left;
+    padding-left: 15px;
+    width: 60px;
+    height: 24px;
+}
+
+.merchant_service:hover .ms_content {
+    display: block;
+}
+
+.phonejd {
+    position: relative;
+}
+
+.phonejd a{
+    margin-left: 10px;
+    margin-right: 9px;
+}
+
+.pjd_content {
+    position: absolute;
+    height: 495px;
+    top: 30px;
+    right: 0px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-top: 0;
+    display: none;
+}
+
+.trianglesign {
+    position: absolute;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #FFFFFF;
+    left: 147px;
+    top: -6px;
+}
+
+.phonejd:hover .pjd_content {
+    display: block;
+}
+
+.pjd_ctc_item img {
+    width: 180px;
+    height: 90px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.n_content {
+    position: absolute;
+    right: -84px;
+    width: 1189px;
+    padding: 15px 0;
+    top: 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-top: 0;
+    display: none;
+}
+
+.n_ctc_item {
+    float: left;
+    padding-left: 20px;
+    border-left: 1px solid #EEEEEE;
+}
+
+.n_ctc_first {
+    width: 340px;
+}
+
+.n_ctc_second,
+.n_ctc_third,
+.n_ctc_fourth {
+    width: 255px;
+}
+
+.n_ctc_f_title,
+.n_ctc_s_title,
+.n_ctc_t_title,
+.n_ctc_fth_title {
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #666;
+}
+
+.n_ctc_f_item,
+.n_ctc_s_item,
+.n_ctc_t_item,
+.n_ctc_fth_item {
+    width: 85px;
+    height: 24px;
+    float: left;
+}
+
+.navigation:hover .n_content {
+    display: block;
+}
+
+.spacer {
+    overflow: hidden;
+    margin: 11px 0 0;
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+    display: inline-block;
+}
