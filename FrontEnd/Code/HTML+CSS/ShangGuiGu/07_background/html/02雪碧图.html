@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px auto;
+        }
+
+        .box1 {
+            width: 990px;
+            height: 32px;
+            background: url(../img/verycdCut.png) repeat-x;
+        }
+
+        a {
+            display: block;
+            width: 93px;
+            height: 29px;
+            margin: 0 auto;
+        }
+
+        .a1:link {
+            background: url(../img/link.png);
+        }
+
+        .a1:hover {
+            background: url(../img/hover.png);
+        }
+
+        .a1:active {
+            background: url(../img/active.png);
+        }
+
+        .a2:link {
+            background: url(../img/btn.png);
+        }
+
+        .a2:hover {
+            background: url(../img/btn.png) center center;
+        }
+
+        .a2:active {
+            background: url(../img/btn.png) right center;
+        }
+
+        .box2 {
+            width: 128px;
+            height: 46px;
+            background: url(../img/amazon-sprite_.png);
+        }
+
+        .box3 {
+            width: 42px;
+            height: 30px;
+            background: url(../img/amazon-sprite_.png) -58px -338px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--切图-->
+    <div class="box1"></div>
+    <!--
+        关于第一次进入页面 按钮背景图会闪白的问题
+            图片属于网页中的外部资源 外部资源都需要浏览器单独按需发送请求加载 用的时候加载 不用的时候不加载
+            可以通过开发者工具中的网络选项查看加载过程
+
+    -->
+    <a class="a1" href="javascript:;"></a>
+    <!--
+        雪碧图解决闪白问题
+            可以将多个小图片统一保存到一个大图片中 这样图片会同时加载到网页中 就可以避免出现闪白问题
+            通过调整background-position来切换显示的图片 这种技术叫做雪碧图 CSS-Sprite
+        雪碧图的使用
+            确认使用的图标
+            测量图标的大小
+            根据测量结果创建元素
+            将雪碧图设置为元素的背景
+            设置偏移量显示正确的图片
+        雪碧图的特点
+            一次性加载多个图片 降低请求次数 加快访问速度 提升用户体验
+    -->
+    <a class="a2" href="javascript:;"></a>
+
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>

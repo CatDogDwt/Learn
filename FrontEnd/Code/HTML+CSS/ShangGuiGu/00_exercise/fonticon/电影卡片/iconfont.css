@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3942204 */
+  src: url('iconfont.woff2?t=1678349630700') format('woff2'),
+       url('iconfont.woff?t=1678349630700') format('woff'),
+       url('iconfont.ttf?t=1678349630700') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star:before {
+  content: "\e7df";
+}
+
+.icon-facebook:before {
+  content: "\e8fa";
+}
+

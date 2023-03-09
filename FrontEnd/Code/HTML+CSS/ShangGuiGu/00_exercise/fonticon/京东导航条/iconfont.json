@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2510117",
+      "name": "location",
+      "font_class": "location",
+      "unicode": "e76f",
+      "unicode_decimal": 59247
+    },
+    {
+      "icon_id": "7789620",
+      "name": "下拉",
+      "font_class": "xiala",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
       "icon_id": "3539016",
       "name": "Spain",
       "font_class": "Spain",

@@ -1,0 +1,23 @@
+{
+  "id": "3942204",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4766954",
+      "name": "star",
+      "font_class": "star",
+      "unicode": "e7df",
+      "unicode_decimal": 59359
+    },
+    {
+      "icon_id": "20452165",
+      "name": "facebook",
+      "font_class": "facebook",
+      "unicode": "e8fa",
+      "unicode_decimal": 59642
+    }
+  ]
+}

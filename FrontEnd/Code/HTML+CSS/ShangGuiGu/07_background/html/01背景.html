@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            background-color 背景颜色
+            background-image 背景图片(加引号防止特殊路径 也可以不加)
+                如果背景图片小于元素 则背景图片会自动在元素中平铺 将元素铺满
+                如果背景图片大于元素 则部分背景图片会被遮挡
+                如果背景图片和元素相同 则会正常显示
+            background-repeat 设置背景图片的重复方式
+                可选值
+                    repeat 默认值 沿X轴和Y轴平铺
+                    repeat-x 沿X轴平铺
+                    repeat-y 沿y轴平铺
+                    no-repeat 背景图片不重复
+            background-position 设置背景图片的位置
+                可选值
+                    top left right bottom center
+                        (实际上是一个九宫格)
+                        使用方位词时 通常指定两个值(只写一个值 第二个值默认为center)
+                    偏移量
+                        水平偏移量 垂直偏移量
+            background-clip 设置背景的范围
+                可选值
+                    border-box 默认值 背景会出现在边框的下边
+                    padding-box 背景只会出现在内容区和内边距
+                    content-box 背景只会出现在内容区
+            background-origin 背景图片偏移量计算的原点
+                可选值
+                    padding-box 默认值 背景图片的原始偏移量从内边距开始计算
+                    content-box 背景图片的原始偏移量从内容区开始计算
+                    border-box 背景图片的原始偏移量从边框处开始计算
+            background-size 背景图片的尺寸
+                可选值
+                    cover 图片比例不变 将元素铺满
+                    contain 图片比例不变 将图片在元素中完整显示
+                    自己设置
+                        第一个值表示宽度 第二个值表示高度(只设置一个值 则高度会自动设置auto)
+            background-attachment 背景图片是否跟随元素移动
+                可选值
+                    scroll 默认值 背景图片跟随元素移动
+                    fixed 背景图片固定在页面中 此时与定位中的fixed一致 都是相对于浏览器视口进行定位
+
+            简写属性
+                background: #bfa url("") center center/content border-box content-box no-repeat;
+                    background-size的值必须写在position后面 且需要使用/隔开
+                    background-origin的值必须写在background-clip前
+                    其它样式无顺序要求 也无必填要求
+        */
+        .box1{
+            width: 240px;
+            height: 240px;
+            background-color: #bfa;
+            background-image: url("../img/Rikka.png");
+            background-repeat:no-repeat;
+            display: inline-block;
+
+            background-position: top center;
+        }
+        .box2{
+            border: 10px double red;
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: #bfa;
+            background-image: url("../img/Rikka.png");
+            background-repeat:no-repeat;
+            display: inline-block;
+
+            background-position: 0 0;
+            background-clip: border-box;
+            background-origin: border-box;
+        }
+        .box3{
+            width: 200px;
+            height: 400px;
+            background-color: #bfa;
+            background-image: url("../img/Rikka.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: inline-block;
+            overflow: scroll;
+        }
+
+        .box4{
+            width: 200px;
+            height: 800px;
+            background-image: url(../../01_introduce/img/图片01.png);
+            background-repeat: no-repeat;
+            /* background-size: 15%; */
+            /* background-position: 99px 56px; */
+
+            background-size: 2%;
+            background-position: 595px 62px;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">
+        <div class="box4">
+            RikkaRikkaRikkaRikka<br>
+            RikkaRikkaRikkaRikka<br>
+            RikkaRikkaRikkaRikka<br>
+            RikkaRikkaRikkaRikka<br>
+            RikkaRikkaRikkaRikka<br>
+            RikkaRikkaRikkaRikka<br>
+            RikkaRikkaRikkaRikka<br>
+        </div>
+    </div>
+</body>
+</html>

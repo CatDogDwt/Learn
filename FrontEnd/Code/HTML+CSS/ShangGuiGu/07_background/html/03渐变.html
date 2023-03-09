@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../03_layout/css/reset.css">
+    <style>
+        /*
+        https://developer.mozilla.org/zh-CN/docs/Web/CSS/background
+            渐变
+                渐变是图片 需要通过background-image来设置
+                线性渐变 linear-gradient(方向,颜色 位置,颜色 位置,颜色 位置,...,颜色 位置);
+                    颜色沿着一条直线发生变化
+                        方向
+                            xxdeg 度数
+                            turn 圈
+                            to left
+                            to right
+                            to bottom
+                            to top
+                            ...
+                        颜色
+                            渐变可以指定多个颜色 多个颜色默认平均分布
+                            指定颜色渐变分布
+                径向渐变 radial-gradient(大小 at 位置,颜色 位置,颜色 位置,颜色 位置,...,颜色 位置);
+                    颜色呈放射性变化 变化随着容易大小改变
+                        大小
+                            circle 正圆
+                            elipse 椭圆
+                            ...可参照文档
+                        位置
+                            top left center right bottom
+                平铺线性渐变 repeating-linear-gradient()
+                平铺径向渐变 repeating-radial-gradient();
+                            
+        */
+        .box1 {
+            background: linear-gradient(30deg, rgba(255, 192, 203, .1), rgba(255, 0, 0, 0.2), rgba(255, 192, 203, .3), rgba(255, 0, 0, 0.2), rgba(255, 192, 203, .5), rgba(255, 0, 0, 0.2), rgba(255, 192, 203, .7));
+
+
+            height: 500px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            backdrop-filter: blur(30px);
+            box-shadow: 0px 10px 15px rgba(140, 59, 232, 0.2);
+        }
+
+        .box2 {
+            background: radial-gradient(black,gold,black,black,gold,black,black,gold,black,black,gold,black);
+            height: 170px;
+            width: 45%;
+            border-radius: 50%;
+            margin: 55% auto 35%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>
