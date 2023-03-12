@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            表格样式
+                解决指定边框样式时 边框之间通常会有缝隙的问题
+                    border-spacing 设置边框间距(副作用—重叠部分加粗) 
+                        或
+                    border-collapse 设置边框的合并 令多重边框合并成一个
+        */
+        table,
+        th,
+        td {
+            border: 1px dashed red;
+        }
+
+        table {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+
+            border-collapse: collapse;
+        }
+
+        /*隔行变色*/
+        tr:nth-child(even) {
+            background-color: #bfa;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        通过table标签创建表格
+        长表格
+            将一个表格分为三个部分
+            thead 头部
+            tbody 主体
+            tfoot 底部
+
+            th 表示头部单元格
+    -->
+    <table>
+        <thead>
+            <!--
+                在table中使用tr表示表格的行
+                    tr是table的子元素吗？
+                        如果直接使用tr创建表格 浏览器会自动将tr放到一个由浏览器创建的tbody中
+                        所以tr不是tbody的子元素 但是tr是thead,tbody,tfoot的子元素
+            -->
+            <tr>
+                <th>日期</th>
+                <th>收入</th>
+                <th>支出</th>
+                <th>合计</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!--通过rowspan纵向合并单元格-->
+                <td rowspan="3">2023.03.10</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <!--
+                    在tr中使用td表示一个单元格
+                        元素在td中默认是垂直居中的 可以通过vertical-align设置
+                -->
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <!--通过colspan横向合并单元格-->
+                <td colspan="2"></td>
+                <td>合计：</td>
+                <td>0</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>

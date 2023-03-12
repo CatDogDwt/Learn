@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3944825 */
+  src: url('iconfont.woff2?t=1678437731554') format('woff2'),
+       url('iconfont.woff?t=1678437731554') format('woff'),
+       url('iconfont.ttf?t=1678437731554') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xiangzuojiantou:before {
+  content: "\e660";
+}
+
+.icon-kefu:before {
+  content: "\e635";
+}
+
+.icon-24huafei:before {
+  content: "\e66f";
+}
+
+.icon-xiangyoujiantou:before {
+  content: "\e65f";
+}
+
+.icon-simqia:before {
+  content: "\e728";
+}
+
+.icon-jiantouyou:before {
+  content: "\e62d";
+}
+
+.icon-geren:before {
+  content: "\e600";
+}
+
+.icon-sousuo:before {
+  content: "\eafe";
+}
+
+.icon-gouwuche:before {
+  content: "\e607";
+}
+
+.icon--exchange-:before {
+  content: "\e60d";
+}
+
+.icon-24gl-building2:before {
+  content: "\e831";
+}
+
+.icon-shijian:before {
+  content: "\e636";
+}
+
+.icon-xiuli:before {
+  content: "\e624";
+}
+
+.icon-F_round:before {
+  content: "\e632";
+}
+
+.icon-shouji:before {
+  content: "\e638";
+}
+
+.icon-icon-xiaomiguishu:before {
+  content: "\e613";
+}
+

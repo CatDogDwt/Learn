@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        form 表单
+            在现实生活中表单用于提交数据
+            网页中的表单用于将本地数据提交给远程服务器
+            属性：
+                action 表单提交的服务器地址
+    -->
+    <form action="./target.html" autocomplete="off">
+        <!--
+            文本框
+            注意：数据要提交到服务器中，必须要为元素指定一个name属性
+        -->
+        <input type="text" name="sin" value="たかなし りっか"><br>
+        <!--密码框-->
+        <input type="password" name="password" id="" value="123456"><br>
+        <!--
+            单选按钮
+                指定value属性作为数据提交
+                checked可以将单选按钮设置为默认选中
+        -->
+        <input type="radio" name="radio" id="" value="1" checked>
+        <input type="radio" name="radio" id="" value="2">
+        <input type="radio" name="radio" id="" value="3">
+        <input type="radio" name="radio" id="" value="4">
+        <input type="radio" name="radio" id="" value="5">
+        <input type="radio" name="radio" id="" value="6"><br>
+        <!--多选框-->
+        <input type="checkbox" name="cb" value="7" checked>
+        <input type="checkbox" name="cb" value="8">
+        <input type="checkbox" name="cb" value="9">
+        <input type="checkbox" name="cb" value="10">
+        <input type="checkbox" name="cb" value="11">
+        <input type="checkbox" name="cb" value="12"><br>
+        <!--下拉列表-->
+        <select name="select" id="">
+            <option value="13">爆裂吧，现实！</option>
+            <option value="14"> 粉碎吧，精神！</option>
+        </select>
+        <br>
+        <!--input提交按钮 input重置按钮-->
+        <input type="submit" value="Banishiment this world!">
+        <input type="reset" value="重置"><br>
+        <!--button提交按钮 button重置按钮-->
+        <button type="submit">Banishiment this world!</button>
+        <button type="reset">重置</button>
+    </form>
+    <!--
+    补充
+        autocomplete 自动补全
+            可选值
+                off 关
+                on 开
+        readonly 只读 数据会提交
+        disabled 禁用 数据不会提交
+        autofocus 表单项自动获取焦点
+        
+    -->
+</body>
+
+</html>

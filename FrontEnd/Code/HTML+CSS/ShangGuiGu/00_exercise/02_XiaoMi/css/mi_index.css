@@ -1,0 +1,271 @@
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top_nav {
+    height: 40px;
+    width: 100%;
+    background-color: #333333;
+    font-size: 12px;
+}
+
+.top_nav a {
+    width: 100%;
+    color: #b0b0b0;
+    padding: 0 8px;
+    border-right: 1px solid #424242;
+}
+
+.nbr {
+    border-right: none !important;
+}
+
+.top_nav_content {
+    width: 80%;
+    line-height: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.top_nav_left {
+    float: left;
+}
+
+.top_nav_left li {
+    float: left;
+    color: #b0b0b0;
+}
+
+.top_nav_right {
+    float: right;
+}
+
+.top_nav_right li {
+    float: left;
+}
+
+.shoppingcart {
+    width: 120px;
+    text-align: center;
+}
+
+header {
+    height: 55px;
+    width: 80%;
+    margin: 22px auto 23px;
+}
+
+.logo {
+    display: inline-block;
+    margin-right: 190px;
+}
+
+.logo svg {
+    height: 55px;
+    width: 55px;
+}
+
+header nav {
+    display: inline-block;
+    margin-left: 7px;
+}
+
+header nav ul li {
+    float: left;
+    font-size: 16px;
+    padding: 0 20px 0 0;
+    line-height: 55px;
+}
+
+.search {
+    float: right;
+    width: 296px;
+}
+
+.searchinput,
+.searchbutton {
+    border: 1px solid #E1E1E1;
+    outline: none;
+    vertical-align: middle;
+}
+
+.searchinput {
+    width: 200px;
+    height: 38px;
+    float: left;
+    padding: 5px 20px;
+}
+
+.searchbutton {
+    height: 49px;
+    width: 52px;
+    background-color: white;
+}
+
+.searchbutton svg {
+    color: #616161;
+    font-size: 28px;
+}
+
+.rightnav{
+    position: fixed;
+    right: 128px;
+    bottom: 64px;
+}
+
+.rightnav ul{
+    height: 206px;
+    width: 26px;
+}
+
+.rightnav li{
+    width: 26px;
+    padding: 15px 5px;
+    text-align: center;
+    border: 1px solid #CFCCCA;
+}
+
+main {
+    height: 644px;
+    width: 80%;
+    margin: 0 auto 30px;
+}
+
+.maintop {
+    height: 460px;
+    width: 100%;
+}
+
+.maintop aside {
+    float: left;
+    width: 234px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(30px);
+    font-size: 16px;
+    position: relative;
+    padding: 20px 0;
+}
+
+.maintop aside li {
+    height: 42px;
+    padding: 0 30px;
+    color: #E1E1E1;
+}
+
+.maintop aside li span {
+    line-height: 42px;
+}
+
+.maintop aside li svg {
+    float: right;
+    height: 42px;
+}
+
+.maintop section {
+    width: 1226px;
+    height: 460px;
+    background: url(../images/XiaoMi.jpg) center center/992px 460px;
+}
+
+.slb,
+.srb {
+    position: relative;
+    top: 50%;
+    display: inline;
+    font-size: 28px;
+    color: #CED4D5;
+}
+
+.srb {
+    float: right;
+}
+
+.sbb {
+    width: 200px;
+    position: relative;
+    left: 67%;
+    display: inline-block;
+    top: 88%;
+}
+
+.sbb ul li {
+    height: 9px;
+    width: 9px;
+    border: 3px solid rgba(255, 255, 255, .4);
+    background-color: rgba(0, 0, 0, .4);
+    float: left;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.mainbottom {
+    height: 170px;
+    margin-top: 14px;
+}
+
+.mainbottom aside {
+    height: 170px;
+    float: left;
+    width: 234px;
+    margin-right: 14px;
+}
+
+.mainbottom table {
+    height: 170px;
+    width: 234px;
+    background: #5F5750;
+    color: #CFCCCA;
+}
+
+.mainbottom td {
+    width: 76px;
+    height: 84px;
+}
+
+.atop {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+    padding-top: 10px;
+}
+
+.abottom {
+    display: block;
+    font-size: 13px;
+    text-align: center;
+}
+
+.mainbottom section {
+    float: right;
+    height: 170px;
+}
+
+.mainbottom section div {
+    float: left;
+    height: 170px;
+    width: 316px;
+}
+
+.mainbottom section div:nth-child(2) {
+    margin: 0 15px;
+}
+
+.normal {
+    background: url(../images/normal.jpg) 0 0/316px 170px;
+}
+
+.flagship {
+    background: url(../images/flagship.jpg) 0 0/316px 170px;
+}
+
+.bracelet {
+    background: url(../images/bracelet.jpg) 0 0/316px 170px;
+}
