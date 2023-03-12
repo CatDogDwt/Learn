@@ -17,7 +17,7 @@
 .c_img {
     height: 158px;
     width: 100%;
-    background: url(../images/0701.jpg);
+    background: url(../images/0101.jpg);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -55,7 +55,7 @@
     width: 120px;
     height: 30px;
     display: inline-block;
-    background: url(../images/0702.png) -480px;
+    background: url(../images/0102.png) -480px;
 }
 
 .c_button ul li{
