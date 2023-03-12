@@ -1,0 +1,12 @@
+.box1{
+    height: 271px;
+    width: 132px;
+    margin: 150px auto;
+    background-image: url(../images/bigtap-mitu-queue-big.png);
+    background-position: 0 0;
+    transition: .3s steps(3);
+}
+
+.box1:hover{
+    background-position: -396px 0;
+}

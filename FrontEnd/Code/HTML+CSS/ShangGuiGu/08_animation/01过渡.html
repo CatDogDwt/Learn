@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box1 {
+            width: 700px;
+            background-color: silver;
+            overflow: hidden;
+            margin: 50px auto;
+            padding: 10px 0;
+        }
+
+        .box1 div {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+        }
+
+        .box2 {
+            background-color: #bfa;
+        }
+
+        .box3 {
+            background-color: orangered;
+        }
+
+        .box4 {
+            background-color: blueviolet;
+        }
+
+        .box5 {
+            background-color: coral;
+        }
+
+        .box6 {
+            background-color: crimson;
+        }
+
+        .box7 {
+            background-color: gold;
+        }
+
+        .box8 {
+            background-color: forestgreen;
+        }
+
+        .box9 {
+            background-color: lightslategray;
+        }
+
+        /*
+            过渡 transition
+                过渡可以指定一个属性发生变化时切换的方式 过渡必须要从一个有效数值向另一个有效数值过渡
+                    可选值
+                        transition-property 指定要过渡的属性
+                            多个属性使用逗号隔开 所有属性加all
+                        transition-duration 指定过渡的持续时间
+                            时间单位：s 和 ms 1s = 1000ms
+                        transition-timing-function 过渡的时序函数 指定过渡的执行方式
+                            ease 默认值
+                            linear 匀速
+                            ease-in 加速
+                            ease-out 减速
+                            ease-in-out 先加速 后减速
+                            cubic-bezier ()未指定时序函数 https://cubic-bezier.com
+                            steps(次数,何时执行) 分步执行过渡效果
+                                何时执行 end、start
+                        transition-delay 过渡效果的延迟 在同时设置所有相关属性时 则两个时间中第一个是持续时间 第二个是延迟
+        */
+
+        .box1:hover .box2 {
+            margin-left: 600px;
+            transition: margin-left 1s;
+        }
+
+        .box1:hover .box3 {
+            margin-left: 600px;
+            transition: all 1s linear;
+        }
+
+        .box1:hover .box4 {
+            margin-left: 600px;
+            transition: all 1s ease-in;
+        }
+
+        .box1:hover .box5 {
+            margin-left: 600px;
+            transition: all 1s ease-out;
+        }
+
+        .box1:hover .box6 {
+            margin-left: 600px;
+            transition: all 1s ease-in-out;
+        }
+
+        .box1:hover .box7 {
+            margin-left: 600px;
+            transition: all 1s cubic-bezier(1, -0.82, 0, 1.1);
+        }
+
+        .box1:hover .box8 {
+            margin-left: 600px;
+            transition: all 1s cubic-bezier(1, -0.82, 0, 1.1) ;
+            transition-timing-function: steps(3,end);
+        }
+
+        .box1:hover .box9 {
+            margin-left: 600px;
+            transition: all 1s cubic-bezier(1,1.89,.09,1.89) 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+    </div>
+</body>
+
+</html>
