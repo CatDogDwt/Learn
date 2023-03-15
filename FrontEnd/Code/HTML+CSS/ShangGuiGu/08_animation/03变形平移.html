@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            transform 变形不会影响页面的布局
+                平移元素的百分比是相对于自身计算的
+                可选值
+                    平移
+                        translate(X Y)
+                        translateX() 沿X轴平移
+                        translateY() 沿Y轴平移
+                        translateZ() 沿Z轴平移
+                            调整元素在Z轴的位置(正常情况下 即元素和人眼的距离)
+                            距离越大 元素离屏幕越近 
+                            需要设置视距才能看到移动
+                        perspective() 默认情况网页不支持透视 如果需要看见效果 则必须要设置网页的视距
+                    旋转
+                        rotateX() 沿X轴旋转
+                        rotateY() 沿Y轴旋转
+                        rotateZ() 沿Z轴旋转
+                            deg turn
+                        backface-visibility 旋转后是否显示元素背面
+        */
+
+        body {
+            perspective: 800px;
+        }
+
+        .outer {
+            height: 400px;
+            width: 415px;
+            margin: 200px auto;
+            background-color: orange;
+            transition: all .5s;
+
+        }
+
+        .outer:hover {
+            transform: translateZ(200px);
+        }
+
+        .box1 {
+            font-size: 53px;
+            width: 320px;
+            height: 200px;
+            background-color: orange;
+            margin: 196px auto 0;
+            text-align: center;
+            transition: all .5s;
+        }
+
+        .box1:hover {
+            transform: translate(0, -50px);
+            box-shadow: 0 20px 10px rgba(255, 0, 51, 0.5);
+        }
+
+        .box2 {
+            background-color: orange;
+            /* 通过transform定位居中 */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* 多个元素用空格隔开 */
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .box3,
+        .box4,
+        .box5,
+        .box6 {
+            background-color: orange;
+            height: 100px;
+            width: 100px;
+            margin: 50px auto;
+            transition: all .5s;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            color: orange;
+            font:  28px/3.6 myfont;
+        }
+
+        .box3:hover {
+            transform: perspective(800px) rotateX(45deg);
+
+            box-shadow: 0 10px 20px rgba(255, 0, 51, 0.5);
+            background-color: orangered;
+            cursor: pointer;
+        }
+
+        .box4:hover {
+            transform: perspective(800px) rotateY(45deg);
+
+            box-shadow: 0 10px 20px rgba(255, 0, 51, 0.5);
+            background-color: orangered;
+            cursor: pointer;
+        }
+
+        .box5:hover {
+            transform: perspective(800px) rotateZ(45deg);
+
+            box-shadow: 0 10px 20px rgba(255, 0, 51, 0.5);
+            background-color: orangered;
+            cursor: pointer;
+        }
+
+        .box6:hover {
+            transform:perspective(800px) rotateX(45deg) rotateY(180deg) rotateZ(45deg);
+
+            box-shadow: 0 10px 20px rgba(255, 0, 51, 0.5);
+            background-color: orangered;
+            cursor: pointer;
+        }
+
+        @font-face {
+            font-family: 'myfont';
+            src: url(../06_font/font/aamaketi.ttf) format('truetype');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box1">变形不会影响页面的布局</div>
+        <div class="box2">只被内容撑开的box 通过transform定位居中</div>
+        <div class="box3">福</div>
+        <div class="box4">福</div>
+        <div class="box5">福</div>
+        <div class="box6">福</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.mitu{
+    height: 271px;
+    width: 132px;
+    margin: 150px auto;
+    background-image: url(../images/bigtap-mitu-queue-big.png);
+    animation: mitu infinite .5s steps(3) alternate;
+}
+
+@keyframes mitu {
+    from{
+        background-position: 0 0;
+    }
+
+    to{
+        background-position: -396px 0;
+    }
+}

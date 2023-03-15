@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::after,
+        .clearfix::before{
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .box1 {
+            width: 700px;
+            overflow: hidden;
+            margin: 50px auto;
+            background: rgba(218, 153, 153, 0.1);
+            text-align: center;
+            backdrop-filter: blur(30px);
+            border: 1px solid purple;
+            box-shadow: 0 0px 15px rgba(183, 180, 180, 0.3);
+        }
+
+        .shadow{
+            height: 15px;
+            width: 60%;
+            border-radius: 100%;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin: 256px 0 0 43px;
+            animation: shadow .5s steps(2)  infinite;
+        }
+
+        /*
+            动画 animation
+                和过渡类似 都可以实现一些动画效果 不同的是过渡需要在某个属性发生变化时才会触发 动画会自动触发动态效果
+                设置动画效果 需要先设置关键帧 关键帧设置了动画执行的每一个步骤
+                animation-name 指定关键帧
+
+                animation-duration 动画执行持续时间
+                animation-delay 动画执行延时时间 在同时设置所有相关属性时 则两个时间中第一个是持续时间 第二个是延迟
+                animation-timing-function 动画的时序函数 指定动画的执行方式
+                animation-iteration-count 迭代 动画的执行次数
+                    可选值
+                        数字 按指定次数执行
+                        infinite 无限执行
+                animation-direction 动画的运行方向
+                    可选值
+                        normal 默认值 从form向to运行
+                        reverse 从to向form运行
+                        alternate 从form向to运行 重复执行时会反向执行
+                        alternate-reverse 从to向form运行 重复执行时会反向执行
+                animation-play-state 设置动画的执行状态
+                    可选值
+                        running 默认值 动画执行
+                        paused 动画暂停
+                animation-fill-mode 动画的填充模式
+                    可选值
+                        none 默认值 动画执行完毕 元素回到初始位置
+                        forwards 动画执行完毕 元素会停止在动画结束的位置
+                        backwards 动画延时等待时 元素就会处于开始位置
+                        both 结合forwards和backwards
+        */
+
+        /*指定关键帧  关键帧名*/
+        @keyframes box2identifier {
+
+            /*from表示动画的开始位置 也可以使用0%或7.5%...*/
+            from {
+                margin-left: -100px;
+            }
+
+            /*to表示动画的结束位置 也可以使用100%或38.5%...*/
+            to {
+                margin-left: 700px;
+                background-color: papayawhip;
+            }
+
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+            background-color: palevioletred;
+            margin-left: -100px;
+            animation: cubic-bezier(.64, -0.92, .36, 1.62) box2identifier 3s 1s infinite alternate;
+        }
+
+        .runningboy {
+            width: 256px;
+            height: 300px;
+            margin: 0 0 20px -256px;
+            background: url(../00_exercise/04_过渡动画练习/images/bg2.png) no-repeat;
+            animation: runningboy .6s steps(5) infinite,runningboyforward 3s steps(24) infinite;
+        }
+
+        @keyframes runningboy {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -1280px 0;
+            }
+        }
+
+        @keyframes runningboyforward{
+            from {
+                margin-left: -256px;
+            }
+
+            to {
+                margin-left: 1024px;
+            }
+        }
+
+        @keyframes shadow{
+            form{
+                height: 15px;
+                width: 60%;
+                margin: 256px 0 0 43px;
+            }
+            50%{
+                height: 6px;
+                width: 15%;
+                margin: 256px 0 0 86px;
+            }
+            to{
+                height: 15px;
+                width: 60%;
+                margin: 256px 0 0 43px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="runningboy clearfix">
+            <div class="shadow"></div>
+        </div>
+    </div>
+</body>
+
+</html>

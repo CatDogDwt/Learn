@@ -1,0 +1,91 @@
+body {
+    perspective: 800px;
+}
+
+.clock {
+    width: 512px;
+    height: 512px;
+    border-radius: 100%;
+    margin: 50px auto;
+    background: url(../images/bg3.jpg) center center/cover;
+    position: relative;
+}
+
+.hourinner,
+.minuteinner,
+.secondsinner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.hourinner{
+    animation: hour 43200s steps(60) infinite;
+    /* animation: hour 43200s steps(60) infinite; */
+    /* animation: hour 144s steps(60) infinite; */
+}
+
+@keyframes hour {
+    form{
+        transform: rotateZ(0deg);
+    }
+
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+.minuteinner{
+    animation: minute 3600s steps(60) infinite;
+    /* animation: minute 1800s steps(60) infinite; */
+    /* animation: minute 6s steps(60) infinite; */
+}
+
+@keyframes minute {
+    form{
+        transform: rotateZ(0deg);
+    }
+
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+.secondsinner{
+    animation: seconds 60s steps(60) infinite;
+    /* animation: seconds 30s steps(60) infinite; */
+    /* animation: seconds 0.1s steps(60) infinite; */
+}
+
+@keyframes seconds {
+    form{
+        transform: rotateZ(0deg);
+    }
+
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+.hourpointer,
+.minutepointer,
+.secondspointer {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-100%);
+}
+
+.hourpointer {
+    border-bottom: 100px solid #ED4141;
+}
+
+.minutepointer {
+    border-bottom: 145px solid #ED4141;
+}
+
+.secondspointer {
+    border-bottom: 208px solid #ED4141;
+}
