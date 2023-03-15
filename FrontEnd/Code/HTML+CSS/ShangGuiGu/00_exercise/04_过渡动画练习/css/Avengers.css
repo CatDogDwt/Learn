@@ -1,0 +1,72 @@
+.outer {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 65%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
+.outer div {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.one {
+    background-image: url(../images/Avengers/1.jpg);
+    transition: all 1s;
+}
+
+.outer:hover .one {
+    transform: rotateX(-45deg) rotateY(45deg) translate(70px, -45px) translateZ(-70px);
+}
+
+.two {
+    background-image: url(../images/Avengers/2.jpg);
+    transition: all 1s 1s;
+}
+.outer:hover .two {
+    transform: rotateX(45deg) rotateY(45deg) translate(0px, -2px) translateZ(200px);
+}
+
+.three {
+    background-image: url(../images/Avengers/3.jpg);
+    transition: all 1s 2s;
+}
+.outer:hover .three {
+    transform: rotateX(45deg) rotateZ(45deg) translate(0px, -101px) translateZ(102px);
+}
+
+.four {
+    background-image: url(../images/Avengers/4.jpg);
+    transition: all 1s 3s;
+}
+
+.outer:hover .four {
+    transform: rotateX(45deg) rotateZ(45deg) translate(2px, -98px) translateZ(-95px);
+}
+
+
+.five {
+    background-image: url(../images/Avengers/5.jpg);
+    transition: all 1s 5s;
+}
+
+.outer:hover .five {
+    transform: rotateX(45deg) rotateY(45deg) translate(0, -3px) translateZ(0px);
+}
+
+.six {
+    background-image: url(../images/Avengers/6.jpg);
+    transition: all 1s 4s;
+}
+
+.outer:hover .six {
+    transform: rotateX(-45deg) rotateY(45deg) translate(101px, 0px) translateZ(99px);
+}

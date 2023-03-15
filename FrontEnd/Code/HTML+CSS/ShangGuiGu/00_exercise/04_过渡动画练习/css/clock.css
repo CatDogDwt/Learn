@@ -1,4 +1,4 @@
-body {
+.outer{
     perspective: 800px;
 }
 
@@ -9,6 +9,7 @@ body {
     margin: 50px auto;
     background: url(../images/bg3.jpg) center center/cover;
     position: relative;
+    transition: transform .5s,background .2s;
 }
 
 .hourinner,
@@ -21,8 +22,6 @@ body {
 
 .hourinner{
     animation: hour 43200s steps(60) infinite;
-    /* animation: hour 43200s steps(60) infinite; */
-    /* animation: hour 144s steps(60) infinite; */
 }
 
 @keyframes hour {
@@ -35,10 +34,22 @@ body {
     }
 }
 
+.outer:hover .hourinner{
+    animation: hourBacKFace linear 43200s infinite;
+}
+
+@keyframes hourBacKFace {
+    form{
+        transform: rotateZ(0deg);
+    }
+
+    to{
+        transform: rotateZ(-360deg);
+    }
+}
+
 .minuteinner{
     animation: minute 3600s steps(60) infinite;
-    /* animation: minute 1800s steps(60) infinite; */
-    /* animation: minute 6s steps(60) infinite; */
 }
 
 @keyframes minute {
@@ -51,10 +62,22 @@ body {
     }
 }
 
+.outer:hover .minuteinner{
+    animation: minuteBacKFace linear 3600s infinite;
+}
+
+@keyframes minuteBacKFace {
+    form{
+        transform: rotateZ(0deg);
+    }
+
+    to{
+        transform: rotateZ(-360deg);
+    }
+}
+
 .secondsinner{
-    animation: seconds 60s steps(60) infinite;
-    /* animation: seconds 30s steps(60) infinite; */
-    /* animation: seconds 0.1s steps(60) infinite; */
+    animation: seconds 60s  steps(60) infinite;
 }
 
 @keyframes seconds {
@@ -64,6 +87,20 @@ body {
 
     to{
         transform: rotateZ(360deg);
+    }
+}
+
+.outer:hover .secondsinner{
+    animation: secondsBacKFace linear 60s infinite;
+}
+
+@keyframes secondsBacKFace {
+    form{
+        transform: rotateZ(0deg);
+    }
+
+    to{
+        transform: rotateZ(-360deg);
     }
 }
 
@@ -79,13 +116,18 @@ body {
 }
 
 .hourpointer {
-    border-bottom: 100px solid #ED4141;
+    border-bottom: 100px solid black;
 }
 
 .minutepointer {
-    border-bottom: 145px solid #ED4141;
+    border-bottom: 145px solid black;
 }
 
 .secondspointer {
     border-bottom: 208px solid #ED4141;
+}
+
+.outer:hover .clock{
+    background: url(../images/1024px-Analogue_clock_face.svg.png) center center/cover;
+    transform: rotateY(180deg);
 }
