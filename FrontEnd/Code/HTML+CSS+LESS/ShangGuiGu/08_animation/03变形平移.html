@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .clearfix::after,
+        .clearfix::before{
+            content: '';
+            display: table;
+            clear: both;
+        }
         /*
             transform 变形不会影响页面的布局
                 平移元素的百分比是相对于自身计算的
@@ -26,19 +32,42 @@
                         rotateZ() 沿Z轴旋转
                             deg turn
                         backface-visibility 旋转后是否显示元素背面
+                    设置3D变形效果
+                        preserve-3d
+                    缩放 网易新闻练习中的放大缩小图片
+                        scale() 双方向缩放
+                        scaleX() 水平缩放
+                        scaleY() 垂直缩放
+                        scaleZ() Z轴缩放
+            transform-origin 变形原点 指定变形开始的位置
+                可选值
+                    center 默认值
+                    XXpx,XXpx 指定位置
         */
 
         body {
             perspective: 800px;
         }
 
+        .outerter{
+            height: 750px;
+            width: 800px;
+            background-color: aquamarine;
+            margin: 0 auto;
+            perspective: 800px;
+            transition: all 1s;
+        }
+
+        .outerter:hover{
+            transform: scale(0.8);
+        }
+
         .outer {
             height: 400px;
             width: 415px;
-            margin: 200px auto;
             background-color: orange;
             transition: all .5s;
-
+            margin: 200px auto;
         }
 
         .outer:hover {
@@ -83,7 +112,7 @@
             text-align: center;
             line-height: 100px;
             color: orange;
-            font:  28px/3.6 myfont;
+            font: 28px/3.6 myfont;
         }
 
         .box3:hover {
@@ -111,7 +140,7 @@
         }
 
         .box6:hover {
-            transform:perspective(800px) rotateX(45deg) rotateY(180deg) rotateZ(45deg);
+            transform: perspective(800px) rotateX(45deg) rotateY(180deg) rotateZ(45deg);
 
             box-shadow: 0 10px 20px rgba(255, 0, 51, 0.5);
             background-color: orangered;
@@ -126,15 +155,16 @@
 </head>
 
 <body>
-    <div class="outer">
-        <div class="box1">变形不会影响页面的布局</div>
-        <div class="box2">只被内容撑开的box 通过transform定位居中</div>
-        <div class="box3">福</div>
-        <div class="box4">福</div>
-        <div class="box5">福</div>
-        <div class="box6">福</div>
+    <div class="outerter clearfix">
+        <div class="outer">
+            <div class="box1">变形不会影响页面的布局</div>
+            <div class="box2">只被内容撑开的box 通过transform定位居中</div>
+            <div class="box3">福</div>
+            <div class="box4">福</div>
+            <div class="box5">福</div>
+            <div class="box6">福</div>
+        </div>
     </div>
-
 </body>
 
 </html>

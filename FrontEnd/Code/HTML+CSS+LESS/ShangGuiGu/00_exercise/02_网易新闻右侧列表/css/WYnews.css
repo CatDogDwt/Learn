@@ -27,7 +27,6 @@
 
 .box2>h2>a:hover{
     color: red;
-    transition: .2s ease;
     cursor: pointer;
 }
 
@@ -36,7 +35,7 @@
 }
 
 .box2>div>a>img{
-    transition: .2s ease;
+    transition: .2s linear;
 }
 
 .box2>div>a>img:hover{
