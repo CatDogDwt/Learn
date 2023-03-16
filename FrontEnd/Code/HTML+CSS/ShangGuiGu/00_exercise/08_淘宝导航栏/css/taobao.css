@@ -1,0 +1,48 @@
+.nav {
+  height: 215px;
+  width: 520px;
+  display: flex;
+  margin: 200px auto;
+  flex-direction: column;
+}
+.topinner,
+.topinner ul,
+.downinner ul {
+  height: 107.5px;
+  width: 520px;
+}
+.topinner ul {
+  display: flex;
+}
+.topinner li {
+  height: 107.5px;
+  width: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.topinner img {
+  height: 71.66666667px;
+  width: 86.66666667px;
+}
+.downinner {
+  height: 107.5px;
+  width: 520px;
+}
+.downinner ul {
+  display: flex;
+}
+.downinner li {
+  height: 107.5px;
+  width: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.downinner img {
+  height: 71.66666667px;
+  width: 86.66666667px;
+}
+/*# sourceMappingURL=./taobao.css.map */

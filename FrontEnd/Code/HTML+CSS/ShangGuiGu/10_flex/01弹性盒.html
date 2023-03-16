@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /*
+            flex弹性盒 一种布局手段 主要用于代替浮动完成页面的布局 flex可以使元素跟随页面大小的改变而改变
+                弹性容器
+                    使用弹性盒必须先将一个元素设置为弹性容器 通过display设置
+                    display:flex 设置为块级弹性容器
+                    display:inline-flex 设置为行内弹性容器
+                    主轴 弹性元素的排列方向
+                    侧轴 与主轴垂直方向的叫做侧轴
+                        属性
+                            flex-direction用于指定弹性元素的排列方式(弹性容器的属性)
+                                可选值
+                                    row 默认值 行 主轴在容器中从左向右排列
+                                        row-reverse 主轴在容器中从右向左排列
+                                    column 主轴在容器中自上向下排列
+                                        column-reverse 主轴在容器中自下向上排列
+                            flex-wrap 设置弹性元素是否自动换行
+                                可选值
+                                    nowrap 默认值 不会自动换行
+                                    wrap 沿辅轴方向自动换行
+                                    wrap-reverse 沿辅轴方向反向换行
+                            flex-flow wrap和direction的简写属性
+                            justify-content 主轴元素如何排列
+                                可选值
+                                    flex-start 默认值 元素沿主轴起始边排列
+                                    flex-end 元素沿主轴终边排列
+                                    center 元素沿主轴居中排列
+                                    space-around 空白分配至元素两侧
+                                    space-evenly 空白分配到元素单侧
+                                    space-between 空白分配到元素间
+                            align-items 辅轴元素如何对齐
+                                可选值
+                                    stretch 默认值 将元素长度设置为相同值
+                                    flex-start 元素不拉伸 元素会沿着辅轴起始边对齐
+                                    flex-end 元素不拉伸 元素会沿着辅轴终边对齐
+                                    center 元素不拉伸 元素沿辅轴居中排列
+                                    baseline 基线对齐
+                            align-content 辅轴元素如何排列
+                                可选值
+                                    flex-start 默认值 元素沿辅轴起始边排列
+                                    flex-end 元素沿辅轴终边排列
+                                    center 元素沿辅轴居中排列
+                                    space-around 空白分配至元素两侧
+                                    space-evenly 空白分配到元素单侧
+                                    space-between 空白分配到元素间
+                弹性元素
+                    弹性容器的子元素是弹性元素(弹性项) 一个元素可以同时是弹性容器和弹性元素
+                    属性
+                        flex-grow 指定弹性元素的伸展系数 默认值为0 
+                            当父元素有多余的空间时 子元素如何伸展
+                            父元素的剩余空间会按照比例进行分配
+                        flex-shrink 指定弹性元素的收缩系数 默认值为1
+                            当父元素空间不足以容纳所有子元素时对子元素进行收缩 根据收缩系数和元素大小来收缩
+                        align-self 覆盖当前弹性元素上的align-items
+                        flex-basis 指定元素在主轴上的基础长度 默认值 auto
+                            如果主轴是横向 则该值指定元素宽度
+                            如果主轴是纵向 则该值指定元素高度
+                            设置默认值auto则参考元素自身的宽高
+                            设置具体数值则会覆盖原本的宽高
+                        order 决定弹性元素的排列顺序
+                    简写属性:伸展 收缩 基础长度; 默认值initial
+                    flex : 1 1 auto;
+        */
+
+        ul {
+            width: 800px;
+            border: 10px solid red;
+            display: flex;
+            /* flex-direction: row;
+            flex-wrap: wrap-reverse; */
+            /* flex-flow: row wrap; */
+            /* justify-content: center;
+            align-items: center; */
+            /* align-content: center; */
+            flex:1 1 auto;
+        }
+
+        li {
+            width: 200px;
+            height: 100px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-shrink: 0;
+            /* align-self:center ; */
+            /* flex-basis: content; */
+        }
+
+        li:nth-child(2) {
+            background-color: pink;
+            /* flex-grow: 2; */
+            /* order: 3; */
+        }
+
+        li:nth-child(3) {
+            background-color: orange;
+            /* flex-grow: 3; */
+            /* order:1; */
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

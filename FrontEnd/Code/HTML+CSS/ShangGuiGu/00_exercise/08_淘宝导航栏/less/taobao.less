@@ -1,0 +1,36 @@
+@import "./variable.less";
+
+.nav {
+    height: @h;
+    width: @w;
+    display: flex;
+    margin: 200px auto;
+    flex-direction: column;
+}
+
+.topinner {
+    height: (@h / 2);
+    width: @w;
+
+    ul:extend(.topinner) {
+        display: flex;
+    }
+
+    li {
+        height: (@h / 2);
+        width: (@w / 5);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    img{
+        height: (@h / 3);
+        width: (@w / 6);
+    }
+}
+
+.downinner {
+    .topinner()
+}

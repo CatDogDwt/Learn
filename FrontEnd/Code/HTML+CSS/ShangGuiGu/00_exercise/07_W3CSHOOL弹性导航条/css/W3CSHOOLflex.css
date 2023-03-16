@@ -1,0 +1,32 @@
+nav{
+    width: 1210px;
+    margin: 125px auto;  
+}
+
+ul{
+    display: flex;
+}
+
+li{
+    width: 166px;
+    height: 48px;
+    display: flex;
+}
+
+nav>ul>li>a{
+    width: 166px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    text-decoration: none;
+    color: #A4A4A2;
+    font-size: 18px;
+    background-color: #E8E7E3;
+    font-weight: bold;
+    transition: .5s linear;
+}
+
+nav>ul>li>a:hover{
+    background-color:#3F3F3F ;
+    color:#E3E2DE ;
+}
