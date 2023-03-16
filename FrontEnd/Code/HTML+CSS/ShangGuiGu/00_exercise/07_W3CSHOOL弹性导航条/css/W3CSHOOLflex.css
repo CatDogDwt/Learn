@@ -8,9 +8,11 @@ ul{
 }
 
 li{
-    width: 166px;
+    /* width: 166px; */
     height: 48px;
     display: flex;
+    flex-grow: 1;
+
 }
 
 nav>ul>li>a{
@@ -24,6 +26,7 @@ nav>ul>li>a{
     background-color: #E8E7E3;
     font-weight: bold;
     transition: .5s linear;
+    flex-grow: 1;
 }
 
 nav>ul>li>a:hover{
