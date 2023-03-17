@@ -1,0 +1,15 @@
+html {
+  font-size: 5.33333333vw;
+  background-color: #eff0f4;
+}
+.content {
+  width: 18.75rem;
+  height: 32.5rem;
+}
+.content .topbar {
+  width: 17.35rem;
+  height: 4.375rem;
+  background-color: aqua;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=./vw.css.map */

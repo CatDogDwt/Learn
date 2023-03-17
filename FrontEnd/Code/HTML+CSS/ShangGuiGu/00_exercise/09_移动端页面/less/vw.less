@@ -1,0 +1,26 @@
+//750*1334
+
+
+//定义变量
+@total-width: 750;
+@total-height: 1334;
+@multiple: 40;
+
+html {
+    //设置rem的比值
+    font-size: (100vw/@total-width) * @multiple;
+    background-color: #eff0f4;
+}
+
+.content {
+    width: 18.75rem;
+    height: 32.5rem;
+
+    .topbar{
+        width: 17.35rem;
+        height: 4.375rem;
+        background-color: aqua;
+        margin: 0 auto;
+    }
+}
+
