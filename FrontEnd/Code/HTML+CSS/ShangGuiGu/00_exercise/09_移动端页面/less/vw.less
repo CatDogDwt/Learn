@@ -5,22 +5,159 @@
 @total-width: 750;
 @total-height: 1334;
 @multiple: 40;
+@coursewidth: 7.2rem;
+@cpicheight: 3.9rem;
 
 html {
     //设置rem的比值
     font-size: (100vw/@total-width) * @multiple;
-    background-color: #eff0f4;
+    background-color: #FFFFFF;
+}
+
+.buttonstyle() {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.buttonitemstyle() {
+    width: 8.175rem;
+    height: 2.55rem;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+}
+
+.courses() {
+    width: @coursewidth;
+    display: flex;
+    flex-direction: column;
+    // align-items: space-between;
+    // justify-content: space-between;
 }
 
 .content {
-    width: 18.75rem;
-    height: 32.5rem;
+    padding: 0 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    .topbar{
-        width: 17.35rem;
+    .topbar {
         height: 4.375rem;
-        background-color: aqua;
-        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .title {
+            flex-grow: 1;
+        }
+    }
+
+    .middleimg {
+        height: 6.9rem;
+        border-radius: 10px;
+        background: url(../images/0901.jpg) center/cover;
+    }
+
+    .button {
+        height: 8.425rem;
+        display: flex;
+        justify-content: space-between;
+
+        .bleft {
+            .buttonstyle();
+
+            .mycourses {
+                .buttonitemstyle();
+                background: #FE8268;
+            }
+
+            .starteacher {
+                .buttonitemstyle();
+                background: #C657FF;
+            }
+        }
+
+        .bright {
+            .buttonstyle();
+
+            .subscription {
+                .buttonitemstyle();
+                background: #FCAD00;
+            }
+
+            .mydownload {
+                .buttonitemstyle();
+                background: #1D92FF;
+            }
+        }
+    }
+
+    .detail {
+        height: 10.9rem;
+        padding: 0 0.5rem;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            height: 2.2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .more {
+                color: #656565;
+            }
+        }
+
+        .datailcontent {
+            display: flex;
+            justify-content: space-between;
+
+            .leftcourse {
+                .courses();
+
+                .coursepic {
+                    width: @coursewidth;
+                    height: @cpicheight;
+                    background: url(../images/0902.jpeg) center/cover;
+                }
+
+                .coursename {
+                    margin: 0.625rem 0;
+                    font-size: 16px;
+                }
+
+                .profile {
+                    width: 1.025rem;
+                    height: 1.05rem;
+                    border-radius: 50%;
+                    border: 1px solid #656565;
+                    background: url(../images/0904.png) center/cover;
+                    display: inline-block;
+                }
+
+                .teachername {
+                    display: inline-block;
+                    font-size: 16px;
+                    color: #656565;
+                    vertical-align: top;
+                    line-height: 1.05rem;
+                }
+            }
+
+            .rightcourse {
+                .leftcourse();
+
+                .coursepic {
+                    background: url(../images/0903.jpg) center/cover;
+                }
+            }
+        }
     }
 }
-
