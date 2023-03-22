@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,9 +28,9 @@
             使用function声明的函数，都会作为window的方法保存
         */
         var b = 20
-        console.log("b=",b)
-        console.log("window.b=",window.b)
-        function fn(){
+        console.log("b=", b)
+        console.log("window.b=", window.b)
+        function fn() {
             console.log("fnfnnfnfnfnfn")
         }
         fn()
@@ -39,26 +40,32 @@
             使用let声明的变量不会存储在window 而是存在一个无法被访问的空间
         */
         let c = 20
-        console.log("window.c=",window.c)
+        console.log("window.c=", window.c)
         _()
 
-        function fn3(){
-            dd = 10//在局部作用域中，如果没有使用var或let声明变量，则变量会自动成为window对象的属性，也就是全局变量
+        {
+            {
+                dd = 10//在局部作用域中，如果没有使用var或let声明变量，则变量会自动成为window对象的属性，也就是全局变量
+                let ee = 20
+                console.log("ee=",ee)
+            }
         }
-        fn3()
-        console.log("dd=",dd)
-        console.log("window.dd=",window.dd); 
+        console.log("dd=", dd)
+        console.log("window.dd=", window.dd);
+        console.log("window.ee=", window.ee)
         _()
-        function fn2(){
+        function fn2() {
             var d = 10 //var无块作用域 但有函数作用域
-            console.log("我在这里(fn2函数的里面定义的变量var d = 10)-->",d)
+            console.log("我在这里(fn2函数的里面定义的变量var d = 10)-->", d)
         }
         fn2()
         console.log("因为var有函数作用域 无法在函数fn2外部被访问的变量 var d↓")
         console.log(d)
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

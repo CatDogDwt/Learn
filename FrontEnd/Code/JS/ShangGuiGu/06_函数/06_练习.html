@@ -58,41 +58,22 @@
         console.log(e)
         _()
 
-        console.log(f)
+        console.log("61--->",f)
         var f = 1//提升var f
-        console.log(f)
+        console.log("63--->",f)
         //提升并赋值
         function f(){
             alert(2)
         }
-        console.log(f)
-        var f = 3//因为第62行var f已经声明 所以此行代码声明不生效 也不会提升
-        console.log(f)
-        //因为第62行var f已经声明 所以此行代码声明不生效 也不会提升
+        console.log("68--->",f)
+        var f = 3
+        console.log("70--->",f)
         var f = function(){
             alert(4)
         }
-        console.log(f)
-        var f//因为第62行var f已经声明 所以此行代码声明不生效 也不会提升
-        console.log(f)
-        /*
-            62：var f提升
-            64：function f(){alert(2)}提升并赋值
-            68：不执行(已执行)
-            70：不执行(已执行)
-            74：不执行(已执行)
-            61：打印function f(){alert(2)}
-            62：赋值f=1
-            63：打印1
-         64-66：不执行(已执行)
-            67：打印1
-            68：赋值f=3
-            69：打印3
-         70-72：赋值function f(){alert(4)}
-            73：打印function f(){alert(4)}
-            74：不执行(已执行)
-            75：打印function f(){alert(4)}
-        */
+        console.log("75--->",f)
+        var f = 5
+        console.log("77--->",f)
     </script>
 </head>
 <body>

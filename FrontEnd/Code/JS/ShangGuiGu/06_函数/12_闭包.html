@@ -30,33 +30,103 @@
                 相较于类来说 闭包比较浪费内存空间(类可以使用原型而闭包不能)
                 需要执行次数较少时使用闭包 需要大量创建实例时使用类
         */
+        // // let testnum = 0
+        // function test() {
+        //     testnum++;
+        //     console.log(testnum);
+        // }
+        // test()
+
         function outer() {
+            let newFnNum = "newFn的调用会不会显示"
+            console.log("0-->",newFnNum)
             let num = 0
+            // num++
+            // return num
+            console.log("1-->", num)
             return () => {
-                num++
-                console.log(num)
+                console.log("2-->", num)
+                num++;
+                console.log("3-->", num);
             }
         }
         const newFn = outer()
         /*
+            不明白：为什么调用outer()()返回的为1
+            解释：
+                在控制台输入outer()时 返回值为箭头函数()=>{num++ console.log(num)} 此时箭头并未执行
+                在控制台输入outer()()时 执行箭头函数 此时的执行顺序为 let num = 0 -> num++ -> 1
+
             不明白：为什么用newFn()调用num不会被重新赋值为0
-            解释：num位于函数作用域内 outer返回的是()=>{num++ console.log(num)}
-            ①function outer() {
-                let num = 0
-                return () => {
-                    num++
-                    console.log(num)
-                }
-            }
-            实际上和
-            ②let num = 0
-            function outer(){
-                num++
-                console.log(num)
-            }
-            在结构和功能上是大致相同的
-            但是②中的num是一个全局变量 全局变量有可能不小心被修改
-            
+            解释：
+                一、注意区分const newFn = outer和const newFn = outer()
+                    首先const newFn = outer
+                        将outer赋值给newFn 实际上是将
+                            let num = 0
+                            return () => {
+                                num++;
+                                console.log(num);
+                            }
+                        赋值给了newFn 此时调用函数newFn() 输出结果永远为
+                            return () => {
+                                num++;
+                                console.log(num);
+                            }
+                        并且此时 num=0 return中的箭头函数并未执行
+                        并且由于是将outer直接全部赋值给newFn 所以执行 newFn()() 和 执行outer()()是一样的 每次执行都会重复赋值num为0
+                    其次const newFn = outer()
+                        将outer()赋值给newFn 实际上是将
+                            () => {
+                                num++;
+                                console.log(num);
+                            }
+                        赋值给了newFn 因为调用函数"outer()"输出的结果是他的返回值()=>{num++;console.log(num)}
+                        此时newFn是一个箭头函数 相当于 const newFn = () => {num++;console.log(num)}
+                        当调用newFn时直接调用的是此箭头函数
+                二、链式作用域
+                    执行此函数 会发现testnum由于未定义 在打印时会报错 Uncaught ReferenceError: testnum is not defined
+                        function test() {
+                            testnum++;
+                            console.log(testnum);
+                        }
+                        test()                   
+                    当在外层定义一个testnum变量时 里层的testnum会向上寻找此全局变量 于是可以正常输出
+                        let testnum = 0
+                        function test() {
+                            testnum++;
+                            console.log(testnum);
+                        }
+                        test()
+                    同理 在调用newFn时 由于箭头函数内部无num变量 所以子对象会一级一级向上寻找所有父对象的变量
+                    也就是 闭包就是能访问到外部函数作用域中变量的函数
+                    因此 当在outer函数中添加以下语句
+                        function outer() {
+                        ①   let newFnNum = "newFn的调用会不会显示"
+                        ②   console.log("0-->",newFnNum)
+                        ③   let num = 0
+                            // num++
+                            // return num
+                        ④   console.log("1-->", num)
+                        ⑤   return () => {
+                        ⑥       console.log("2-->", num)
+                        ⑦       num++;
+                        ⑧       console.log("3-->", num);
+                            }
+                        }                   
+                    于是 当第一次调用newFn()时 人为分析执行顺序为⑤⑥①②③④⑤⑥⑦⑧
+                       输出结果为 0-->newFn的调用会不会显示
+                                 1-->0
+                                 2-->0
+                                 3-->1
+                    当第二次调用newFn()时 由于此时num已经存在于全局当中 所以newFn()可以直接使用此变量
+                    人为分析执行顺序为⑤⑥⑦⑧ 输出结果为 2-->1 再次执行 输出结果为 2-->2 以此类推......
+                                                   3-->2                    3-->3
+                总结
+                    即在调用newFn时 执行的只是outer的返回函数 由于在newFn中没有num变量 所以"不得不"根据特性寻找num变量
+                    当再次执行时 outer返回函数中的num已经存在 所以就可以直接执行 于是num不会被重置
+                        
+
+                
         */
         newFn()//outer返回的是()=>{num++ console.log(num)}
         _()

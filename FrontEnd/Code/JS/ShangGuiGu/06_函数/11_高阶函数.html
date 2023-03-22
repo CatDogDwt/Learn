@@ -35,6 +35,9 @@
                 if (cb(arr[i]))
                     newArr.push(arr[i])
             }
+            for (let j = 0; j < newArr.length; j++) {
+                console.log(newArr[j].name, newArr[j].age)
+            }
             return newArr
         }
         console.log(filter(personArr, a => a.age <= 18))

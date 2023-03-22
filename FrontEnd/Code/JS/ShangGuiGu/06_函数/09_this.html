@@ -23,13 +23,14 @@
             console.log(this)
         }
         fn()
+        //以方法形式调用指向调用方法的对象
         const obj = {
             name: "孙悟空",
             test: fn
         }
         obj.test()
         _()
-        //以方法形式调用指向调用方法的对象
+        //通过this可以在方法中引用调用方法的对象
         const obj2 = {
             name: "猪八戒",
             SayHello() {
@@ -51,7 +52,7 @@
                                     ...
                                     return 返回值
                                 }
-                箭头函数没有自己的this,它的this由它的外层作用域决定
+                箭头函数没有自己的this,它的this由它所处作用域的外层作用域决定
                 箭头函数的this和他的调用方式无关
         */
         //外部作用域为全局window 此时箭头函数的this指向的是window
@@ -73,11 +74,11 @@
                 }
                 t();
 
-                //箭头函数由外层作用域决定 此时fn3的外层作用域为obj3
+                //箭头函数由外层作用域决定 此时fn3所处作用域SayHello的外层作用域为obj3
                 const fn3 = () => console.log("fn3()=>", this)
                 fn3()
             },
-            //箭头函数由外层作用域决定 此时fn4的外层作用域为window
+            //箭头函数由外层作用域决定 此时fn4所处作用域obj3的外层作用域为window
             fn4: () => console.log("fn4()=>", this)
         }
         //虽然作为obj3的属性 但由于箭头函数fn2的外层是全局window并且箭头函数this和他的调用方式无关 所以他的this依然指向window 
