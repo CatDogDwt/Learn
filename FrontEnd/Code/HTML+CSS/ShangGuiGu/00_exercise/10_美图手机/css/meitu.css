@@ -1,0 +1,129 @@
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.topbarwrapper {
+  background-color: black;
+}
+.topbar {
+  height: 48px;
+  background-color: black;
+  padding: 0 14px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+.leftmenu .menuicon {
+  width: 18px;
+  height: 48px;
+  position: relative;
+}
+.leftmenu .menuicon li {
+  width: 18px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  transform-origin: left center;
+  transition: all 0.5s;
+}
+.leftmenu .menuicon li:nth-child(1) {
+  top: 18px;
+}
+.leftmenu .menuicon li:nth-child(2) {
+  top: 23px;
+}
+.leftmenu .menuicon li:nth-child(3) {
+  bottom: 18px;
+}
+.leftmenu .menuicon:hover li:nth-child(1) {
+  transform: rotateZ(40deg);
+}
+.leftmenu .menuicon:hover li:nth-child(2) {
+  opacity: 0;
+}
+.leftmenu .menuicon:hover li:nth-child(3) {
+  transform: rotateZ(-40deg);
+}
+.leftmenu .nav {
+  position: absolute;
+  top: 48px;
+  background-color: black;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 30px;
+  color: white;
+  display: none;
+  transition: all 5s;
+}
+.leftmenu .nav li {
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid white;
+}
+.leftmenu .nav li a {
+  line-height: 44px;
+  font-size: 14px;
+  display: block;
+}
+.leftmenu .nav li:last-child a {
+  display: inline-block;
+  margin-right: 6px;
+}
+.leftmenu:hover .nav {
+  display: block;
+}
+.logo a {
+  text-indent: -9999px;
+  display: block;
+  height: 24px;
+  width: 122px;
+  background: url(../images/bg.png) -5px -35px/400px 400px;
+}
+@media only screen and (min-width: 768px) {
+  .leftmenu {
+    order: 2;
+    flex: auto;
+  }
+  .leftmenu .nav {
+    display: block;
+    position: static;
+    display: flex;
+    height: 48px;
+    padding: 0;
+    justify-content: space-evenly;
+  }
+  .leftmenu .nav li {
+    width: auto;
+    border-bottom: none;
+    margin: 0;
+  }
+  .leftmenu .nav li a {
+    line-height: 48px;
+  }
+  .leftmenu .nav li span {
+    display: none;
+  }
+  .leftmenu .menuicon {
+    display: none;
+  }
+  .leftmenu:hover .nav {
+    display: flex;
+  }
+  .logo {
+    order: 1;
+  }
+  .userinfo {
+    order: 3;
+  }
+}
+/*# sourceMappingURL=./meitu.css.map */

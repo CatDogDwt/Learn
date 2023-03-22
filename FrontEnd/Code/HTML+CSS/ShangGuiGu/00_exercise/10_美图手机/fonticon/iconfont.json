@@ -1,0 +1,30 @@
+{
+  "id": "3966146",
+  "name": "5",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4485645",
+      "name": "个人",
+      "font_class": "geren",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "713433",
+      "name": "分类",
+      "font_class": "fenlei",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "2076190",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e86e",
+      "unicode_decimal": 59502
+    }
+  ]
+}
