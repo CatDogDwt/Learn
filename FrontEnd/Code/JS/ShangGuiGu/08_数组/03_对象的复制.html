@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>对象的复制</title>
     <script src="../../global/global.js"></script>
     <script>
+        _begin()
         /*
             如果对象中存储的数据是原始值，那么拷贝的深浅不重要
                 浅拷贝(shallow copy)：
@@ -18,9 +19,9 @@
                     深拷贝不仅复制对象本身 还会复制对象中的属性或元素
                     因为性能问题 通常情况下不太使用深拷贝
 
-            slice() 方法以新的数组对象，返回数组中被选中的元素。
-            slice(start,end) 方法选择从给定的 start 参数开始的元素，并在给定的 end 参数处结束，但不包括。
-                slice() 方法不会改变原始数组。
+            slice()方法以新的数组对象，返回数组中被选中的元素。
+            slice(start,end)方法选择从给定的 start 参数开始的元素，并在给定的 end 参数处结束，但不包括。
+                slice()方法不会改变原始数组。
         */
         const arr = [{ name: "Ming" }, { name: "Tao" }]
         console.log(arr)
@@ -53,8 +54,13 @@
                     将被复制对象中的属性复制到目标对象里，并将目标对象返回
         */
         const arr5 = [...arr]
-        const obj = {}
+        console.log(arr5)
+        console.log("arr?arr5", arr === arr5);
+        const obj = {obj:"obj"}
         const obj2 = Object.assign({},obj)
+        console.log(obj2)
+
+        _end()
     </script>
 </head>
 

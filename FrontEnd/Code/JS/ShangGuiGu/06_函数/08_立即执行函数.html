@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>立即执行函数</title>
     <script src="../../global/global.js"></script>
     <script>
+        _begin()
         /*
             在开发中应该尽量减少直接在全局作用域中编写代码
             所谓代码应尽量编写到局部作用域
@@ -34,6 +35,7 @@
                 console.log(b);
             }());
         }
+        _end()
     </script>
 </head>
 

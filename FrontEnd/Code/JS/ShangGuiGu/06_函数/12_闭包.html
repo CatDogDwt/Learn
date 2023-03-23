@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>闭包</title>
     <script src="../../global/global.js"></script>
     <script>
+        _begin()
+
         /*
             创建一个函数 第一次调用时打印1 第二次调用打印2 以此类推
 
@@ -143,7 +145,7 @@
             fn()
         }
         fn2()
-        _()
+        
         function fn3() {
             let a = "fn3中的a"
             function fn4() {
@@ -151,8 +153,13 @@
             }
             return fn4
         }
-        let fn4 = fn3()
+        let fn4 = fn3() 
         fn4()
+
+        function fn5(){
+            console.log(a)
+        }
+        fn5()
         _()
 
         function outCloser() {
@@ -165,6 +172,8 @@
         const outCloserFn2 = outCloser()//独立闭包
         outCloserFn()
         outCloserFn2()
+
+        _end()
     </script>
 </head>
 

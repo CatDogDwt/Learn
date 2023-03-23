@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可变参数</title>
+    <script src="../../global/global.js"></script>
+    <script>
+        _begin()
+
+        function fn() {
+            /*
+                arguments 类数组对象 (伪数组对象)
+                    除this外另一个隐含参数
+                    作用
+                        用来存储函数的实参 无论用户是否定义形参 实参都会存储到arguments对象中
+                        可以通过该对象直接访问实参
+                        和数组相似 可以通过索引来访问元素 可以通过for循环变量
+                        但由于不是数组对象 所以不能调用数组方法
+            */
+            console.log(arguments.length);
+            console.log(arguments[1]);
+            console.log(Array.isArray(arguments));
+            _()
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+            _()
+            for (let j of arguments) {
+                console.log(j);
+            }
+        }
+        fn(1, "a", 35)
+        _()
+        //定义一个函数 可以求任意个数值的和
+        //通过arguments可以不受参数的限制 更加灵活的创建函数
+        function sum() {
+            let result = 0;
+            for (let v of arguments) {
+                result += v;
+            }
+            return result;
+        }
+
+        _end()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

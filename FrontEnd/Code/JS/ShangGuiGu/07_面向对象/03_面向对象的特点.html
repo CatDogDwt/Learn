@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>面向对象的特点</title>
     <script src="../../global/global.js"></script>
     <script>
+        _begin()
+
         /*
             面向对象的特点：
             封装 —— 安全性
@@ -78,10 +80,10 @@
             }
 
             //新方法：
-            get gender() {
+            get Getgender() {
                 return this.#gender
             }
-            set gender(gender) {
+            set Setgender(gender) {
                 return this.#gender = gender
             }
         }
@@ -131,7 +133,7 @@
                     通过继承可以减少重复的代码，并可以在不修改一个类的前提下对其进行扩展
                     在子类中可以创建同名方法来覆写父类方法
                         重写构造函数时，构造函数的第一行代码必须为super()调用父类的构造函数
-                        在方法中可以使用super来引用父类的方法(必须在使用this关键字之前使用)
+                        在方法中可以使用super来引用父类的方法(必须在this关键字之前使用)
 
                 OCP开闭原则
                     程序应该对修改关闭,对扩展开放
@@ -144,9 +146,7 @@
                 run() {
                     console.log(`${this.name} is running!`)
                 }
-                sound() {
-                    console.log(`${this.name} is saying!`)
-                }
+                sound() {}
             }
             class Dog extends Animal {
                 sound(){
@@ -155,7 +155,6 @@
             }
             class Cat extends Animal {
                 sound(){
-                    super.sound()
                     console.log(`${this.name} is mew mew mew!`)
                 }
                 constructor(name,age){
@@ -173,6 +172,8 @@
             console.log(`这只${Ragdoll.name}今年${Ragdoll.age}了`)
             Ragdoll.run()
             Ragdoll.sound()
+
+            _end()
         }
     </script>
 </head>
