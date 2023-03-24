@@ -43,7 +43,20 @@
         console.log("arr[0].name = Min--->", arr2)
         console.log("arr[0].name = Min--->", arr3)
         console.log("arr[0].name = Min--->", arr4)//深拷贝会将被拷贝对象里的属性和元素 拷贝到一个新的对象中
-
+        const obj = {
+            role1: "Eren",
+            friend: {
+                rf1: "Mikasa"
+            }
+        }
+        console.log("obj--->", obj);
+        //对obj进行浅复制
+        const obj2 = Object.assign({}, obj);
+        console.log("obj2--->", obj2, "obj.friend=obj2.friend?", obj2.friend === obj.friend);
+        //深复制
+        const obj3 = structuredClone(obj);
+        console.log("obj3--->", obj3, "obj.friend=obj3.friend?", obj3.friend === obj.friend);
+        _()
         /*
             复制的方式：
                 ...
@@ -56,9 +69,9 @@
         const arr5 = [...arr]
         console.log(arr5)
         console.log("arr?arr5", arr === arr5);
-        const obj = {obj:"obj"}
-        const obj2 = Object.assign({},obj)
-        console.log(obj2)
+        const obj4 = { obj4: "obj4" };
+        const obj5 = Object.assign({}, obj4)
+        console.log(obj5)
 
         _end()
     </script>

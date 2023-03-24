@@ -12,7 +12,7 @@
 
         function fn() {
             /*
-                arguments 类数组对象 (伪数组对象)
+                arguments 类数组对象 (伪数组对象) 箭头函数中没有arguments
                     除this外另一个隐含参数
                     作用
                         用来存储函数的实参 无论用户是否定义形参 实参都会存储到arguments对象中
@@ -43,6 +43,36 @@
             }
             return result;
         }
+        /*
+            可变参数 ...参数名 在定义函数时可以将参数指定为可变参数
+                可变参数可以接受任意数量的实参 并将他们统一存储到一个数组中返回
+                与arguments的不同点：
+                    可变参数的名字可以自己指定
+                    可变参数是一个数组 可以直接使用数组的方法
+                    可变参数可以配合其他参数一起使用 此时可变参数应该写到最后            
+        */
+        function fn2(...params) {
+            console.log(params);
+        }
+        fn2()
+        function sum2(...args) {
+            return args.reduce((v1, v2) => v1 + v2, 0)
+        }
+        _()
+        function fn3(a, b) {
+            console.log(a, b)
+            for (let i of arguments) {
+                console.log(i)
+            }
+        }
+        console.log(fn3)
+        fn3(123, 456)
+        function fn4(a, b, ...params) {
+            console.log(a, b)
+            console.log(params);
+        }
+        console.log(fn4)
+        fn4(123, 456, 789, 101112)
 
         _end()
     </script>

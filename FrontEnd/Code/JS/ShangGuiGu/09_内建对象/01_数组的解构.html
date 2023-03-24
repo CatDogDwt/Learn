@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组的解构</title>
+    <script src="../../global/global.js"></script>
+    <script>
+        _begin()
+
+        //解构赋值
+        const arr = ["Rikka", "Eren", "Mikasa"];
+
+        let [a, b, c] = arr;
+        console.log(a, b, c);
+
+        let [d, e, f, g] = ["Rikka", "Eren", "Mikasa"];//声明同时解构
+        console.log(d, e, f, g);
+
+        [d, e, f, g] = [1, 2, 3]//g被赋值undefined
+        console.log(d, e, f, g);
+
+        [d = d, e = e, f = f, g = g] = [] //可以添加默认值
+        console.log(d, e, f, g);
+
+        let [h, i, j] = ["Rikka", "Eren", "Mikasa"];
+        [h = h, i = i, j = j] = [1, 2]//如果没有赋值 则默认值为上一次的值
+        console.log(h, i, j)
+
+        let [k, ...l] = ["Rikka", "Eren", "Mikasa"];//解构数组时 当变量小于数组值时 可以使用...来获取多余的数组值
+        console.log(k, l);
+
+        //另一种解构情况
+        function fn() {
+            return ["Rikka"]
+        }
+
+        let [name1, name2] = fn()
+
+        //通过解构赋值快速的交换两个变量的值
+        let a1 = 10
+        let a2 = 20
+        console.log("a1 = ", a1, "a2 = ", a2);
+        [a1, a2] = [a2, a1]
+        console.log("a1 = ", a1, "a2 = ", a2);
+        //通过解构赋值快速的交换数组中字面量的值
+        const arr2 = ["Rikka", "Eren"]
+        console.log(arr2);
+        [arr2[0], arr2[1]] = [arr2[1], arr2[0]]
+        console.log(arr2);
+
+        //解构二维数组
+        const arr3 = [["中二病", "Rikka"], ["进击的巨人", "Mikasa"], ["进击的巨人", "Eren"]]
+        let [[cartoon, role], ...array] = arr3
+        console.log(cartoon, role, array);
+
+        _end()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -58,7 +58,7 @@
                     执行函数操作 返回值赋值给frontvalue 
                     backvalue取下一个值 再次执行函数操作 以此类推
         */
-        let result4 = arr2.reduce((frontvalue, backvalue) => frontvalue + backvalue);
+        let result4 = arr2.reduce((frontvalue, backvalue) => frontvalue + backvalue, 0);//添加 ,0？ 指定初始值0 无参数传入时返回初始值
         console.log(result4);
 
         _end()
