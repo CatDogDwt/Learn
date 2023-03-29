@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+    <script src="../../global/global.js"></script>
+</head>
+
+<body>
+    <button id="btn" onclick="alert('你点我干嘛~')">别点我！</button>
+    <button id="btn2" ondblclick="alert('你双击干嘛~')">别双击我！</button>
+    <button id="btn3" onmousemove="alert('你碰我干嘛~')">别碰我！</button>
+    <button id="btn4" onmousemove="">别点我！</button>
+    <button id="btn5" onmousemove="">别点我！</button>
+
+    <script>
+        _begin()
+
+        /*
+            事件 event
+                用户和页面之间发生的交互称为事件 比如点击按钮 鼠标移动 敲击键盘...
+                可以通过为事件绑定响应函数(回调函数) 来完成和用户的交互
+                绑定响应函数的方式
+                    直接在元素的属性中设置
+                    通过为元素的指定属性设置回调函数的形式来绑定事件
+                        一个事件仅能绑定一个响应函数
+                    通过元素的addEventListener(事件,函数)方法来绑定事件
+                        一个事件可以绑定多个响应函数 按顺序执行
+        */
+        const btn4 = document.getElementById("btn4");
+        btn4.onclick = function () {
+            btn4.innerText = "流氓！"
+        }
+
+        const btn5 = document.getElementById("btn5");
+        btn5.addEventListener("click", function () { btn5.innerText = "流氓" });
+        btn5.addEventListener("click", function () { btn5.style="background:red;" });
+
+    </script>
+</body>
+
+</html>

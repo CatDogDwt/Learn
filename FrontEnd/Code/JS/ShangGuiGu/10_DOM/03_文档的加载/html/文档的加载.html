@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档的加载</title>
+    <script src="../../../../global/global.js"></script>
+    <script defer src="../script/03.js"></script>
+    <script>
+        _begin()
+
+        /*
+            网页是自上向下进行加载 如果将JS代码编写到网页上边 
+            在js代码执行时 由于网页还未加载完毕 这时就会出现无法获取到DOM对象的情况
+            如何解决以上问题
+                将script标签编写到body中(写在body后浏览器会自动纠正)
+                    执行时机最早
+                将script标签写在head中 通过window.onload或window.addEventListener()进行延时触发
+                    window.onload
+                        事件会在窗口中的内容加载完毕之后触发 执行时机较晚
+                将代码编写到document对象的DOMContentLoaded的回调函数中
+                    document对象的DOMContentLoaded
+                        事件会在当前文档加载完毕之后触发 执行时机更早
+                将代码编写到外部的JS文件中 然后以defer的形式进行引入
+                    比DOMContentLoaded的执行时机更早
+
+        */
+        window.onload = () => {
+            const btn = document.getElementById("btn");
+            console.log(btn);
+        }
+        window.addEventListener("load", () => {
+            const btn = document.getElementById("btn");
+            console.log(btn);
+        })
+        document.addEventListener("DOMContentLoaded", () => {
+            const btn = document.getElementById("btn");
+            console.log(btn);
+        })
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">别点我！</button>
+    <iframe src="../../../../../HTML+CSS/ShangGuiGu/00_exercise/09_移动端页面/html/移动端页面.html" frameborder="0"></iframe>
+</body>
+
+</html>
