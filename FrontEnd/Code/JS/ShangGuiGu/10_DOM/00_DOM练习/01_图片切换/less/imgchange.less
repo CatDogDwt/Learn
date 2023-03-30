@@ -15,6 +15,23 @@ body {
     top: 45%;
     transition: .1s;
     border: none;
+    z-index: 1;
+
+    i {
+        -ms-user-select: none;
+        -webkit-user-select: none;/* Safari */
+        -ms-user-select: none;/* IE 10+ and Edge */
+    }
+}
+
+.lihover {
+    outline: 3px solid rgba(0, 0, 0, .1);
+    background: rgba(255, 255, 255, 1) !important;
+}
+
+.linormal {
+    outline: none;
+    background: rgba(0, 0, 0, .1);
 }
 
 .content {
@@ -40,6 +57,10 @@ body {
             position: absolute;
             border-radius: 10px;
             border: none;
+
+            &:first-child {
+                z-index: 1;
+            }
         }
     }
 
@@ -67,8 +88,11 @@ body {
 
     .ib_bottom_select {
         position: absolute;
-        bottom: 20px;
-        left: 20px;
+        top: 310px;
+        padding: 10px;
+        z-index: 1;
+        background: rgba(0, 0, 0, .1);
+        border-radius: 8px;
 
         li {
             height: 10px;
@@ -77,6 +101,7 @@ body {
             margin-left: 4px;
             border-radius: 100%;
             background: rgba(0, 0, 0, .1);
+            z-index: 1;
 
             &:hover {
                 outline: 3px solid rgba(0, 0, 0, .1);
