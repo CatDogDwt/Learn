@@ -1,0 +1,21 @@
+.content {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin: 150px auto;
+  width: 500px;
+  text-align: center;
+}
+.content th {
+  border: 1px solid black;
+}
+.content tr {
+  border: 1px solid black;
+}
+.content td {
+  border: 1px solid black;
+}
+.addbox {
+  text-align: center;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=./operation.css.map */
