@@ -6,12 +6,6 @@ addBtn[0].onclick = () => {
     let email = document.getElementsByName("email")[0].value;
     let money = document.getElementsByName("money")[0].value;
     const table = document.querySelectorAll("tbody")[0];
-    table.insertAdjacentHTML("beforeend", `<tr><td>${name}</td><td>${email}</td><td>${money}</td><td><a href='javascript:;'>删除</a></td></tr>`)
-    
+    table.insertAdjacentHTML("beforeend", `<tr><td>${name}</td><td>${email}</td><td>${money}</td><td><a href='javascript:;'>删除</a></td></tr>`);
 }
 
-for (let i = 0; i < links.length; i++) {
-    links[i].onclick = () => {
-        console.log(1)
-    }
-}
