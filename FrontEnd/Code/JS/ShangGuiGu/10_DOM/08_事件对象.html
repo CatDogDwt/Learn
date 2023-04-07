@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象</title>
+    <style>
+        #box1 {
+            width: 300px;
+            height: 300px;
+            border: 10px greenyellow solid;
+        }
+
+        #box2 {
+            width: 250px;
+            height: 250px;
+            background-color: orange;
+        }
+
+        #box3 {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+        }
+
+        #box4 {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            /*
+                event 事件
+                    事件对象
+                        由浏览器在事件触发时所创建的对象 此对象中封装了事件发生时的所有相关信息
+                        通过事件对象可以获取到事件的详细信息
+                            比如：鼠标的坐标、键盘的按键...
+                        浏览器在创建事件对象后，会将事件对象作为响应函数的参数传递
+                        所以可以在事件的回调函数中定义一个形参来接受事件对象
+                        在DOM中存在着多种不同类型的事件对象 他们都有一个共同的祖先Event     
+                        https://developer.mozilla.org/zh-CN/docs/Web/API/Event
+                        event的属性和方法:
+                            .target 表示触发事件的对象
+                                this和target的区别
+                                    this 绑定事件的对象
+                                    target 触发事件的对象 
+                            .stopPropagation() 停止事件的传递
+                                事件的冒泡(bubble):
+                                    当元素上的某个事件被触发后，其祖先元素上的相同事件也会同时触发
+                                    冒泡的存在简化了JS代码的编写 但在某些场景下不需要冒泡的存在
+                                    取消冒泡：
+                                        可以通过事件对象stopPropagation取消冒泡
+                            .currentTarget 绑定事件的对象(同this 可以在箭头函数中使用)
+                            .preventDefault() 取消默认行为
+
+            */
+            box1.onmousemove = (event) => {
+                span1.textContent = "x=" + event.x + "," + "y=" + event.y;
+            }
+            box1.addEventListener("click", function (event) {
+                span2.textContent = "x=" + event.x + "," + "y=" + event.y;
+                console.log("this", this);
+                console.log("event.target", event.target);
+            })
+            box2.addEventListener("click", function (event) {
+                console.log("点击了box2")
+                //取消事件的传递(取消冒泡)
+                // event.stopPropagation()
+            })
+            box3.addEventListener("click", function (event) {
+                console.log("点击了box3")
+            })
+            bilibili.addEventListener("click", event => {
+                alert("别点我！")
+                event.preventDefault()//取消默认行为
+            })
+
+            //使box4跟随鼠标移动
+            let box4 = document.getElementById("box4")
+            box4.addEventListener("mousemove", event => {
+                box4.style.left = event.x + "px"
+                box4.style.top = event.y + "px"
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
+    <span id="span1"></span>
+    <span id="span2"></span>
+    <a id="bilibili" href="https://www.bilibili.com/">是兄弟就点我</a>
+    <div id="box4"></div>
+</body>
+
+</html>

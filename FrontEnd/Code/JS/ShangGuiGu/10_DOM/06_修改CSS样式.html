@@ -13,6 +13,17 @@
             background-color: orange;
             transition: all 1s;
         }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            transition: all 1s;
+        }
+
+        .box2Bg {
+            background-color: red;
+        }
     </style>
     <script>
         /*
@@ -23,18 +34,42 @@
         window.onload = () => {
             const btn1 = document.getElementById("btn01");
             const box1 = document.querySelector(".box1")
-            btn1.onclick = () =>{
+            btn1.onclick = () => {
                 box1.style.backgroundColor == "red" ? box1.style.backgroundColor = "orange" : box1.style.backgroundColor = "red"
                 box1.style.width == "400px" ? box1.style.width = "200px" : box1.style.width = "400px"
                 box1.style.height == "400px" ? box1.style.height = "200px" : box1.style.height = "400px"
+            }
+
+            /*
+                直接修改样式👆容易造成耦合问题
+                👇可以通过修改class属性来间接修改样式
+                    通过这种方法 可以一次性修改多个样式
+                                对JS和CSS进行解耦
+                元素.classList 是一个对象 对象中提供了对当前元素的类的各种操作方法
+                    .add("","",...,"") 向元素中添加一个或多个class
+                    .remove("","",...,"") 向元素中移除一个或多个class
+                    .toggle("") 切换元素中的class
+                    .replace("","") 用后一个class替换前一个class
+                    .contains("") 检查元素中是否含有此class 有返回true 无返回false 
+
+            */
+            btn02.onclick = () => {
+                // box2.className += " box2Bg"
+                box2.classList.add("box2Bg")
             }
         }
     </script>
 </head>
 
 <body>
-    <button id="btn01">修改样式</button>
-    <div class="box1"></div>
+    <div id="content1">
+        <button id="btn01">读取样式</button>
+        <div class="box1"></div>
+    </div>
+    <div id="content2">
+        <button id="btn02">操作class</button>
+        <div id="box2" class="box2"></div>
+    </div>
 </body>
 
 </html>

@@ -11,6 +11,8 @@ addBtn[0].onclick = () => {
         在事件中可以通过取消默认行为来阻止超链接的跳转 
             使用return false;
                 这种方式 适用于所有默认行为 但只在 xxx.xxx = function()这种形式绑定的事件中才适用
+            使用事件对象方法：
+                event.preventDefault() 推荐
     */
     //此方式👇容易被XSS注入！
     // table.insertAdjacentHTML("beforeend", `<tr><td>${name}</td><td>${email}</td><td>${money}</td><td><a href="javascript:;">删除</a></td></tr>`);
