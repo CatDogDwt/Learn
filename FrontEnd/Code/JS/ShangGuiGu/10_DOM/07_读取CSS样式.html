@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读取CSS样式</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            transition: all 1s;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            margin: 50px;
+            border: 10px solid red;
+            background-color: orange;
+            transition: all 1s;
+        }
+
+        .box1::after {
+            content: "haha";
+            color: red;
+        }
+    </style>
+    <script>
+        /*
+            点击按钮后读取box1的样式
+                getComputedStyle(元素)
+                getComputedStyle(元素,伪元素)
+                    返回的对象中包含了当前元素所有的生效样式
+                    样式对象中返回的样式值 不一定能拿来直接计算
+        */
+        window.onload = () => {
+            const btn1 = document.getElementById("btn01");
+            const box1 = document.querySelector(".box1")
+            btn1.onclick = () => {
+                const styleObj = getComputedStyle(box1);
+                console.log(styleObj)
+                console.log(styleObj.width)
+                //通过此方法设置样式
+                box1.style.width = parseInt(styleObj.width) + 100 + "px"
+                console.log(styleObj.backgroundColor)
+                const styleObj2 = getComputedStyle(box1, "::after");
+                console.log(styleObj2.color)
+            }
+            /*
+                元素.clientWidth
+                元素.clientHeight
+                    获取元素全部的宽度和高度 包括内容区和内边距
+                元素.offsetHeight
+                元素.offsetWidth
+                    获取元素可见框的大小 包括内容区、内边距和边框
+                元素.scrollHeight
+                元素.scrollWidth
+                    获取元素可见框和溢出框的大小
+                元素.offsetTop
+                元素.offsetLeft
+                    获取元素相对于其定位父元素的偏移量
+                        定位父元素：离元素最近的开启了定位的祖先元素
+                元素.scrollTop
+                元素.scrollLeft
+                    获取或设置元素滚动条的偏移量
+                元素.offsetParent
+                    获取离元素最近的定位父元素 如果所有元素都没有开启定位 则获取body
+                    
+            */
+            btn02.onclick = () => {
+                //当使用id时 浏览器已经创建了同名元素变量
+                console.log(box2.clientWidth);
+                console.log(box2.offsetWidth);
+                console.log(box2.scrollWidth);
+                console.log(box2.scrollLeft);
+                console.log(box2.offsetTop);
+                console.log(box2.offsetParent);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content1">
+        <button id="btn01">读取样式</button>
+        <div class="box1"></div>
+    </div>
+    <div class="content2">
+        <button id="btn02">读取样式</button>
+        <div id="box2" class="box2"></div>
+    </div>
+</body>
+
+</html>

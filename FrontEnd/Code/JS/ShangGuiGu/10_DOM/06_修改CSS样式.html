@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改CSS样式</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            transition: all 1s;
+        }
+    </style>
+    <script>
+        /*
+            点击按钮后修改box1的样式
+                元素.style.样式名 = 样式值
+                如果样式名中有-号 需要将样式名修改为驼峰命名法
+        */
+        window.onload = () => {
+            const btn1 = document.getElementById("btn01");
+            const box1 = document.querySelector(".box1")
+            btn1.onclick = () =>{
+                box1.style.backgroundColor == "red" ? box1.style.backgroundColor = "orange" : box1.style.backgroundColor = "red"
+                box1.style.width == "400px" ? box1.style.width = "200px" : box1.style.width = "400px"
+                box1.style.height == "400px" ? box1.style.height = "200px" : box1.style.height = "400px"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">修改样式</button>
+    <div class="box1"></div>
+</body>
+
+</html>

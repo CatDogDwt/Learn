@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点的复制</title>
+    <script>
+        window.onload = () => {
+            //点击按钮后 将id为l1的元素添加到list2中
+            const btn01 = document.getElementById("btn01");
+            const btn02 = document.getElementById("btn02");
+            const list2 = document.getElementById("list2");
+            const l1 = document.getElementById("l1")
+            btn01.onclick = () => {
+                list2.appendChild(l1)
+            }
+            /*
+                cloneNode() 
+                    此方法对节点进行复制时 它会复制节点的所有特点包括各种属性
+                    此方法只会复制当前节点 不会复制节点的子节点(浅复制)
+                    可以传递一个true作为参数 这样该方法也会将元素的子节点一起复制
+            */
+            btn02.onclick = () => {
+                const newl1 = l1.cloneNode(true)
+                list2.appendChild(newl1)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">appendChild</button>
+    <button id="btn02">cloneNode</button>
+    <ul id="list1">
+        <li id="l1">Mikasa</li>
+        <li id="l2">Eren</li>
+        <li id="l3">Rikka</li>
+    </ul>
+    <ul id="list2">
+        <li>WENTD</li>
+    </ul>
+</body>
+
+</html>
