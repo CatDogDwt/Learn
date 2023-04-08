@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的委托</title>
+    <script>
+        window.onload = () => {
+            /*
+                事件委托
+                    将本该绑定给多个元素的事件 统一绑定给一个公共的祖先元素(通常是document)
+                    降低代码的复杂度 
+            */
+            // const links = document.links;
+            // for (let i = 0; i < links.length; i++) {
+            //     links[i].addEventListener("click", event => {
+            //         alert(event.target.textContent)
+            //     })
+            // }
+            const links = list.getElementsByTagName("a")
+            //将事件绑定给document 通过冒泡传递btn01=>document 所有元素都可以具有此事件
+            document.addEventListener("click", event => {
+                /*
+                    因为document为整个网页对象 在冒泡传递时 网页中的click操作都会传递至此
+                    所以为了避免无关操作的影响 在执行代码时 先判断一下是由谁触发
+                    👆获取网页中需要操作的集合
+                    👇[...links]转换为数组 通过includes方法判断触发事件是否处在操作集合中
+                */
+                if ([...links].includes(event.target)) {
+                    alert(event.target.textContent);
+                }
+            })
+            //点击按钮后 在ul中添加一个新的li
+            btn01.addEventListener("click", event => {
+                list.insertAdjacentHTML("beforeend", "<li><a href='javascript:;'>新超链接</a></li>")
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">攻击我</button>
+    <ul id="list">
+        <li><a href="javascript:;">链接1</a></li>
+        <li><a href="javascript:;">链接2</a></li>
+        <li><a href="javascript:;">链接3</a></li>
+        <li><a href="javascript:;">链接4</a></li>
+    </ul>
+</body>
+
+</html>

@@ -53,12 +53,17 @@
                             .stopPropagation() 停止事件的传递
                                 事件的冒泡(bubble):
                                     当元素上的某个事件被触发后，其祖先元素上的相同事件也会同时触发
+                                    事件冒泡和样式无关 只和结构有关
                                     冒泡的存在简化了JS代码的编写 但在某些场景下不需要冒泡的存在
                                     取消冒泡：
                                         可以通过事件对象stopPropagation取消冒泡
                             .currentTarget 绑定事件的对象(同this 可以在箭头函数中使用)
                             .preventDefault() 取消默认行为
-
+                            .eventPhase 表示事件触发的时机
+                                返回值
+                                    1 表示捕获阶段
+                                    2 表示目标阶段
+                                    3 表示冒泡阶段
             */
             box1.onmousemove = (event) => {
                 span1.textContent = "x=" + event.x + "," + "y=" + event.y;
@@ -71,7 +76,7 @@
             box2.addEventListener("click", function (event) {
                 console.log("点击了box2")
                 //取消事件的传递(取消冒泡)
-                // event.stopPropagation()
+                event.stopPropagation()
             })
             box3.addEventListener("click", function (event) {
                 console.log("点击了box3")
@@ -83,7 +88,7 @@
 
             //使box4跟随鼠标移动
             let box4 = document.getElementById("box4")
-            box4.addEventListener("mousemove", event => {
+            document.addEventListener("mousemove", event => {
                 box4.style.left = event.x + "px"
                 box4.style.top = event.y + "px"
             })
