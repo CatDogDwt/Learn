@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+    <script>
+        window.onload = () => {
+            /*
+                通过定时器 可以使代码在指定时间后执行
+                    设置定时器的方式
+                        setTimeout(回调函数,间隔时间（毫秒）) 只执行一次
+                            关闭定时器
+                                clearTimeout(setTimeout返回的标识变量)
+                        setInterval(回调函数,间隔时间（毫秒）) 根据间隔时间反复执行
+                            关闭定时器
+                                clearInterval(setInterval返回的标识变量)
+                            缺点：
+                                每间隔一段时间将函数添加到消息队列中 
+                                但是如果函数执行的速度比较慢 它就无法确保每次执行的间隔都是一样的
+                            如何确保每次函数执行时间间隔相同？
+                                使用setTimeout模拟setInterval
+                    定时器的本质
+                        在指定时间后 将函数添加到消息队列中
+                事件循环(event loop)
+                    函数在每次执行时 都会产生一个执行环境 执行环境负责存储函数执行时产生的一切数据
+                    执行环境存储在哪里？
+                        调用堆栈（call stack）
+                            负责存储函数的执行环境
+                            当一个函数被调用时 他的执行环境会作为一个栈帧 插入到调用栈的栈顶
+                            函数执行完毕 其栈帧会自动从栈中弹出
+                        栈
+                            一种数据结构
+                            特点是后进先出
+                        消息队列
+                            负责存储将要执行的函数
+                            当触发一个事件时 其响应函数会被JS引擎插入到消息队列中排队 等待调用栈清空
+                        队列
+                            一种数据结构
+                            特点是先进先出
+            */
+            const timerTimeout = setTimeout(() => {
+                console.log("我是定时器setTimeout");
+            }, 3000)
+            // clearTimeout(timerTimeout)
+            const timerInterval = setInterval(() => {
+                console.log("我是定时器setInterval");
+            }, 5000)
+
+            const EventLoop = () => {
+                let a = 10;
+                let b = 20;
+                console.log("EventLoop已进栈");
+            }
+            debugger
+            EventLoop();
+            console.log("EventLoop已从栈中弹出");
+
+            btn.onclick = () => {
+                alert("点击确定后 将会执行一个循环 请立即多次点击按钮2")
+                const begin = Date.now();
+                while (Date.now() - begin < 10000) { }
+            }
+            btn2.onclick = () => {
+                alert("我是按钮2 我被执行了！")
+            }
+
+            const timeOutInterval = setTimeout(function fn() {
+                console.log("使用setTimeout模拟setInterval~")
+                setTimeout(fn, 3000)
+            }, 3000)
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">按钮1：攻击我</button>
+    <button id="btn2">按钮2：快速攻击我!!!</button>
+</body>
+
+</html>

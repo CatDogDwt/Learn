@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM对象</title>
+    <script>
+        /*
+            BOM 浏览器对象模型
+                BOM对象：
+                    window 代表浏览器窗口（全局对象）
+                    navigator 浏览器对象 （可以用来识别浏览器）https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator
+                        userAgent 用户代理 返回一个描述浏览器信息的字符串
+                    location 浏览器地址栏信息 https://developer.mozilla.org/zh-CN/docs/Web/API/Location
+                        可以为location赋其他地址值
+                        .href 获取当前的浏览器地址
+                        .assign("地址") 跳转到一个新的地址
+                        .replace("地址") 跳转到一个新的地址(无法回退到之前的网页)
+                        .reload(true强制清除缓存) 刷新页面
+                    history 浏览器历史记录 （控制浏览器前进后退）
+                        .length 历史记录条数
+                        .back() 回退
+                        .forward() 前进
+                        .go() 1...infinite 向前 infinite.. -1 向后
+                    screen 屏幕的信息
+                BOM对象都是作为window对象的属性保存 所以可以直接在JS中访问这些对象
+        */
+        console.log(window);
+        console.log(navigator);
+        console.log(navigator.userAgent);
+        console.log(location);
+        window.onload = () => {
+            btnLocation.addEventListener("click", () => {
+                //可以为location赋其他地址值 此时点击会自动跳转至该地址
+                location = "https://bilibili.com"
+                console.log(location.href);
+            })
+        }
+        console.log(history);
+        window.onload = () => {
+            btnHistory.addEventListener("click", () => {
+                console.log(history.length);
+            })
+        }
+        console.log(screen);
+    </script>
+</head>
+
+<body>
+    <button id="btnLocation">Location-bilibili</button>
+    <button id="btnHistory">History</button>
+</body>
+
+</html>
