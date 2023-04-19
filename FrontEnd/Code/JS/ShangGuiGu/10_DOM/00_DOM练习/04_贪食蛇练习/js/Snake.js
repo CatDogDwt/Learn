@@ -39,13 +39,6 @@ const GAME = (signal) => {
                 leftNumber += 10
                 snake.style.left = leftNumber + 'px';
             }
-            let foodPosition = food.offsetLeft + food.offsetTop
-            let snakeHeadPosition = snakeHead.left + snakeHead.top
-            console.log("f--", foodPosition);
-            console.log("s--", snakeHeadPosition);
-            if (foodPosition == snakeHeadPosition) {
-                console.log("吃到了！");
-            }
             setTimeout(move, 300)
         }, 300)
     } else if (signal == "end") {
