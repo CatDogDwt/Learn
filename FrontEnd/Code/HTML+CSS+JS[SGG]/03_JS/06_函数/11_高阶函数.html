@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高阶函数</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+        /*
+            高阶函数
+                如果一个函数的参数或返回值为函数(回调函数) 则这个函数称为高阶函数
+                将函数作为参数可以对另一个函数动态的传递代码
+        */
+        //使用函数作为参数
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+        }
+
+        const personArr = [
+            new Person("Ming", 18),
+            new Person("Ya", 16),
+            new Person("Min", 56),
+            new Person("Ling", 56)
+        ]
+
+        function filter(arr, cb) {
+            const newArr = []
+            for (let i = 0; i < arr.length; i++) {
+                //arr[i] => arr[i].age <= 18
+                if (cb(arr[i]))
+                    newArr.push(arr[i])
+            }
+            for (let j = 0; j < newArr.length; j++) {
+                console.log(newArr[j].name, newArr[j].age)
+            }
+            return newArr
+        }
+        console.log(filter(personArr, a => a.age <= 18))
+        _()
+
+        //使用函数作为返回值
+        function someFn() {//函数执行时，可以记录一条日志
+            let result = prompt("请输入日志内容")
+            return console.log(result)
+        }
+        function outer(cb) {
+            return () => {
+                console.log("记录日志~~~~~~~");
+                const result = cb()
+                return result
+            }
+        }
+        let result2 = outer(someFn)
+        result2()
+
+
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

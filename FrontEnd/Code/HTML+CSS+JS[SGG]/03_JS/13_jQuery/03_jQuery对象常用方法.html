@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery对象常用方法</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: whitesmoke;
+            transition: all .2s;
+        }
+
+        .boxChange1 {
+            border: 10px red solid;
+        }
+
+        .boxChange2 {
+            background-color: orange;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    </style>
+    <script src="./scripts/jquery-3.6.4.js"></script>
+    <script>
+        /*
+            jQuery对象方法 
+                https://api.jquery.com/
+            jQuery对象常用方法
+                .addClass()
+                    可以为元素添加一个或多个样式
+                        .addClass("class") .addClass(["class1","class2"])
+                    可以接收一个回调函数作为参数 
+                        在回调函数中 this表示的是当前的元素
+                        回调函数的返回值会成为当前元素的class
+                .hasClass()
+                    检查jQuery对象是否含有某个class
+                .removeClass()
+                    删除jQuery对象的指定class
+                .toggleClass()
+                    切换jQuery对象的指定class
+                .clone()
+                    复制jQuery元素
+                    .clone(true)
+                        复制元素和元素中的属性和方法
+        */
+        $(function () {
+            $("#btn").click(() => {
+                $(".box1").addClass(["boxChange1", "boxChange2"])
+                $("div").addClass(function (index, className) {
+                    console.log(index, "---", className);
+                    if (index % 2 === 0) {
+                        return "boxChange1"
+                    } else {
+                        $(this).addClass("boxChange2")
+                    }
+                })
+            })
+
+
+            let $dwnt1 = $("#list li:nth-child(1)")
+            let $dwnt2 = $("#list li:nth-child(2)").clone(true)
+            var $list2 = $("#list2")
+            $("#btn2").click(()=>{
+                $list2.append($dwnt1,$dwnt2)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn" class="btn">攻击</button>
+    <hr>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <hr>
+    <button id="btn2" class="btn">攻击</button>
+    <hr>
+    <ul id="list">
+        <li>DWENT1</li>
+        <li>DWENT2</li>
+    </ul>
+    <ul id="list2">
+        <li>Mikasa</li>
+        <li>Eren</li>
+        <li>Rikka</li>
+    </ul>
+</body>
+
+</html>

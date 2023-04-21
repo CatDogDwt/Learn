@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旧类</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+        /*
+            早期的JS直接通过函数定义类
+                函数名() 直接调用为普通函数
+                new 函数名() 通过new调用为构造函数
+        */
+        //使用旧类时通常会将类放在一个立即执行函数中
+        var Person = (function () {
+            function Person(name, age) {
+                this.name = name
+                this.age = age
+            }
+            //实例方法
+            Person.prototype.sayHello = function () { }
+            //静态属性
+            Person.staticProperty = "staticProperty"
+            //静态方法
+            Person.staticMethod = function () { }
+
+            return Person
+        }())
+        const p = new Person("Ming", 18)
+        console.log(p);
+        //旧类的继承
+        var PersonExtends = (function () {
+            function PersonExtends(name,age) {
+                this.name = name
+                this.age = age
+            }
+            PersonExtends.prototype = new Person()
+            return PersonExtends
+        }())
+        const pe = new PersonExtends("Ming-extends",18)
+        console.log(pe);
+        _()
+
+
+        class newPerson {
+            //静态属性
+            static staticProperty = "staticProperty"
+            //静态方法
+            static staticMethod() { }
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+            //实例方法
+            sayHello() { }
+        }
+        const np = new newPerson("Ming", 19)
+        console.log(np)
+        class newPersonExtends extends newPerson{
+
+        }
+        const npe = new newPersonExtends("Ming-extends",19)
+        console.log(npe)
+
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

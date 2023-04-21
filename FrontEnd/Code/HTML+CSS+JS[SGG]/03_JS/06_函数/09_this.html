@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+        /*
+            this
+                函数在执行时，JS解释器每次都会传递进一个隐含的参数
+                这个参数就叫做this
+                this会指向一个对象
+                this所指向的对象会根据函数调用方式的不同而不同
+                    以函数形式调用时，this指向的是window
+                    以方法形式调用时，this指向的是调用方法的对象
+                    在构造函数中 this表示当前所创建的对象
+                    通过call和apply调用函数 call和apply的第一个参数 会成为函数的this
+                    通过bind返回的函数 this由bind第一个参数决定(无法修改)
+                通过this可以在方法中引用调用方法的对象
+        */
+        //以函数形式调用指向window
+        function fn() {
+            console.log(this)
+        }
+        fn()
+        //以方法形式调用指向调用方法的对象
+        const obj = {
+            name: "孙悟空",
+            test: fn
+        }
+        obj.test()
+        _()
+        //通过this可以在方法中引用调用方法的对象
+        const obj2 = {
+            name: "猪八戒",
+            SayHello() {
+                console.log(this.name)
+            }
+        }
+        obj2.SayHello()
+        _()
+        /*
+            箭头函数中的this
+                ([参数]) => 返回值
+            例子：
+                无参箭头函数： () => 返回值
+                一个参数的：a => 返回值
+                多个参数的：(a,b) => 返回值
+
+                只返回一个对象的函数：() => ({...})
+                有多行语句的函数:() => {
+                                    ...
+                                    return 返回值
+                                }
+                箭头函数没有自己的this,它的this由它所处作用域的外层作用域决定
+                箭头函数的this和他的调用方式无关
+        */
+        //外部作用域为全局window 此时箭头函数的this指向的是window
+        const fn2 = () => {
+            console.log("fn2=>", this)//总是window
+        }
+        fn2()
+        const obj3 = {
+            name: "沙僧",
+            fn2,
+            //方法
+            SayHello() {
+                //以方法形式调用指向调用方法的对象
+                console.log(this.name)
+
+                //以函数形式调用 window
+                function t() {
+                    console.log("t---->", this)
+                }
+                t();
+
+                //箭头函数由外层作用域决定 此时fn3所处作用域SayHello的外层作用域为obj3
+                const fn3 = () => console.log("fn3()=>", this)
+                fn3()
+            },
+            //箭头函数由外层作用域决定 此时fn4所处作用域obj3的外层作用域为window
+            fn4: () => console.log("fn4()=>", this)
+        }
+        //虽然作为obj3的属性 但由于箭头函数fn2的外层是全局window并且箭头函数this和他的调用方式无关 所以他的this依然指向window 
+        obj3.fn2()
+        obj3.SayHello()
+        obj3.fn4()
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

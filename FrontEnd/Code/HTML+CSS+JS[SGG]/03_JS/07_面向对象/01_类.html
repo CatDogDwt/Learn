@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+        /*
+            JS中的类
+                定义：
+                    类是对象模板，可以将对象中的属性和方法直接定义在类中 定义后，就可以通过类来创建对象
+                    通过同一个类创建的对象 称为同类对象
+                        可以使用instanceof来检查一个对象是否由某个类创建
+                        如果某个对象是由某个类所创建 则我们称该对象是这个类的实例
+                    类的代码块默认是严格模式
+                语法：
+                    class 类名 {} 
+                    const 类名 = class {}
+                通过类创建对象
+                    new 类()
+                    const 变量名 = new 类()
+
+            属性
+                可以在类中设置属性
+            方法
+                可以在类中设置方法
+
+        */
+        class Human {
+            name = "孙悟空" //Human的实例属性和方法 只能通过实例访问 实例.name 实例.SayHello
+            age = 18
+            //静态属性和方法只能通过类名访问 类名.name 类名.SayHello
+            static name = "Human"
+            static age = 18
+            
+            SayHello(){
+                console.log(`你好 我是${this.name}`)
+            }//实例方法
+
+            static SayHello(){
+                console.log(`你好 我是${this.name}`)
+            }//静态方法:this指向当前类
+        }
+        const Dog = class {}
+        const h1 = new Human()
+        const d1 = new Dog()
+        console.log(`h1 instanceof Human? ${h1 instanceof Human}`)
+        console.log(`d1 instanceof Human? ${d1 instanceof Human}`)
+        _()
+        const h2 = new Human()
+        console.log(h2.name,h2.age)
+        h2.SayHello()
+        _()
+        console.log(Human.name,Human.age)
+        Human.SayHello()
+
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

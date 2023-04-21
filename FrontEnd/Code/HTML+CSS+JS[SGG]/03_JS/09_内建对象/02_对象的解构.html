@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的解构</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+
+        const obj = { role1: "Rikka", role2: "Eren", role3: "Mikasa" };
+        let { role1, role2, role3 } = obj;//声明变量同时解构对象
+        console.log(role1, role2, role3);
+
+        let Rikka, Eren, Mikasa;
+        ({ Rikka, Eren, Mikasa } = obj)//没有的属性返回undefined
+        console.log(Rikka, Eren, Mikasa);
+
+        //通过别名就可以解决返回undefined的问题 //设置初始值
+        ({ role1: Rikka = "小鸟游 六花", role2: Eren = "艾伦·耶格尔", role3: Mikasa = "三笠·阿卡曼", role4: no = "NONE" } = obj)
+        console.log(Rikka, Eren, Mikasa, no);
+
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

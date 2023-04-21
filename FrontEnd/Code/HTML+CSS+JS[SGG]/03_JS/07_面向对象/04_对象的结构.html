@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的结构</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+        /*
+            对象中存储属性的区域实际有两个
+                1.对象自身
+                    直接通过对象添加的属性，位于对象自身中
+                    在类中通过x = y的形式添加的属性，位于对象自身中
+                2.原型对象[[Prototype]]
+                    会添加到原型对象中的情况：
+                        在类中通过 方法名(){} 添加的方法，位于原型中
+                        主动向原型中添加的属性或方法
+                    在对象中有一个属性__proto__用来存储原型对象
+                    原型对象负责为对象存储属性
+                        当我们访问对象中的属性时，会优先访问对象自身的属性
+                        对象自身不包含该属性时，才会去原型对象中寻找
+                    访问一个对象的原型对象
+                        对象.__proto__
+                        Object.getPrototypeOf(对象)
+                    原型对象中的数据
+                        对象中的数据（属性、方法等）
+                        constructor(对象的构造函数)
+                    注意：
+                        原型对象也有原型，这样就构成了一条原型链，根据对象的复杂程度不同，原型链的长度也不同
+                    原型的作用：
+                        所有的同类型对象他们的原型对象都是同一个
+                        也就意味着 同类型对象的原型链是一样的
+                        原型就相当于是一个公共的区域，可以被所有该类实例访问
+                        可以将一个该类实例中所有的公共属性(方法)统一存储到原型中，这样只需要创建一个属性，即可被所有实例访问  
+
+                    JS中继承就是通过原型来实现 当继承时，子类的原型就是一个父类的实例
+
+                    尝试：
+                        函数的原型链？函数👉原型👉原型👉null
+                        Object的原型链？Object👉原型👉null
+                            ?Object的原型链为什么会少一个
+                                答：因为其他对象是由Object衍生而来 Object最后指向原型链的终结null
+                    
+                    修改原型：
+                        类名.prototype.属性(方法)
+
+                    instanceof：用来检查一个对象是否是一个类的实例
+                        检查的是对象的原型链上是否有该类实例
+                        Object是所有对象的原型，所以任何对象和Object进行instanceof运算都会返回true
+                    hasOwn:用来检查一个对象的自身是否含有某个属性(推荐使用)
+                        Object.hasOwn(对象,属性名)
+                    hasOwnProperty：用来检查一个对象的自身是否含有某个属性(不推荐使用)
+                        对象.hasOwnProperty(属性名)
+                    in:
+                        使用in运算符检查属性时，无论属性在对象自身还是在原型对象中，都会返回true
+
+        */
+        class Person {
+            name = "Ming"
+            sayHello() {
+                console.log(this.name)
+            }
+        }
+        const p = new Person()
+        console.log(p)
+        console.log(Object.getPrototypeOf(p));
+        //原型链：p对象--->原型--->原型--->null
+        console.log(p.__proto__)
+        console.log(p.__proto__.__proto__)
+        console.log(p.__proto__.__proto__.__proto__)
+        _()
+        //函数的原型链
+        const fn1 = function () { console.log("this is fn1") }
+        console.log(fn1);
+        console.log(fn1.__proto__);
+        console.log(fn1.__proto__.__proto__);
+        console.log(fn1.__proto__.__proto__.__proto__);
+        _()
+        function fn2() { console.log("this is fn2") }
+        console.log(fn2);
+        console.log(fn2.__proto__);
+        console.log(fn2.__proto__.__proto__);
+        console.log(fn2.__proto__.__proto__.__proto__);
+        _()
+        const fn3 = () => console.log("this is fn3")
+        console.log(fn3);
+        console.log(fn3.__proto__);
+        console.log(fn3.__proto__.__proto__);
+        console.log(fn3.__proto__.__proto__.__proto__);
+        _()
+        //Object的原型链
+        const obj = {
+            property: "property",
+            objfn() {
+                console.log("this is objfn")
+            }
+        }
+        console.log(obj)
+        console.log(obj.__proto__);
+        console.log(obj.__proto__.__proto__);
+        _()
+        class Alien extends Person {
+            constructor() {
+                super()
+                this.name = "AlienMing"
+            }
+        }
+        const a = new Alien()
+        console.log(a);
+        console.log(a.__proto__);
+        console.log(a.__proto__.__proto__);
+        console.log(a.__proto__.__proto__.__proto__)
+        console.log(a.__proto__.__proto__.__proto__.__proto__)
+        _()
+        class ThreeBody extends Alien{
+            constructor(){
+                super()
+                this.name = "TuoShui"
+            }
+        }
+        const t = new ThreeBody()
+        console.log(t);
+        console.log(t.__proto__);
+        console.log(t.__proto__.__proto__);
+        console.log(t.__proto__.__proto__.__proto__)
+        console.log(t.__proto__.__proto__.__proto__.__proto__)
+        console.log(t.__proto__.__proto__.__proto__.__proto__.__proto__)
+
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+
+        /*
+            创建一个函数 第一次调用时打印1 第二次调用打印2 以此类推
+
+            可以利用函数隐藏不希望被外部访问的变量
+
+            闭包
+                闭包就是能访问到外部函数作用域中变量的函数
+                当我们需要隐藏一些不希望被别人访问的内容时就可以使用闭包
+            闭包的构成
+                函数的嵌套
+                内部函数要引用外部函数中的变量
+                内部函数要作为返回值返回
+            闭包原理
+                利用词法作用域
+            闭包的生命周期
+                闭包在外部函数调用时产生，外部函数每次调用都会产生一个全新的闭包
+                在内部函数丢失时销毁(内部函数被垃圾回收了，闭包才会消失)
+            注意事项
+                闭包主要用来隐藏一些不希望被外部访问的内容 这就意味着闭包需要占用一定的内存空间
+                相较于类来说 闭包比较浪费内存空间(类可以使用原型而闭包不能)
+                需要执行次数较少时使用闭包 需要大量创建实例时使用类
+        */
+        // // let testnum = 0
+        // function test() {
+        //     testnum++;
+        //     console.log(testnum);
+        // }
+        // test()
+
+        function outer() {
+            let newFnNum = "newFn的调用会不会显示"
+            console.log("0-->",newFnNum)
+            let num = 0
+            // num++
+            // return num
+            console.log("1-->", num)
+            return () => {
+                console.log("2-->", num)
+                num++;
+                console.log("3-->", num);
+            }
+        }
+        const newFn = outer()
+        /*
+            不明白：为什么调用outer()()返回的为1
+            解释：
+                在控制台输入outer()时 返回值为箭头函数()=>{num++ console.log(num)} 此时箭头并未执行
+                在控制台输入outer()()时 执行箭头函数 此时的执行顺序为 let num = 0 -> num++ -> 1
+
+            不明白：为什么用newFn()调用num不会被重新赋值为0
+            解释：
+                一、注意区分const newFn = outer和const newFn = outer()
+                    首先const newFn = outer
+                        将outer赋值给newFn 实际上是将
+                            let num = 0
+                            return () => {
+                                num++;
+                                console.log(num);
+                            }
+                        赋值给了newFn 此时调用函数newFn() 输出结果永远为
+                            return () => {
+                                num++;
+                                console.log(num);
+                            }
+                        并且此时 num=0 return中的箭头函数并未执行
+                        并且由于是将outer直接全部赋值给newFn 所以执行 newFn()() 和 执行outer()()是一样的 每次执行都会重复赋值num为0
+                    其次const newFn = outer()
+                        将outer()赋值给newFn 实际上是将
+                            () => {
+                                num++;
+                                console.log(num);
+                            }
+                        赋值给了newFn 因为调用函数"outer()"输出的结果是他的返回值()=>{num++;console.log(num)}
+                        此时newFn是一个箭头函数 相当于 const newFn = () => {num++;console.log(num)}
+                        当调用newFn时直接调用的是此箭头函数
+                二、链式作用域
+                    执行此函数 会发现testnum由于未定义 在打印时会报错 Uncaught ReferenceError: testnum is not defined
+                        function test() {
+                            testnum++;
+                            console.log(testnum);
+                        }
+                        test()                   
+                    当在外层定义一个testnum变量时 里层的testnum会向上寻找此全局变量 于是可以正常输出
+                        let testnum = 0
+                        function test() {
+                            testnum++;
+                            console.log(testnum);
+                        }
+                        test()
+                    同理 在调用newFn时 由于箭头函数内部无num变量 所以子对象会一级一级向上寻找所有父对象的变量
+                    也就是 闭包就是能访问到外部函数作用域中变量的函数
+                    因此 当在outer函数中添加以下语句
+                        function outer() {
+                        ①   let newFnNum = "newFn的调用会不会显示"
+                        ②   console.log("0-->",newFnNum)
+                        ③   let num = 0
+                            // num++
+                            // return num
+                        ④   console.log("1-->", num)
+                        ⑤   return () => {
+                        ⑥       console.log("2-->", num)
+                        ⑦       num++;
+                        ⑧       console.log("3-->", num);
+                            }
+                        }                   
+                    于是 当第一次调用newFn()时 人为分析执行顺序为⑤⑥①②③④⑤⑥⑦⑧
+                       输出结果为 0-->newFn的调用会不会显示
+                                 1-->0
+                                 2-->0
+                                 3-->1
+                    当第二次调用newFn()时 由于此时num已经存在于全局当中 所以newFn()可以直接使用此变量
+                    人为分析执行顺序为⑤⑥⑦⑧ 输出结果为 2-->1 再次执行 输出结果为 2-->2 以此类推......
+                                                   3-->2                    3-->3
+                总结
+                    即在调用newFn时 执行的只是outer的返回函数 由于在newFn中没有num变量 所以"不得不"根据特性寻找num变量
+                    当再次执行时 outer返回函数中的num已经存在 所以就可以直接执行 于是num不会被重置
+                        
+
+                
+        */
+        newFn()//outer返回的是()=>{num++ console.log(num)}
+        _()
+
+        let a = "全局变量a"
+        /*
+            函数的外层作用域在函数创建时就已经确定了(词法作用域)和调用的位置无关
+        */
+        function fn() {
+            console.log(a);
+        }
+        function fn2() {
+            let a = "fn2中的a"
+            fn()
+        }
+        fn2()
+        
+        function fn3() {
+            let a = "fn3中的a"
+            function fn4() {
+                console.log(a)
+            }
+            return fn4
+        }
+        let fn4 = fn3() 
+        fn4()
+
+        function fn5(){
+            console.log(a)
+        }
+        fn5()
+        _()
+
+        function outCloser() {
+            let outCloserVariable = "This variable is in the outCloser"
+            return function () {
+                console.log(outCloserVariable)
+            }
+        }
+        const outCloserFn = outCloser() //独立闭包
+        const outCloserFn2 = outCloser()//独立闭包
+        outCloserFn()
+        outCloserFn2()
+
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../global/global.js"></script>
+    <script>
+        /*
+            变量的提升
+                使用var声明的变量 它会在所有代码执行前被声明
+                    注意：提升的是声明  不是赋值
+                使用let声明的变量也会提升 但是在赋值之前解释器禁止对该变量的访问
+            函数的提升
+                使用函数声明创建的函数 会在其他代码被执行前创建
+                function 函数名()这样声明才会被提升
+        */
+        console.log(a)//提升的是声明 赋值在下面进行
+        var a = 10
+        fn()
+        function fn() {
+            console.log("fnfnfnfnfnfn")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

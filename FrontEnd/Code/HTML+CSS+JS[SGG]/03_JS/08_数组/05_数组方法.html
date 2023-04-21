@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组方法</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+        //sort() 用来对数组进行排序 破坏性方法 会改变原数组
+        let arr = ["a", "c", "e", "f", "d", "b"];
+        console.log(arr.sort());
+        /*
+            sort默认会按照Unicode编码将数组进行升序排列 
+            所以如果直接通过sort对数字进行排序 可能会得到一个错误的结果
+            可以指定一个回调函数来指定排序规则
+        */
+        let arr2 = [1, 2, 3, 5, 8, 9, 6, 4, 7, 10];
+        console.log(arr2.sort((a, b) => a - b));//升序排列
+        console.log(arr2.sort((a, b) => b - a));//降序排列
+        _()
+        /*
+            forEach() 用来遍历数组
+                需要一个回调函数作为参数 回调函数调用次数和数组中的元素个数有关
+                每次调用 都会将数组中的数据作为参数传递
+                回调函数中有三个参数
+                    第一个参数为数组中的元素(当前)
+                    第二个参数为数组元素的索引(当前)
+                    第三个参数为正在被遍历的数组(当前)
+        */
+        console.log(arr.forEach((element, index, array) => { console.log(element, index, array); }));
+        _()
+        /*
+            filter() 将数组中符合条件的元素保存到一个新数组中返回 非破坏性方法
+                需要一个回调函数作为参数 会为每一个元素去调用回调函数 并根据返回值来决定是否将元素添加到新数组
+        */
+        //获取数组中的所有偶数
+        let result = arr2.filter((element, index, array) => element % 2 == 0);
+        console.log(result);
+        _()
+        /*
+            map() 根据当前数组生成一个新数组 非破坏性方法
+                需要一个回调函数作为参数 回调函数的返回值会成为新数组中的元素
+        */
+        let result2 = arr2.map((element, index, array) => element * 2);
+        console.log(result2);
+        let arr3 = ["Rikka", "Eren", "Mikasa"]
+        let result3 = arr3.map(element => "<li>" + element + "</li>")
+        console.log(result3);
+        _()
+        /*
+            reduce() 整合 将一个数组中的所有元素整合为一个值
+                需要一个回调函数作为参数 回调函数会返回一个整合值 可以设置初始值
+                第一次执行
+                    frontvalue取数组中第一个值 backvalue取数组中下一个值
+                    执行函数操作 返回值赋值给frontvalue 
+                    backvalue取下一个值 再次执行函数操作 以此类推
+        */
+        let result4 = arr2.reduce((frontvalue, backvalue) => frontvalue + backvalue, 0);//添加 ,0？ 指定初始值0 无参数传入时返回初始值
+        console.log(result4);
+
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

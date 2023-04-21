@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排序</title>
+    <script src="../global/global.js"></script>
+    <script>
+        _begin()
+        /*
+            有一个数组：[9,1,3,2,8,0,5,7,6,4] 编写代码进行排序->0,1,2,3,4,5,6,7,8,9
+        */
+        //选择排序 取出一个元素 然后将该元素和其他元素进行比较
+        const OriginalArr = [9, 1, 3, 2, 8, 0, 5, 7, 6, 4]
+        for (let i = 0; i < OriginalArr.length - 1; i++) {
+            for (let j = i + 1; j < OriginalArr.length; j++) {
+                if (OriginalArr[j] < OriginalArr[i]) {
+                    let temp = OriginalArr[j]
+                    OriginalArr[j] = OriginalArr[i]
+                    OriginalArr[i] = temp
+                    console.log(`${OriginalArr[j]}<--->${OriginalArr[i]}`)
+                }
+            }
+            console.log("OriginalArr--->", OriginalArr)
+        }
+        _()
+        //冒泡排序 交换相邻两个元素 不适用于数据量较大的排序
+        const arr = [9, 1, 3, 2, 8, 0, 5, 7, 6, 4]
+        for (let j = 0; j < arr.length - 1; j++) {
+            for (let i = 0; i < arr.length - 1 - j; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    let temp = arr[i]
+                    arr[i] = arr[i + 1]
+                    arr[i + 1] = temp
+                    console.log(`${arr[i + 1]}<--->${arr[i]}`)
+                }
+            }
+            console.log("arr--->", arr)
+        }
+
+         
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

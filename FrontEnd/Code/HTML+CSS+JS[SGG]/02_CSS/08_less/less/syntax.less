@@ -1,0 +1,101 @@
+//@import用于将其他的less引入到当前的less 模块化
+@import "./importless.less";
+
+//less中的单行注释
+/*css中的多行注释*/
+.box4 {
+    background-color: #ff0;
+
+    .box5 {
+        background-color: orangered;
+    }
+
+    >.box6 {
+        background-color: orange;
+    }
+
+    //&表示外层元素 设置box4的hover
+    &:hover {
+        background-color: crimson;
+    }
+
+    div & {
+        //编译成 div .box4
+    }
+}
+
+
+//变量 在变量中可以存储任意的值
+//  语法
+//      @变量名 
+//  使用
+//      直接使用 @变量名
+//      作为类名使用 或 作为一部分值使用 @{变量名}
+//      会优先使用较近的变量 可以在变量声明前使用变量
+
+@width: 100px;
+@height: 100px;
+@color: #bfa;
+@box: .box5;
+@imagepath: "../../../00_PRACTICE/06_过渡动画练习/images";
+@size: 28px;
+
+.box4 {
+    height: @height;
+    width: @width;
+    color: @color;
+}
+
+@{box} {
+    height: @height;
+    width: @width;
+    color: @color;
+    background: url("@{imagepath}/bg2.png") 0 0/cover;
+}
+
+.box6 {
+    @height: 200px;
+    height: @height;
+    width: @width;
+    // font-size: $size; 版本问题无法使用
+}
+
+@width: 200px;
+
+//extend()扩展: 对当前选择器扩展指定选择器的样式(选择器分组)
+.box7:extend(.box6) {
+    border: 5px solid chartreuse;
+}
+
+//mixins混合 直接对指定的样式进行引用
+.box8 {
+    .box7();
+}
+
+
+//使用类选择器时 可以在选择器后加一个括号创建一个mixins 
+//  混合函数mixins
+//      在混合函数中可以直接设置变量
+//可以设置默认值
+.box9(@w: 10px, @h: 10px, @c: 10px solid black) {
+    border: @c;
+    width: @w;
+    height: @h
+}
+
+.box10 {
+    //调用混合函数 按顺序传递参数
+    // .box9(200px,300px,cornflowerblue);
+    //调用混合函数 按名称传递参数
+    // .box9(@h:200px,@w:300px,@c:cornflowerblue);
+    //调用混合函数 传一个值 其余的值为默认值
+    .box9(200px);
+}
+
+
+//在less中所有的数值都可以直接进行运算+ - * / 除法运算整个都要写在括号()中
+.box11 {
+    width: 100px + 200px;
+    height: 300px + 0;
+    background-color: #bfa;
+}

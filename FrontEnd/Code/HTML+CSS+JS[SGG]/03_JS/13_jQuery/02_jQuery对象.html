@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery对象</title>
+    <script src="./scripts/jquery-3.6.4.js"></script>
+    <script>
+        /*
+        
+            jQuery对象
+                通过jQuery函数获取到的对象 本质上是DOM对象的类数组
+                可以通过索引获取jQuery对象中的DOM对象
+                jQuery的隐式迭代
+                   修改jQuery对象时 它会自动修改jQuery中的所有元素
+                读取文本时 返回所有标签中的文本
+                读取属性时 返回第一个标签的属性
+                jQuery的链式调用
+                    通常情况下 jQuery对象方法的返回值依然是一个jQuery对象 所以我们可以调用方法后继续调用其他方法
+        */
+        $(function () {
+            var $li = $("li")
+            console.log($li);
+            console.log($li.text);
+            console.log($li.attr("id"));
+            $("#btn01").click(() => {
+                $li.text("DWENT").css("color", "red")
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn01">攻击</button>
+    <ul>
+        <li id="Mikasa">Mikasa</li>
+        <li id="Eren">Eren</li>
+        <li id="Rikka">Rikka</li>
+    </ul>
+</body>
+
+</html>
