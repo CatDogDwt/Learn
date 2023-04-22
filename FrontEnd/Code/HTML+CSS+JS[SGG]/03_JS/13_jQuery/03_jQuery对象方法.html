@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery对象常用方法</title>
+    <title>jQuery对象方法</title>
     <style>
         div {
             width: 50px;
@@ -31,7 +31,7 @@
         /*
             jQuery对象方法 
                 https://api.jquery.com/
-            jQuery对象常用方法
+            一些jQuery对象方法
                 .addClass()
                     可以为元素添加一个或多个样式
                         .addClass("class") .addClass(["class1","class2"])
@@ -48,6 +48,15 @@
                     复制jQuery元素
                     .clone(true)
                         复制元素和元素中的属性和方法
+                .unwrap(删除指定父元素 如果父元素与指定元素不同则无操作)
+                    默认去除父元素 
+                .wrap()
+                    添加父元素
+                .wrapAll()
+                    为当前所有元素统一添加容器
+                .wrapInner()
+                    为当前元素添加一个内部容器
+                ......
         */
         $(function () {
             $("#btn").click(() => {
@@ -66,8 +75,25 @@
             let $dwnt1 = $("#list li:nth-child(1)")
             let $dwnt2 = $("#list li:nth-child(2)").clone(true)
             var $list2 = $("#list2")
-            $("#btn2").click(()=>{
-                $list2.append($dwnt1,$dwnt2)
+            $("#btn2").click(() => {
+                $list2.append($dwnt1, $dwnt2)
+            })
+
+
+            $("#btn3").click(() => {
+                $("#list3 li").unwrap()
+            })
+
+            $("#btn4").click(() => {
+                $("#list4 li").wrap("<div/>")
+            })
+
+            $("#btn5").click(() => {
+                $("#list5 li").wrapAll("<div/>")
+            })
+
+            $("#btn6").click(() => {
+                $("#list6 li").wrapInner("<div/>")
             })
         })
     </script>
@@ -90,6 +116,34 @@
         <li>Mikasa</li>
         <li>Eren</li>
         <li>Rikka</li>
+    </ul>
+    <hr>
+    <button id="btn3" class="btn">攻击</button>
+    <hr>
+    <ul id="list3">
+        <li>DWENT1</li>
+        <li>DWENT2</li>
+    </ul>
+    <hr>
+    <button id="btn4" class="btn">攻击</button>
+    <hr>
+    <ul id="list4">
+        <li>DWENT1</li>
+        <li>DWENT2</li>
+    </ul>
+    <hr>
+    <button id="btn5" class="btn">攻击</button>
+    <hr>
+    <ul id="list5">
+        <li>DWENT1</li>
+        <li>DWENT2</li>
+    </ul>
+    <hr>
+    <button id="btn6" class="btn">攻击</button>
+    <hr>
+    <ul id="list6">
+        <li>DWENT1</li>
+        <li>DWENT2</li>
     </ul>
 </body>
 
