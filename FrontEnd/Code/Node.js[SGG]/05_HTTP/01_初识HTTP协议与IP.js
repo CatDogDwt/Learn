@@ -107,7 +107,28 @@
                 响应体--{       <head></head>
                         |      <body></body>
                         {   </html>
-
+ * GET与POST请求的应用场景与区别
+        GET请求的情况
+            在地址栏直接输入url访问
+            点击a链接
+            link标签引入css
+            script标签引入js
+            video与audio引入多媒体
+            img标签引入图片
+            form标签中的method为get
+            ajax中的get请求
+        POST请求的情况
+            form标签中的method为post
+            ajax中的post请求
+        区别
+            作用：
+                GET主要用来获取数据 POST主要用来提交数据
+            参数位置
+                GET带参数请求是将参数缀到URL后 POST带参数请求是将参数放到请求体中
+            安全性
+                POST请求相对GET安全一些 因为在浏览器中参数会暴露在地址栏
+            GET的请求大小有限制 一般为2K 而POST请求的则没有大小限制
+            
  * IP地址
  *      本身为数字标识 例如 192.168.1.3 本质为32bit的二进制数字 11000000 10101000 00000001 00000011
  *      用来标志网络设备 实现设备通信
@@ -127,4 +148,28 @@
  * 端口
  *      应用程序的数字标识 现代计算机有65536个端口 0~65535 一个应用程序可以使用一个或多个端口
  *      端口可以实现不同主机应用程序之间的通信
+ * 
+ * 网页资源加载过程
+ *      html->css->js->图片...
+ * 静态资源
+ *      内容长时间不发生改变的资源 例如图片 视频 css文件 js文件 html文件 字体文件...
+ * 动态资源
+ *      内容经常更新的资源 如网站首页 搜索列表...
+ * 静态资源目录或网站根目录
+ *      HTTP服务在哪个文件夹中寻找静态资源，那个文件夹就是静态资源目录，也称之为网站根目录 
+ * 设置资源类型
+ *      媒体类型是一种标准 用来表示文档、文件或字节流的性质和格式
+ *              mime类型结构[type]/[subType] 例如 text/html text/css iamge/jpeg application/json
+ *      HTTP服务可以设置响应头content-type来表明响应体的MIME类型 浏览器会根据该类型决定如何处理资源
+ *              常见的MIME类型
+ *                  html:text/html
+ *                  css:text/css
+ *                  js:text/javascript
+ *                  png:image/png
+ *                  jpg:image/jpeg
+ *                  gif:image/gif
+ *                  mp4:video/mp4
+ *                  mp3:video/mpeg
+ *                  json:application/json
+ *      对于未知的资源类型 可以选择 application/octet-stream类型 浏览器在遇到该类型的响应时 会对响应体内容进行独立存储 也就是下载
 */
