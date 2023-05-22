@@ -18,7 +18,7 @@
 删除包
     执行如下命令删除包
         npm unpublish
-删除包需要满足一定的条件,https://docs.npmjs.com/policies/unpublish
+    删除包需要满足一定的条件,https://docs.npmjs.com/policies/unpublish
     你是包的作者
     发布小于24小时
     大于24小时后，没有其他包依赖，并且每周小于300下载量，并且只有一个维护者

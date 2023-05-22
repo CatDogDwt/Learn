@@ -9,6 +9,16 @@ console.log('通过node.js执行');
         开发服务器应用 开发工具类应用 开发桌面端应用
     下载
         https://nodejs.org/en
+    nvm
+        nvm是管理node版本的工具 方便切换不同版本的node.js
+        安装 https://github.com/coreybutler/nvm-windows/releases
+        常用命令
+            nvm list available  显示所有可以下载的Node.js版本
+            nvm list    显示已安装的版本
+            nvm install 18.12.1 安装18.12.1版本的nodejs
+            nvm install latest  安装最新版的nodejs
+            nvm uninstall 18.12.1   删除18.12.1版本的nodejs
+            nvm use 18.12.1 切换18.12.1版本的nodejs
     额外知识补充：
         命令行结构
             命令名称 参数
