@@ -3,28 +3,24 @@
         {
             "role_name":"六花",
             "role_gender":"女",
-            "role_img":"Rikka.png",
             "role_star":"⭐⭐⭐⭐⭐⭐",
             "id":0
         },
         {
             "role_name":"三笠",
             "role_gender":"女",
-            "role_img":"Mikasa.jpg",
             "role_star":"⭐⭐⭐⭐⭐",
             "id":1
         },
         {
             "role_name":"米法",
             "role_gender":"女",
-            "role_img":"Mifa.png",
             "role_star":"⭐⭐⭐⭐⭐",
             "id":2
         },
         {
             "role_name":"塞尔达",
             "role_gender":"女",
-            "role_img":"Zelda.jpg",
             "role_star":"⭐⭐⭐⭐",
             "id":3
         }

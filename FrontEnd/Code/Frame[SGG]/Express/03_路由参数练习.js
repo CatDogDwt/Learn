@@ -38,7 +38,6 @@ app.get('/role/:id.html', (req, res) => {
         <body>
             <h1>${result.role_name}</h1>
             <h1>${result.role_gender}</h1>
-            <img src="./03_role/${result.role_img}">
             <h1>${result.role_star}</h1>
         </body>
 
