@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>记账本</title>
+  <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+
+<body>
+  <div class="content">
+    <h1>记账本</h1>
+    <hr>
+    <% accounts.forEach(item=> { %>
+      <div class="item">
+        <div class="top">
+          <span>
+            <%= item.time %>
+          </span>
+        </div>
+        <div class="down">
+          <div class="text">
+            <%= item.title %>
+          </div>
+          <div class="sort">
+            <span class="out">
+              <% if(item.type=='out' ){ %>
+                支出
+                <% }else if(item.type=='in' ){ %>
+                  收入
+                  <% } %>
+            </span>
+          </div>
+          <div class="money">
+            <%= item.money %>元
+          </div>
+          <div>
+            <a href="/account/<%= item.id %>">x</a>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+  </div>
+</body>
+
+</html>

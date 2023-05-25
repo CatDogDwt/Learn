@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记账本</title>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+
+<body>
+    <form action="/account" method="post">
+        <div class="content">
+            <h1>添加记录</h1>
+            <hr>
+            <div class="insert">
+                <span>事项</span>
+                <input name="title" type="text">
+                <span>发生时间</span>
+                <input name="time" type="text">
+                <span>类型</span>
+                <select name="type" id="type">
+                    <option value="out">支出</option>
+                    <option value="in">收入</option>
+                </select>
+                <span>金额</span>
+                <input name="money" type="text">
+            </div>
+            <hr>
+            <button>添加</button>
+        </div>
+    </form>
+</body>
+
+</html>

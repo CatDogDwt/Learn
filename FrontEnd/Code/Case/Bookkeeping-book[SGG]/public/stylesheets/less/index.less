@@ -1,0 +1,95 @@
+.content {
+    width: 50%;
+    margin: 0 auto;
+
+    //account
+    .item {
+        width: 100%;
+        border: 1px solid grey;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+        .top {
+            background-color: coral;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding: 5px 5px 5px 20px;
+            color: white;
+        }
+
+        .down {
+            display: flex;
+            flex-direction: row;
+            height: 80px;
+            line-height: 80px;
+            background-color: white;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            justify-content: space-evenly;
+            font-size: 12px;
+
+            .text {
+                width: 50%;
+            }
+
+            .sort {
+                width: 20%;
+
+                .in {
+                    background-color: green;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    color: white;
+                }
+
+                .out {
+                    background-color: crimson;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    color: white;
+                }
+            }
+
+            .money {
+                width: 15%;
+            }
+        }
+    }
+
+    //create
+    .insert {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        justify-content: space-between;
+        padding: 10px 0;
+
+        input,
+        select {
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid black;
+            height: 30px;
+        }
+    }
+
+    button {
+        width: 100%;
+        background-color: cornsilk;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        height: 30px;
+        margin-top: 10px;
+
+        &:hover {
+            background-color: blanchedalmond;
+        }
+
+        &:active {
+            background-color: burlywood;
+        }
+    }
+}
