@@ -96,3 +96,41 @@
        db.集合名.update({name:'张三'},{$set:{age:19}})
 
      - db.集合名.remove(查询条件) 删除文档
+
+9. #### 条件控制
+
+   - ###### 运算符
+
+      $gt 大于
+
+      $lt 小于
+
+      $gte 大于等于
+
+      $lte 小于等于
+
+      $ne 不全等
+
+      db.集合名.find ( { id : { $gt : 3 } } ) id号比3大的所有记录
+
+   - ###### 逻辑运算
+
+      $or 逻辑或
+
+      db.集合名.find( { $or : [ { age : 18 } , { age : 24 } ] } )
+
+      $and 逻辑与
+
+      db.集合名.find( { $and : [ { age: { $lt : 20 } } , { age :  { $gt : 15 } } ] } )
+
+   - ###### 正则匹配
+
+      条件中可以直接使用JS的正则语法 通过正则可以进行模糊查询
+
+      db.集合名.find({name:/xxx/})
+
+10. #### 图形化工具
+
+   - ###### Robo 3T https://github.com/Studio3T/robomongo/releases
+
+   - ###### Navicat https://www.navicat.com.cn/

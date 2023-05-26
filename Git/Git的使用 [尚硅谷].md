@@ -21,3 +21,11 @@
   ![](https://raw.githubusercontent.com/CatDogDwt/IHS/master/Git/202211061827926.png)
 
 ![](https://raw.githubusercontent.com/CatDogDwt/IHS/master/Git/202211061827927.png)
+
+- ###### git上传忽略文件夹
+
+  1. 进入相关文件夹打开git bash 输入touch .gitignore 创建gitignore
+
+  2. 在.gitignore中输入相关规则即可
+
+     例如：**/node_modules 忽略全局的node_modules
