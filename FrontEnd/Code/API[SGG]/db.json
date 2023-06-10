@@ -1,0 +1,26 @@
+{
+  "Role": [
+    {
+      "id": 1,
+      "name": "Rikka"
+    },
+    {
+      "id": 2,
+      "name": "Zelda"
+    },
+    {
+      "name": "Link",
+      "id": 3
+    }
+  ],
+  "Role2": [
+    {
+      "id": 1,
+      "name": "Mikasa"
+    },
+    {
+      "id": 2,
+      "name": "Mifa"
+    }
+  ]
+}

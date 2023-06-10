@@ -11,13 +11,15 @@
 
 <body>
   <div class="content">
+    <a class="listbtnout" href="/logout">退出登录</a>
+    <a class="listbtn" href="/account/create">添加账单</a>
     <h1>记账本</h1>
     <hr>
     <% data.forEach(item=> { %>
       <div class="item">
         <div class="top">
           <span>
-            <%= item.time %>
+            <%= moment(item.time).format('YYYY-MM-DD') %>
           </span>
         </div>
         <div class="down">
