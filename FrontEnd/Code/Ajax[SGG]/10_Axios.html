@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios发送AJAX请求</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>通用方法</button>
+    <script>
+        const btns = document.querySelectorAll('button')
+
+        //配置baseURL
+        axios.defaults.baseURL = 'http://127.0.0.1:3000';
+
+        btns[0].onclick = () => {
+            axios.get('/AxiosServer', {
+                //url参数
+                params: {
+                    name: 'Rikka',
+                    age: 16
+                },
+                //请求头信息
+                headers: {
+                    name: 'Zelda',
+                    age: 130
+                }
+            }).then(value => {
+                console.log(value);
+            });
+        }
+
+        btns[1].onclick = () => {
+            axios.post('/AxiosServer', {
+                //请求体
+                username: 'admin',
+                password: 'admin'
+            }, {//其他配置
+                //url参数
+                params: {
+                    name: 'Rikka',
+                    age: 16
+                },
+                //请求头信息
+                headers: {
+                    name: 'Zelda',
+                    age: 130
+                },
+            }
+            ).then(value => {
+                console.log(value);
+            });
+        }
+
+        btns[2].onclick = () => {
+            axios({
+                //请求方法
+                method: 'POST',
+                //url
+                url: '/AxiosServer',
+                //url参数
+                params: {
+                    name: 'Rikka'
+                },
+                //头信息
+                headers: {
+                    name: 'Zelda'
+                },
+                //请求体参数
+                data: {
+                    username: "admin",
+                    password: "admin"
+                }
+            }).then(res => {
+                console.log(res);
+                console.log(res.status);
+            })
+        }
+    </script>
+</body>
+
+</html>

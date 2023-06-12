@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生jsonp实践</title>
+</head>
+
+<body>
+    <!--需求 在输入框丧失焦点时对服务端发送请求验证用户名是否存在 如果不存在 则输入框变红-->
+    用户名：<input type="text" id="username">
+    <p id="p"></p>
+    <script>
+        //声明handle函数
+        let handle = (error) => {
+            username.style.border = "solid 1px red";
+            p.innerHTML = error.msg;
+        }
+        username.onblur = function () {
+            //向服务端发送数据 检测用户名是否存在
+            ////创建script标签
+            const script = document.createElement('script');
+            ////设置标签的src属性
+            script.src = 'http://127.0.0.1:3000/check-username?username';
+            ////将script插入到文档中
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+
+</html>

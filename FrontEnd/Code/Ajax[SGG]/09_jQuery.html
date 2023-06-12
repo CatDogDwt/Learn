@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery发送AJAX请求</title>
+    <script src="../HTML+CSS+JS[SGG]/03_JS/13_jQuery/scripts/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>通用方法</button>
+    <script>
+        $("button").eq(0).click(() => {
+            $.get('http://127.0.0.1:3000/jQueryGet', { a: 100, b: 200 }, (data) => {
+                console.log(data);
+            }, 'json');
+        })
+        $("button").eq(1).click(() => {
+            $.post('http://127.0.0.1:3000/jQueryPost', { a: 100, b: 200 }, (data) => {
+                console.log(data);
+            });
+        })
+        $('button').eq(2).click(() => {
+            $.ajax({
+                //url
+                url: "http://127.0.0.1:3000/jQueryServer",
+                //参数
+                data: { a: 100, b: 200 },
+                //请求类型
+                type: 'GET',
+                //响应体结果
+                dataType: 'json',
+                //成功的回调
+                success: (data) => {
+                    console.log(data);
+                },
+                //超时时间的回调
+                timeout: 2000,
+                //失败的回调
+                error: () => {
+                    console.log(出错了);
+                },
+                headers: {
+                    naem: 'Mikasa'
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

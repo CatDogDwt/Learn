@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>请求超时与网络异常</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 1px #90b;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="ajaxGetBtn">点击发送请求</button>
+    <div id="result"></div>
+
+    <script>
+        ajaxGetBtn.onclick = () => {
+            //Ajax请求
+            ////创建对象（在浏览器控制台中的XHR选项就是AJAX控制）
+            const xhr = new XMLHttpRequest();
+            ////超时设置 如果2s内无响应 则取消请求
+            xhr.timeout = 2000;
+            ////超时回调
+            xhr.ontimeout = () => {
+                result.innerHTML = '网络异常 请稍后重试'
+            }
+            ////网络异常回调
+            xhr.onerror = () => {
+                result.innerHTML = '您的网络似乎出了一些问题'
+            }
+            ////初始化 设置请求的方法和url
+            xhr.open('GET', 'http://127.0.0.1:3000/delay');//1.发送何种类型的请求 2.请求地址（可传参?&）
+            ////发送
+            xhr.send();
+            ////事件绑定 处理服务端返回的结果
+            xhr.onreadystatechange = () => {
+                //判断 表示服务端返回了所有结果
+                if (xhr.readyState === 4) {
+                    //判断响应的状态码
+                    if (xhr.status >= 200 && xhr.status < 300) {//以2开头的状态码都表示正常
+                        //处理结果 响应报文
+                        ////响应行
+                        console.log(xhr.status);//响应状态码
+                        console.log(xhr.statusText);//响应状态字符串
+                        console.log(xhr.getAllResponseHeaders());//所有响应头
+                        console.log(xhr.response);//响应体
+                        result.innerHTML = xhr.response
+                    }
+                }
+
+
+                /**
+                 * onreadystatechange
+                 * on 当...的时候
+                 * readystate 是xhr对象中的属性 表示状态
+                 *  有五个值 
+                 *      0 默认值 表示未初始化 
+                 *      1 表示open方法已经调用完毕
+                 *      2 表示send方法已经调用完毕
+                 *      3 表示服务端已返回部分结果
+                 *      4 表示服务端已返回所有结果
+                 * change 当改变的时候触发
+                */
+            }
+        }
+    </script>
+</body>
+
+</html>

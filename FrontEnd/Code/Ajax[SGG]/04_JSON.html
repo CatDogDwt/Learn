@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 响应 JSON</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 1px #90b;
+        }
+    </style>
+</head>
+
+<body>
+    <!--当按下任意键时 响应json请求-->
+    <div id="result"></div>
+
+    <script>
+        window.onkeydown = () => {
+            //Ajax请求
+            ////创建对象（在浏览器控制台中的XHR选项就是AJAX控制）
+            const xhr = new XMLHttpRequest();
+            ////初始化 设置请求的方法和url
+            xhr.open('GET', 'http://127.0.0.1:3000/json-server');//1.发送何种类型的请求 2.请求地址（可传参?&）
+            ////设置响应体数据类型
+            xhr.responseType = 'json';
+            ////发送
+            xhr.send();
+            ////事件绑定 处理服务端返回的结果
+            xhr.onreadystatechange = () => {
+                //判断 表示服务端返回了所有结果
+                if (xhr.readyState === 4) {
+                    //判断响应的状态码
+                    if (xhr.status >= 200 && xhr.status < 300) {//以2开头的状态码都表示正常
+                        //处理结果 响应报文
+                        ////响应行
+                        console.log(xhr.status);//响应状态码
+                        console.log(xhr.statusText);//响应状态字符串
+                        console.log(xhr.getAllResponseHeaders());//所有响应头
+                        console.log(xhr.response);//响应体
+                        //手动对数据进行转换
+                        // let data = JSON.parse(xhr.response);
+                        //自动转换👆设置响应体数据类型为json 在上边
+                        result.innerHTML = xhr.response.name
+                    }
+                }
+
+
+                /**
+                 * onreadystatechange
+                 * on 当...的时候
+                 * readystate 是xhr对象中的属性 表示状态
+                 *  有五个值 
+                 *      0 默认值 表示未初始化 
+                 *      1 表示open方法已经调用完毕
+                 *      2 表示send方法已经调用完毕
+                 *      3 表示服务端已返回部分结果
+                 *      4 表示服务端已返回所有结果
+                 * change 当改变的时候触发
+                */
+            }
+        }
+    </script>
+</body>
+
+</html>
