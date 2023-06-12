@@ -6,6 +6,8 @@
 
 3. #### Node.js
 
+4. #### Ajax
+
 - ###### 扩展
 
   ![image-20230611061649644](https://raw.githubusercontent.com/CatDogDwt/IHS/master/Other/202306110616765.png)
