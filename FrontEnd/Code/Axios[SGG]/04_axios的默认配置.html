@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--使用cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>基本使用</h1>
+    <hr>
+    <button id="geT">GET</button>
+    <button id="posT">POST</button>
+    <button id="puT">PUT</button>
+    <button id="deletE">DELETE</button>
+    <script>
+        //默认配置
+        axios.defaults.method = 'GET' //设置默认的请求类型
+        axios.defaults.baseURL = 'http://localhost:3000' //设置基础url
+        axios.defaults.params = { id: 100 }; //设置默认url后缀参数
+        geT.onclick = () => {
+            axios({
+                // method: 'GET',
+                url: '/posts',
+            }).then(res => {
+                console.log(res.data);
+            })
+        }
+    </script>
+</body>
+
+</html>

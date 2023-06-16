@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>then方法返回结果的特点</title>
+</head>
+
+<body>
+    <script>
+        //then()返回结果是由then()指定的回调函数执行的结果决定
+        let p = new Promise((resolve, reject) => {
+            resolve('ok');
+        })
+        //执行then方法
+        let result = p.then(value => {
+            //如果抛出异常 新promise变为rejected，reason为抛出的异常
+            // throw 'warn'
+            //如果返回的是非promise的任意值 新promise变为resolved value为返回的值
+            // return 'Rikka'
+            //如果返回的是另一个新promise 此promise的结果就会成为新promise的结果
+            return new Promise((resolve, reject) => {
+                // resolve('这个结果即为result的结果且状态为正确');
+                // reject('这个结果即为result的结果且状态为错误');
+            })
+        }, reason => {
+            console.warn(reason);
+        })
+        console.log(result);
+    </script>
+</body>
+
+</html>

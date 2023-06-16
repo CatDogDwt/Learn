@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>其他方法</h1>
+    <hr>
+    <button id="geT">GET</button>
+    <button id="posT">POST</button>
+    <button id="puT">PUT</button>
+    <button id="deletE">DELETE</button>
+    <script>
+        geT.onclick = () => {
+            axios.request({
+                method: 'GET',
+                url: 'http://localhost:3000/comments'
+            }).then(res => {
+                console.log(res);
+            })
+        }
+        posT.onclick = () => {
+            axios.post('http://localhost:3000/comments', {
+                body: "some comment2",
+                postId: 2
+            }).then(res => {
+                console.log(res);
+            })
+        }
+    </script>
+</body>
+
+</html>

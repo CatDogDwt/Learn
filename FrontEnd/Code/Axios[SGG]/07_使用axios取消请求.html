@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>axios取消请求</h1>
+    <hr>
+    <button id="send">发送</button>
+    <button id="canclebtn">取消</button>
+    <script>
+        //2.声明全局变量
+        let cancle = null;
+        send.onclick = () => {
+            //检测上一次请求是否已完成
+            if (cancle !== null) {
+                //取消上一次的请求
+                cancle();
+            }
+            axios.get('http://localhost:3000/posts', {
+                //1.添加配置对象的属性
+                cancelToken: new axios.CancelToken(function (c) {
+                    console.log(c);
+                    cancle = c;//3.将c赋值给cancle
+                })
+            }).then(res => {
+                console.log(res);
+                //初始化cancle
+                cancle = null;
+            })
+        }
+
+        canclebtn.onclick = () => {
+            //执行cancle
+            cancle();
+        }
+    </script>
+</body>
+
+</html>

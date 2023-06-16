@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中断promise链</title>
+</head>
+
+<body>
+    <script>
+        //当使用promise的then链式调用时 在中间中断 不在调用后面的回调函数
+        //办法：在回调函数中返回一个pendding状态的promise对象（有且只有这一种方式）
+        let p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('ok')
+            }, 1000);
+        })
+
+        p.then(value => {
+            console.log(1);
+        }).then(value => {
+            return new Promise(() => { });//一个pendding状态的promise对象
+        }).then(value => {
+            console.log(3);
+        }).catch(reason => {
+            console.warn(reason);
+        })
+    </script>
+</body>
+
+</html>

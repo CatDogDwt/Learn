@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--使用cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>基本使用</h1>
+    <hr>
+    <button id="geT">GET</button>
+    <button id="posT">POST</button>
+    <button id="puT">PUT</button>
+    <button id="deletE">DELETE</button>
+    <script>
+
+        const axiosObj = axios.create({//函数 axiosObj与axios功能类似
+            method: 'GET',
+            baseURL: 'http://localhost:3000',
+            timeout: 2000,
+        })//此实例对象只适用一个接口
+        //若想实现面对不同接口请求发送数据 可以多指定几个实例
+        const axiosObj2 = axios.create({
+            method: 'GET',
+            baseURL: 'www.baidu.com',
+            timeout: 2000
+        })
+
+        geT.onclick = () => {
+            // axiosObj({
+            //     url: '/posts'
+            // }).then(res => {
+            //     console.log(res);
+            // })
+            axiosObj.get('/posts').then(res => {//使用get方法
+                console.log(res);
+            })
+        }
+    </script>
+</body>
+
+</html>

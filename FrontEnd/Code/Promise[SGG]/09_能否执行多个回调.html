@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如果使用then方法指定多个回调 那么能否执行多个回调</title>
+</head>
+
+<body>
+    <script>
+        //当promise改变为对应状态时都会调用
+        let p = new Promise((resolve, reject) => {
+            resolve('ok');
+        })
+        //指定回调1
+        p.then(value => {
+            console.log(value);
+        })
+        //指定回调2
+        p.then(value => {
+            alert(value);
+        })
+        //指定回调3
+        p.catch(reason => {
+            console.log(reason);
+        })
+    </script>
+</body>
+
+</html>

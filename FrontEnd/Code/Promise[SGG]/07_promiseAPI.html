@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promiseAPI-语法糖</title>
+</head>
+
+<body>
+    <h1>
+        由于promise中的参数会立即执行 所以promise对象中的结果会优先展示
+    </h1>
+    <script>
+        //Promise.resolve 属于Promise对象 而非实例对象 返回一个成功的promise对象
+        //如果传入的参数为 非promise类型的对象 则返回的结果一直为成功的promise对象
+        //如果传入的参数为 promise类型的对象 则参数的结果决定了resolve的结果
+        let p1 = Promise.resolve('001');
+        console.log('p1-resolve-', p1);
+        let p2 = Promise.resolve(new Promise((resolve, reject) => {
+            resolve('ok')
+        }))
+        console.log('p2-resolve-', p2);
+        let p3 = Promise.resolve(new Promise((resolve, reject) => {
+            reject('error')
+        }))
+        p3.catch(() => { })
+        console.log('p3-resolve-', p3);
+
+        //reject 属于Promise对象 而非实例对象 返回一个错误的promise对象
+        //如果传入的参数为 非promise类型的对象 则返回的结果一直为失败的promise对象
+        //如果传入的参数为 promise类型的对象 则返回的结果是一个失败的promise成功对象
+        let p4 = Promise.reject('002');
+        p4.catch(() => { })
+        console.log('p4-reject-', p4);
+        let p5 = Promise.reject(new Promise((resolve, reject) => {
+            resolve('ok')
+        }))
+        p5.catch(() => { })
+        console.log('p5-reject-', p5);
+
+        //Promise.all 属于Promise对象 而非实例对象
+        //接受参数为包含n个promise的数组 返回一个新的promise 
+        //只有所有的promise都成功才成功 返回一个成功的数组 有一个失败就都失败 返回一个error
+        const result = Promise.all([p1, p2]);
+        console.log('result-all-', result);
+        const result2 = Promise.all([p1, p3]);
+        result2.catch(() => { })
+        console.log('result2-all-', result2);
+
+        //Promise.race 属于Promise对象 而非实例对象
+        //接受参数为包含n个promise的数组 返回一个新的promise 
+        //第一个完成的promise结果状态就是race的最终结果状态 定时器案例
+        const result3 = Promise.race([p1, p2, p3]);
+        console.log('result3-race-', result3);
+        const result4 = Promise.race([p3, p1, p2]);
+        result4.catch(() => { })
+        console.log('result4-race-', result4);
+    </script>
+</body>
+
+</html>

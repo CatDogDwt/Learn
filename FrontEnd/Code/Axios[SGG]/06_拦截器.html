@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //拦截器就是一些函数 分两大类 请求拦截器和响应拦截器
+        //请求拦截器 在发送请求之前 可以借助回调对请求内容进行处理和检测 如果没有问题则发送 如果有问题则取消发送
+        axios.interceptors.request.use(function (config) {
+            console.log('请求拦截器 成功');
+            //配置请求
+            config.params = {
+                a: 100
+            }
+            return config;
+        }, function (error) {
+            console.log('请求拦截器 失败');
+            return Promise.reject(error)
+        })
+        //响应拦截器 在返回结果时 可以借助回调在处理结果之前先对结果进行预处理 例如格式化...
+        axios.interceptors.response.use(function (response) {
+            console.log('响应拦截器 成功');
+            return response.data;//只返回data
+        }, function (error) {
+            console.log('响应拦截器 失败');
+            return Promise.reject(error)
+        })
+
+        //发送请求
+        axios({
+            method: 'GET',
+            url: 'http://localhost:3000/posts'
+        }).then(res => {
+            console.log('自定义回调处理成功的结果');
+        })
+    </script>
+</body>
+
+</html>
