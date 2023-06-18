@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script type='text/javascript' src='../js/vue.js'></script>
+</head>
+
+<body>
+    <!-- 
+        深度监视:
+            (1).Vue中的watch默认不监测对象内部值的改变(一层)
+            (2).配置deep:true可以监测对象内部值改变(多层)
+        备注:
+            (1).Vue自身可以监测对象内部值的改变，但vue提供的watch默认不可以!
+            (2).使用watch时根据数据的具体结构，决定是否采用深度监视。
+     -->
+    <div id='root'>
+        <h2>今天天气很{{info}}</h2>
+        <button @click="changeWeather">切换天气</button>
+        <hr>
+        <h3>a的值是:{{numbers.a}}</h3>
+        <button @click="numbers.a++">a+1</button>
+        <h3>b的值是:{{numbers.b}}</h3>
+        <button @click="numbers.b++">b+1</button>
+        <button @click="numbers = {a:2,b:2}">彻底替换numbers</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                isHot: true,
+                numbers: {
+                    a: 1,
+                    b: 1
+                }
+            },
+            methods: {
+                changeWeather() {
+                    this.isHot = !this.isHot
+                }
+            },
+            computed: {
+                info() {
+                    return this.isHot ? '炎热' : '凉爽'
+                }
+            },
+            //正常写法
+            watch: {
+                isHot: {
+                    // immediate: true,
+                    handler(newVlaue, oldValue) {
+                        console.log(newVlaue);
+                        console.log(oldValue);
+                    }
+                },
+                //监视多级结构中所有属性变化
+                numbers:{
+                    deep:true,//深度监视
+                    handler(newVlaue, oldValue) {
+                        console.log('numbers被改变');
+                    }
+                },
+                //监视多级结构中某个属性的变化
+                'numbers.a': {//其实这是原始写法'xxx'
+                    // immediate: true,
+                    handler(newVlaue, oldValue) {
+                        console.log('a被操作');
+                    }
+                },
+            }
+            //简写
+            // isHot(newVlaue, oldValue) { //当只使用handler函数时简写 监视属性(){} 
+            //     console.log('天气被修改', newVlaue, oldValue);
+            // }
+        })
+    </script>
+</body>
+
+</html>

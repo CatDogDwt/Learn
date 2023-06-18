@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script type='text/javascript' src='../js/vue.js'></script>
+</head>
+
+<body>
+    <!--
+        v-for指令:
+            1.用于展示列表数据
+            2.语法: v-for="(item, index) in xxx” :key="yyy"
+            3.可遍历: 数组、对象、字符串 (用的很少)、指定次数 (用的很少)
+    -->
+    <!-- 可以使用for-of 也可以使用for-in -->
+    <div id='root'>
+        <h2>遍历数组</h2>
+        <ul>
+            <li v-for="(person,index) in persons" :key="index">
+                姓名：{{person.name}} 年龄：{{person.age}}
+            </li>
+        </ul>
+        <h2>遍历对象</h2>
+        <ul>
+            <li v-for="(value,key) in persons2" :key="key">
+                {{value}}
+            </li>
+        </ul>
+        <h2>遍历字符串</h2>
+        <ul>
+            <li v-for="(char,index) in persons3" :key="index">
+                {{char}}
+            </li>
+        </ul>
+        <h2>遍历指定次数</h2>
+        <ul>
+            <li v-for="(number,index) in 6" :key="index">
+                {{index}}-{{number}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                persons: [
+                    {
+                        id: '001',
+                        name: 'Rikka',
+                        age: 16
+                    },
+                    {
+                        id: '002',
+                        name: 'Zelda',
+                        age: 130
+                    },
+                    {
+                        id: '003',
+                        name: 'Mikasa',
+                        age: 18
+                    }
+                ],
+                persons2: {
+                    name: 'Rikka',
+                    age: 16
+                },
+                persons3:"Rikka"
+            },
+            methods: {
+            },
+            computed: {
+                get() {
+
+                },
+                set(value) {
+
+                }
+            },
+            watch: {
+                '': {
+                    immediate: true,
+                    handler(newVlaue, oldValue) {
+
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

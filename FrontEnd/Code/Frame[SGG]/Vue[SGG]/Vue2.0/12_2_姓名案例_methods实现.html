@@ -6,7 +6,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Document</title>
-    <script type='text/javascript' src='./js/vue.js'></script>
+    <script type='text/javascript' src='../js/vue.js'></script>
 </head>
 
 <body>
@@ -14,20 +14,22 @@
         
     -->
     <div id='root'>
-        <h2>今天天气很{{info}}</h2>
-        <button>切换天气</button>
+        姓：<input type="text" v-model="firstName">
+        <br>
+        名：<input type="text" v-model="lastName">
+        <br>
+        全名：<span>{{fullName()}}</span>
     </div>
     <script>
-        const vm = new Vue({
+        new Vue({
             el: '#root',
             data: {
-                isHot: true
+                firstName: '张',
+                lastName: '三',
             },
             methods: {
-            },
-            computed: {
-                info(){
-                    return this.isHot ? '炎热' : '凉爽'
+                fullName() {
+                    return this.firstName + this.lastName;
                 }
             }
         })

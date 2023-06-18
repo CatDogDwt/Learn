@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script type='text/javascript' src='../js/vue.js'></script>
+</head>
+
+<body>
+    <!--
+        
+    -->
+    <div id='root'>
+        <input type="text" placeholder="请输入名字" v-model="keyword">
+        <ul>
+            <li v-for="(person,index) in filPersons" :key="person.id">
+                {{person.name}}-{{person.age}}-{{person.gender}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        // new Vue({//监视属性实现
+        //     el: '#root',
+        //     data: {
+        //         keyword: '',
+        //         persons: [
+        //             { id: '001', name: 'Rikka', age: 16, gender: 'woman' },
+        //             { id: '002', name: 'Zelda', age: 10103, gender: 'woman' },
+        //             { id: '003', name: 'Mikasa', age: 18, gender: 'woman' },
+        //             { id: '004', name: 'Mifa', age: 230, gender: 'woman' },
+        //         ],
+        //         filPersons: []
+        //     },
+        //     watch: {
+        //         keyword: {
+        //             immediate: true,
+        //             handler(newvalue, oldValue) {
+        //                 this.filPersons = this.persons.filter((p) => {
+        //                     return p.name.indexOf(newvalue) !== -1
+        //                 })
+        //             }
+        //         }
+        //     }
+        // })
+
+        new Vue({//计算属性实现
+            el: '#root',
+            data: {
+                keyword: '',
+                persons: [
+                    { id: '001', name: 'Rikka', age: 16, gender: 'woman' },
+                    { id: '002', name: 'Zelda', age: 10103, gender: 'woman' },
+                    { id: '003', name: 'Mikasa', age: 18, gender: 'woman' },
+                    { id: '004', name: 'Mifa', age: 230, gender: 'woman' },
+                ],
+            },
+            computed: {
+                filPersons: {
+                    get() {
+                       return this.persons.filter((p)=>{
+                            return p.name.indexOf(this.keyword) !== -1
+                        })
+                    },
+                    set(value) {
+
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script type='text/javascript' src='../js/vue.js'></script>
+</head>
+
+<body>
+    <!--
+        条件渲染:
+            1.V-if
+                写法:
+                    (1).v-if="表达式"
+                    (2).V-else-if="表达式"
+                    (3).V-else="表达式"
+                适用于:切换频率较低的场景。
+                特点:不展示的DOM元素直接被移除。
+                注意: v-if可以和v-else-if、v-else一起使用，但要求结构不能被“打断”
+            2.V-show
+                写法: 
+                    v-show="表达式"
+                适用于:切换频率较高的场景。
+                特点:不展示的DOM元素未被移除，仅仅是使用样式隐藏掉
+                
+            3.备注: 使用v-if的时，元素可能无法获取到，而使用v-show一定可以获取到。
+    -->
+    <div id='root'>
+        <!-- 使用v-show做条件渲染 -->
+        <h2 v-show="showValue">学习{{name}}</h2>
+        <!-- <h2 v-show="1 === 1">学习{{name}}</h2> -->
+
+        <!-- 使用v-if做条件渲染 -->
+        <h2 v-if="false">学习{{name}}</h2>
+        <!-- <h2 v-if="1 === 1">学习{{name}}</h2> -->
+
+        <h2>当前的n值是{{n}}</h2>
+        <button @click="n++">n+1</button>
+        <div v-show="n===1">v-show:N={{n}}显示这个</div>
+        <div v-show="n===2">v-show:N={{n}}显示这个</div>
+        <div v-show="n===3">v-show:N={{n}}显示这个</div>
+
+        <div v-if="n===4">v-if:N={{n}}显示这个</div>
+        <div v-else-if="n===4">Zelda</div><!-- 不展示 -->
+        <div v-else>v-else:除了4显示这个N={{n}}</div>
+
+        <div v-if="n===4">v-if:N={{n}}显示这个</div>
+        <div v-if="n===4">v-if:N={{n}}显示这个</div><!-- 展示 -->
+        <div v-else-if="n===6">v-else-if:N={{n}}显示这个</div>
+
+        <!-- v-if只能与template使用 -->
+        <template v-if="n===1">
+            <h2>哈</h2>
+            <h2>哈</h2>
+            <h2>哈</h2>
+        </template>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                name: '条件渲染',
+                showValue: true,
+                n: 0
+            },
+            methods: {
+            },
+        })
+    </script>
+</body>
+
+</html>
