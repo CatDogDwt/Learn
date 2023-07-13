@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script type='text/javascript' src='../js/vue.js'></script>
+</head>
+
+<body>
+    <!--
+        自定义指令总结:
+            一、定义语法:
+                (1).局部指令:
+                    new Vue({
+                        directive:{指令名：配置对象}
+                    })
+                    或
+                    new Vue({
+                        directives{指令名：回调函数}
+                    })
+                (2).全局指令:
+                    Vue.directive(指令名,配置对象) 或 Vue.directive(指令名,回调函数)
+            二、配置对象中常用的3个回调:
+                (1).bind: 指令与元素成功绑定时调用。
+                (2).inserted: 指令所在元素被插入页面时调用。
+                (3).update: 指令所在模板结构被重新解析时调用.
+            三、备注:
+                1.指令定义时不加v-，但使用时要加v-;
+                2.指令名如果是多个单词，要使用kebab-case命名方式，不要用camelCase命名。
+    -->
+    <div id='root'>
+        <!--  需求1: 定义一个v-big指令，和v-text功能类似，但会把绑定的数值放大10倍。 -->
+        <h2>当前的n值为：<span v-text='n'></span></h2>
+        <h2>放大10倍的n值为：<span v-big='n'></span></h2>
+        <button @click="n++">n+1</button>
+        <hr>
+        <!-- 需求2: 定义一个v-fbind指令，和v-bind功能类似，但可以让其所绑定的input元素默认获取焦点。 -->
+        v-bind:<input type="text" :value="n"><br>
+        v-fbind<input type="text" v-fbind="n">
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                n: 1
+            },
+            directives: {
+                //函数式
+                //big函数何时会被调用? 1.指今与元素成功绑定时(一上来) 。2.指令所在的模板被重新解析时。
+                big: function (ele, binding) {
+                    ele.innerText = binding.value * 10
+                },//第一种写法 简写 big(){}
+
+                //对象式
+                fbind: {
+                    //指令与元素成功绑定时（一上来）
+                    bind(ele, binding) {
+                        ele.value = binding.value
+                    },
+                    //指令所在元素被插入页面时
+                    inserted(ele, binding) {
+                        ele.focus()
+                    },
+                    //指令所在模板被重新解析时
+                    update(ele, binding) {
+                        ele.value = binding.value * 10
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
