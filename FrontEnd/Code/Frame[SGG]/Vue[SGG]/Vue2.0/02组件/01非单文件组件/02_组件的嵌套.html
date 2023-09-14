@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+    <script type='text/javascript' src='../../../js/vue.js'></script>
+</head>
+
+<body>
+    <div id='root'>
+        <app></app>
+    </div>
+    <script>
+
+        const hello = Vue.extend({
+            name: 'hello',
+            template: `
+                <div>
+                    <h1>{{message}}</h1>
+                </div>
+            `,
+            data() {
+                return {
+                    message: 'hello'
+                }
+            }
+        })
+
+        const student = Vue.extend({
+            name: 'student',
+            template: `
+                <div>
+                    <h2>学生名称：{{name}}</h2>
+                </div>
+            `,
+            data() {
+                return {
+                    name: 'DWENT'
+                }
+            }
+        })
+
+        const school = Vue.extend({
+            name: 'school',
+            template: `
+                <div>
+                    <h2>学校名称：{{name}}</h2>
+                    <student></student>
+                </div>
+            `,
+            data() {
+                return {
+                    name: '信工'
+                }
+            },
+            components: {
+                student
+            }
+        })
+
+        //定义app组件
+        const app = Vue.extend({
+            template: `
+                <div>
+                    <school></school>
+                    <hello></hello>
+                </div>
+            `,
+            components: {
+                school,
+                hello
+            }
+        })
+
+        new Vue({
+            template:``,
+            el: '#root',
+            data: {
+
+            },
+            components: {
+                app:app
+            }
+        })
+    </script>
+</body>
+
+</html>
