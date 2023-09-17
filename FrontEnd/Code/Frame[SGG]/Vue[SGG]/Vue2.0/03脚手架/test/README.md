@@ -975,7 +975,12 @@ module.exports = {
 2. 具体编码：
 
    ```vue
-   <keep-alive include="News"> 
+   <keep-alive include="News"> //组件名
+       <router-view></router-view>
+   </keep-alive>
+   
+   //缓存多个
+   <keep-alive :include=["News","Message"]> //组件名
        <router-view></router-view>
    </keep-alive>
    ```
@@ -1064,6 +1069,14 @@ module.exports = {
 4. history模式：
    1. 地址干净，美观 。
    2. 兼容性和hash模式相比略差。
-   3. 应用部署上线时需要后端人员支持，解决刷新页面服务端404的问题。
-	 
-	 
+   3. 应用部署上线时需要后端人员支持，解决刷新页面服务端404的问题。 
+
+### 14.VueUI组件库
+
+1. 移动端常用 UI 组件库
+   1. Vant https://youzan.github.io/vant
+   2. Cube Ul https://didi.github.io/cube-ui
+   3. Mint UI http://mint-ui.github.io
+2. PC端常用 UI 组件库
+   1. Element Ul https://element.eleme.cn
+   2. IView Ul https://www.iviewui.com
